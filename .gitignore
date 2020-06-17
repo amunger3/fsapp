@@ -40,3 +40,6 @@ coverage.xml
 
 # NPM
 node_modules/
+
+# DB
+*.sqlite
