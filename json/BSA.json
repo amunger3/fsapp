@@ -1,0 +1,238 @@
+{
+    "attrs": {
+        "rl": [
+            16,
+            20
+        ],
+        "cl": [
+            0,
+            0
+        ],
+        "el": [
+            0,
+            0
+        ]
+    },
+    "data": {
+        "1765": {
+            "name": "Fluminense FC",
+            "shortName": "Fluminense",
+            "tla": "FLU",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1766": {
+            "name": "CA Mineiro",
+            "shortName": "Mineiro",
+            "tla": "CAM",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1767": {
+            "name": "Gr\u00eamio FBPA",
+            "shortName": "Gr\u00eamio",
+            "tla": "GRE",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1768": {
+            "name": "CA Paranaense",
+            "shortName": "Paranaense",
+            "tla": "CAP",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1769": {
+            "name": "SE Palmeiras",
+            "shortName": "Palmeiras",
+            "tla": "PAL",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1770": {
+            "name": "Botafogo FR",
+            "shortName": "Botafogo",
+            "tla": "BOT",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1776": {
+            "name": "S\u00e3o Paulo FC",
+            "shortName": "S\u00e3o Paulo",
+            "tla": "SAO",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1777": {
+            "name": "EC Bahia",
+            "shortName": "Bahia",
+            "tla": "BAH",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1778": {
+            "name": "SC Recife",
+            "shortName": "Recife",
+            "tla": "REC",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1779": {
+            "name": "SC Corinthians Paulista",
+            "shortName": "Corinthians",
+            "tla": "COR",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1780": {
+            "name": "CR Vasco da Gama",
+            "shortName": "Vasco da Gama",
+            "tla": "VAS",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1783": {
+            "name": "CR Flamengo",
+            "shortName": "Flamengo",
+            "tla": "FLA",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "1837": {
+            "name": "Cear\u00e1 SC",
+            "shortName": "Cear\u00e1",
+            "tla": "CSC",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "3984": {
+            "name": "Fortaleza EC",
+            "shortName": "Fortaleza",
+            "tla": "FEC",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "3988": {
+            "name": "AC Goianiense",
+            "shortName": "AC Goianiense",
+            "tla": "ACG",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "4241": {
+            "name": "Coritiba FBC",
+            "shortName": "Coritiba",
+            "tla": "COR",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "4250": {
+            "name": "Goi\u00e1s EC",
+            "shortName": "Goi\u00e1s",
+            "tla": "GOI",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "4286": {
+            "name": "RB Bragantino",
+            "shortName": "Bragantino",
+            "tla": "BRA",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "6684": {
+            "name": "SC Internacional",
+            "shortName": "Internacional",
+            "tla": "INT",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        },
+        "6685": {
+            "name": "Santos FC",
+            "shortName": "Santos",
+            "tla": "SAN",
+            "eloRun": [
+                1500
+            ],
+            "eloNow": 1500,
+            "fixtures": [],
+            "results": []
+        }
+    }
+}

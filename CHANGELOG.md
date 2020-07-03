@@ -1,0 +1,19 @@
+---
+page_type: meta
+languages:
+- python
+description: "CHANGELOG"
+urlFragment: changelog
+---
+# Elo Football App
+
+## Release Notes
+
+Changelog labels are any of the following:
+
+- [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
+
+### Version 0.0.1 (2020-07-03)
+
+- [ENHANCEMENT] [Deployed on Heroku](https://fs-mir-pro.herokuapp.com/).
+- [CODEQUALITY] Changelog and SemVer initialized.
