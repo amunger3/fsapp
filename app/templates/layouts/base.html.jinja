@@ -3,18 +3,15 @@
 
 <head>
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.css') }}" />
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
 
 <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-        <a href="http://70.32.24.16/">Alex Munger</a>.
-        {% endblock %}
-    </div>
+    <div class="uk-container">{% block content %}{% endblock %}</div>
+    <script src="{{ url_for('static', filename='js/uikit.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.js') }}"></script>
 </body>
 
 </html>

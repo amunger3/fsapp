@@ -4,16 +4,13 @@
 
 {% block head %}
     {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
 {% endblock %}
 
 {% block content %}
-    <h2>Competitions Included</h2>
-    <ul>
+    <h2 class="uk-header">Competitions Included</h2>
+    <ul class="uk-list uk-list-divider">
     {% for comp in comps.keys() %}
-        <li><a href="/{{ comp }}">{{ comp }}</a></li>
+        <li><a class="uk-link" href="/{{ comp }}">{{ comp }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}
