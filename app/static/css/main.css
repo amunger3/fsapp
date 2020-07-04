@@ -270,7 +270,7 @@ mark {
 
 
 pre, code, pre tt {
-  font-family: Courier, 'Courier New', monospace;
+  font-family: 'Victor Mono', 'Fira Code', 'Consolas', monospace;
 }
 
 #write .md-fences {

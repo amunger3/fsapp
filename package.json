@@ -15,6 +15,7 @@
         "uikit": "^3.5.4"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "heroku:stage": "heroku run python fs.py --app fs-mir-stage",
+        "heroku:pro":   "heroku run python fs.py --app fs-mir-pro"
     }
 }

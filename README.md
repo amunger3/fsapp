@@ -22,9 +22,11 @@ PS> flask run   # Starts configured development server
 There are 2 git remotes, and 2 corresponding heroku apps. Push to `stage` for staging and `pro` for production.
 The app is hosted on a [gunicorn](https://gunicorn.org/) server.
 
+The heroku commands have been configures in `package.json`.
+
 ```powershell
-PS> heroku run python fs.py --app fs-mir-stage
-PS> heroku run python fs.py --app fs-mir-pro
+PS> npm run heroku:stage
+PS> npm run heroku:pro
 ```
 
 ## Code Structure

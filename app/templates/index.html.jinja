@@ -10,8 +10,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-        Welcome to my awesome homepage.
-    </p>
+    <h2>Competitions Included</h2>
+    <ul>
+    {% for comp in comps.keys() %}
+        <li><a href="/{{ comp }}">{{ comp }}</a></li>
+    {% endfor %}
+    </ul>
 {% endblock %}
