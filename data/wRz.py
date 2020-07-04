@@ -1,4 +1,4 @@
-from config import LeagueConfigs
+from static import LeagueConfigs
 from run_calcs import EloRunCalc
 
 

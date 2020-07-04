@@ -7,6 +7,26 @@ urlFragment: readme
 ---
 # Elo Football Data Calculator
 
+## Workflow
+
+### Local Development
+
+```powershell
+PS> ./init.ps1  # Starts virtual environment and sets config variables
+PS> npm install # installs any new NPM dependencies
+PS> flask run   # Starts configured development server
+```
+
+### Deployment
+
+There are 2 git remotes, and 2 corresponding heroku apps. Push to `stage` for staging and `pro` for production.
+The app is hosted on a [gunicorn](https://gunicorn.org/) server.
+
+```powershell
+PS> heroku run python fs.py --app fs-mir-stage
+PS> heroku run python fs.py --app fs-mir-pro
+```
+
 ## Code Structure
 
 ### Logic

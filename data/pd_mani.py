@@ -1,4 +1,4 @@
-from config import LeagueConfigs
+from static import LeagueConfigs
 from run_calcs import EloRunCalc
 import numpy as np
 import pandas as pd

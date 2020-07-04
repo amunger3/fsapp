@@ -4,7 +4,11 @@ import requests_cache
 from flask import Flask, render_template, request, jsonify
 from flask_assets import Environment, Bundle
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static',
+            template_folder='templates')
+
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config.from_object(os.environ['APP_SETTINGS'])
