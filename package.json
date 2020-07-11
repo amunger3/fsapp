@@ -1,6 +1,6 @@
 {
     "name": "flask-fs",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "description": "Flask app showing Elo football ratings deployed on Heroku",
     "keywords": [
         "python",
