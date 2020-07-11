@@ -1,10 +1,11 @@
 {
-    "name": "flask-fs",
+    "name": "elo-football-ratings",
     "version": "0.1.0",
-    "description": "Flask app showing Elo football ratings deployed on Heroku",
+    "description": "Dash app showing Elo football ratings deployed on Heroku",
     "keywords": [
         "python",
         "flask",
+        "dash",
         "heroku",
         "football",
         "data-analytics"
