@@ -13,6 +13,10 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.1.9 (2020-07-11)
+
+- [ENHANCEMENT] Dash app is fully functional. 0.2 will release when integrated into heroku.
+
 ### Version 0.1.1 (2020-07-11)
 
 - [CHANGE] Beginning transition to [Dash DataTable](https://dash.plotly.com/datatable) app.
