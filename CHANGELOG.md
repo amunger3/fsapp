@@ -13,6 +13,10 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.1.0 (2020-07-11)
+
+- [ENHANCEMENT] First working version with all competition routes and tables.
+
 ### Version 0.0.3 (2020-07-03)
 
 - [DEPENDENCY][ENHANCEMENT] Now using [UIKit](https://uikit.com/docs).
