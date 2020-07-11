@@ -34,4 +34,4 @@ def writerate_main(ignore=[]):
 
 
 if __name__ == '__main__':
-    writerate_main(ignore=['PL', 'ELC', 'PD', 'PPL', 'SA', 'DED'])
+    writerate_main(ignore=['ASL', 'BSA', 'BL', 'FL1', 'DED'])
