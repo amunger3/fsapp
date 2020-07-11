@@ -9,8 +9,8 @@
 {% block content %}
     <h2 class="uk-header">Competitions Included</h2>
     <ul class="uk-list uk-list-divider">
-    {% for comp in comps.keys() %}
-        <li><a class="uk-link" href="/{{ comp }}">{{ comp }}</a></li>
+    {% for lg_abr in comps.keys() %}
+        <li><a class="uk-link" href="/comp/{{ lg_abr }}">{{ lg_abr }}</a> - {{ comps[lg_abr] }}</li>
     {% endfor %}
     </ul>
 {% endblock %}

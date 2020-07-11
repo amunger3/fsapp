@@ -1,0 +1,40 @@
+{% extends "layouts/base.html.jinja" %}
+
+{% block title %}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="uk-header">{{ title }}</h2>
+
+    <div class="uk-card uk-card-default uk-card-body">
+        <a class="uk-button uk-button-default" href="/">Home</a>
+        <table class="uk-table uk-table-divider uk-table-striped uk-table-hover">
+            <caption>Elo Ratings through {{ current_time }}</caption>
+            <thead>
+                <tr>
+                    <th class="uk-table-expand">Team</th>
+                    <th class="uk-table-shrink">TLA</th>
+                    <th class="uk-table-shrink">Elo (Cur.)</th>
+                    <th class="uk-table-shrink">Elo (Min.)</th>
+                    <th class="uk-table-shrink">Elo (Max.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team_id, team_info in dfo['data'].items() %}
+                <tr>
+                    <td>{{ team_info['shortName'] }}</td>
+                    <td>{{ team_info['tla'] }}</td>
+                    <td>{{ team_info['eloNow']|round|int }}</td>
+                    <td>{{ team_info['eloRun']|min|round|int }}</td>
+                    <td>{{ team_info['eloRun']|max|round|int }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
