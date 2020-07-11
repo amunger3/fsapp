@@ -3,25 +3,41 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
 from dash_table.Format import Format, Scheme, Sign, Symbol
+from dash.dependencies import Input, Output
+import plotly.express as px
 import pandas as pd
 
 import json
 from pathlib import Path
 
 
-# Loading JSON
-approot = Path.cwd()
-lg_abr = 'PL'
-lg_nx = lg_abr + '.json'
-tojsondir = ['app', 'json', lg_nx]
-fullpath = approot.joinpath(*tojsondir)
-fpo = open(fullpath, 'r')
-json_fpo = json.load(fpo)
-fpo.close()
+def json_load_obj(filename):
+    approot = Path.cwd()
+    file_nx = filename + '.json'
+    tojsondir = ['app', 'json', file_nx]
+    fullpath = approot.joinpath(*tojsondir)
+    fpo = open(fullpath, 'r')
+    json_fpo = json.load(fpo)
+    fpo.close()
+    return json_fpo
 
-# Pandas DataFrame setup
-df_x = pd.DataFrame.from_dict(json_fpo['data'], orient='index')
-df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
+
+# Competition selections
+comps_pop = json_load_obj('competitions-plus3')
+df_comps = pd.DataFrame(comps_pop['competitions'])
+df_comps.rename(columns={'name': 'label', 'code': 'value'}, inplace=True)
+df_compini = df_comps[['label', 'value']]
+
+
+# Pandas DataFrame variable
+def comp_elo_df(comp_code):
+    table_elo = json_load_obj(comp_code)
+    df_x = pd.DataFrame.from_dict(table_elo['data'], orient='index')
+    df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
+    return df_static
+
+
+df_static = comp_elo_df('PL')
 
 
 # Colorbins setup
@@ -101,7 +117,7 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
     return (styles, html.Div(legend, style={'padding': '5px 0 5px 0'}), full_scale)
 
 
-(styles, legend, full_scale) = discrete_background_color_bins(df_static)
+(styles, legend, full_scale) = discrete_background_color_bins(comp_elo_df('PL'))
 
 # Dash App rendering
 app = dash.Dash(
@@ -144,6 +160,15 @@ app.layout = html.Div([
     html.Div(
         className="uk-container uk-margin-medium",
         children=[
+            html.Div([
+                dcc.Dropdown(
+                    id='comps-dropdown',
+                    options=df_compini.to_dict('records'),
+                    placeholder="Select a Competition",
+                    value='PL'
+                ),
+                html.Div(id='comps-output-container')
+            ]),
             html.Div(
                 className="uk-card uk-card-default",
                 children=[
@@ -201,6 +226,16 @@ app.layout = html.Div([
         ]
     )
 ])
+
+
+# Callbacks
+@app.callback(
+    Output('elolgtable', 'data'),
+    [Input('comps-dropdown', 'value')])
+def update_table(value):
+    df_static = comp_elo_df(value)
+    return df_static.to_dict('records')
+
 
 # Run Server
 if __name__ == '__main__':
