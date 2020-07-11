@@ -1,4 +1,5 @@
 import dash
+import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
 from dash_table.Format import Format, Scheme, Sign, Symbol
@@ -6,6 +7,13 @@ import pandas as pd
 
 import json
 from pathlib import Path
+
+
+# CSS import
+# root_path = Path.cwd()
+# dir_desc = ['app', 'static', 'css', 'dash-default.css']
+# css_filepath = root_path.joinpath(*dir_desc)
+# external_stylesheets = [css_filepath]
 
 # Loading JSON
 approot = Path.cwd()
@@ -102,44 +110,85 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
 (styles, legend, full_scale) = discrete_background_color_bins(df_static)
 
 # Dash App rendering
-app = dash.Dash(__name__)
+app = dash.Dash(
+    __name__,
+    assets_ignore='.*main.*',
+    meta_tags=[
+        {
+            'http-equiv': 'X-UA-Compatible',
+            'content': 'IE=edge'
+        },
+        {
+            'name': 'viewport',
+            'content': 'width=device-width, initial-scale=1.0'
+        }
+    ]
+)
 
 app.layout = html.Div([
-    html.Div(legend, style={'float': 'right'}),
-    dash_table.DataTable(
-        id='elolgtable',
-        columns=[
-            {'id': 'shortName', 'name': 'Team', 'type': 'text'},
-            {'id': 'tla', 'name': 'TLA', 'type': 'text'},
-            {
-                'id': 'eloNow',
-                'name': 'Elo (Cur.)',
-                'type': 'numeric',
-                'format': Format(
-                    precision=0,
-                    scheme=Scheme.fixed
-                )
-            }
-            ],
-        data=df_static.to_dict('records'),
-        sort_action='native',
-        style_cell={
-            'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
-            'fontSize': '17px'
-        },
-        style_data_conditional=styles,
-        style_header={
-            'backgroundColor': 'rgb(50, 23, 77)',
-            'color':  'rgb(248, 255, 236)',
-            'fontWeight': 'bold'
-        },
-        style_header_conditional=[
-            {
-                'if': {
-                    'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
-                    },
-                'textAlign': 'left'
-            }
+    html.Div(
+        className="uk-container",
+        children=[
+            html.Nav(
+                className="uk-navbar-container",
+                children=[
+                    html.Div(
+                        className="uk-navbar-center",
+                        children=[
+                            html.Ul(
+                                className="uk-navbar-nav",
+                                children=[
+                                    html.Li(
+                                        "Home"
+                                    )
+                                ]
+                            )
+                        ]
+                    )
+                ]
+            ),
+            html.Div(
+                className="uk-card uk-card-default uk-card-body",
+                children=[
+                    html.Div(legend, style={'float': 'right'}),
+                    dash_table.DataTable(
+                        id='elolgtable',
+                        columns=[
+                            {'id': 'shortName', 'name': 'Team', 'type': 'text'},
+                            {'id': 'tla', 'name': 'TLA', 'type': 'text'},
+                            {
+                                'id': 'eloNow',
+                                'name': 'Elo (Cur.)',
+                                'type': 'numeric',
+                                'format': Format(
+                                    precision=0,
+                                    scheme=Scheme.fixed
+                                )
+                            }
+                            ],
+                        data=df_static.to_dict('records'),
+                        sort_action='native',
+                        style_cell={
+                            'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
+                            'fontSize': '17px'
+                        },
+                        style_data_conditional=styles,
+                        style_header={
+                            'backgroundColor': 'rgb(50, 23, 77)',
+                            'color':  'rgb(248, 255, 236)',
+                            'fontWeight': 'bold'
+                        },
+                        style_header_conditional=[
+                            {
+                                'if': {
+                                    'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
+                                    },
+                                'textAlign': 'left'
+                            }
+                        ]
+                    )
+                ]
+            )
         ]
     )
 ])
