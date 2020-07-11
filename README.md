@@ -57,7 +57,12 @@ them simply by calling `pytest`. Code coverage statistics are output as HTML in 
 
 ## Documentation
 
-Placeholder text.
+**JSON Updates**: To update leagues, do the following (very cumbersome):
+
+```powershell
+PS [root_dir]> cd ./app
+PS [root_dir]/app> python ./data/wRz.py
+```
 
 ## API Requests
 
