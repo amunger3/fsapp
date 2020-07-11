@@ -135,6 +135,8 @@ app = dash.Dash(
     ]
 )
 
+server = app.server
+
 app.layout = html.Div([
     html.Nav(
         html.Div(
