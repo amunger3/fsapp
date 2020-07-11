@@ -9,12 +9,6 @@ import json
 from pathlib import Path
 
 
-# CSS import
-# root_path = Path.cwd()
-# dir_desc = ['app', 'static', 'css', 'dash-default.css']
-# css_filepath = root_path.joinpath(*dir_desc)
-# external_stylesheets = [css_filepath]
-
 # Loading JSON
 approot = Path.cwd()
 lg_abr = 'PL'
@@ -126,65 +120,80 @@ app = dash.Dash(
 )
 
 app.layout = html.Div([
+    html.Nav(
+        html.Div(
+            html.Div(
+                html.Ul(
+                    className="uk-navbar-nav",
+                    children=[
+                        html.Li(
+                            html.A(
+                                "Home",
+                                href="/"
+                            ),
+                            className=""
+                        )
+                    ]
+                ),
+                className="uk-navbar-center"
+            ),
+            className="uk-container"
+        ),
+        className="uk-navbar uk-navbar-transparent"
+    ),
     html.Div(
-        className="uk-container",
+        className="uk-container uk-margin-medium",
         children=[
-            html.Nav(
-                className="uk-navbar-container",
+            html.Div(
+                className="uk-card uk-card-default",
                 children=[
                     html.Div(
-                        className="uk-navbar-center",
+                        html.H3(
+                            "English Premier League Elo Ratings 2019-2020",
+                            className="uk-card-title"
+                        ),
+                        className="uk-card-header"
+                    ),
+                    html.Div(
+                        className="uk-card-body",
                         children=[
-                            html.Ul(
-                                className="uk-navbar-nav",
-                                children=[
-                                    html.Li(
-                                        "Home"
-                                    )
+                            html.Div(legend, style={'float': 'right'}),
+                            dash_table.DataTable(
+                                id='elolgtable',
+                                columns=[
+                                    {'id': 'shortName', 'name': 'Team', 'type': 'text'},
+                                    {'id': 'tla', 'name': 'TLA', 'type': 'text'},
+                                    {
+                                        'id': 'eloNow',
+                                        'name': 'Elo (Cur.)',
+                                        'type': 'numeric',
+                                        'format': Format(
+                                            precision=0,
+                                            scheme=Scheme.fixed
+                                        )
+                                    }
+                                    ],
+                                data=df_static.to_dict('records'),
+                                sort_action='native',
+                                style_cell={
+                                    'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
+                                    'fontSize': '17px'
+                                },
+                                style_data_conditional=styles,
+                                style_header={
+                                    'backgroundColor': 'rgb(50, 23, 77)',
+                                    'color':  'rgb(248, 255, 236)',
+                                    'fontWeight': 'bold'
+                                },
+                                style_header_conditional=[
+                                    {
+                                        'if': {
+                                            'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
+                                            },
+                                        'textAlign': 'left'
+                                    }
                                 ]
                             )
-                        ]
-                    )
-                ]
-            ),
-            html.Div(
-                className="uk-card uk-card-default uk-card-body",
-                children=[
-                    html.Div(legend, style={'float': 'right'}),
-                    dash_table.DataTable(
-                        id='elolgtable',
-                        columns=[
-                            {'id': 'shortName', 'name': 'Team', 'type': 'text'},
-                            {'id': 'tla', 'name': 'TLA', 'type': 'text'},
-                            {
-                                'id': 'eloNow',
-                                'name': 'Elo (Cur.)',
-                                'type': 'numeric',
-                                'format': Format(
-                                    precision=0,
-                                    scheme=Scheme.fixed
-                                )
-                            }
-                            ],
-                        data=df_static.to_dict('records'),
-                        sort_action='native',
-                        style_cell={
-                            'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
-                            'fontSize': '17px'
-                        },
-                        style_data_conditional=styles,
-                        style_header={
-                            'backgroundColor': 'rgb(50, 23, 77)',
-                            'color':  'rgb(248, 255, 236)',
-                            'fontWeight': 'bold'
-                        },
-                        style_header_conditional=[
-                            {
-                                'if': {
-                                    'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
-                                    },
-                                'textAlign': 'left'
-                            }
                         ]
                     )
                 ]
