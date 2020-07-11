@@ -1,5 +1,7 @@
 import dash
+import dash_html_components as html
 import dash_table
+from dash_table.Format import Format, Scheme, Sign, Symbol
 import pandas as pd
 
 import json
@@ -19,14 +21,122 @@ fpo.close()
 df_x = pd.DataFrame.from_dict(json_fpo['data'], orient='index')
 df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
 
+
+# Colorbins setup
+def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
+    import colorlover
+    bounds = [i * (1.0 / n_bins) for i in range(n_bins + 1)]
+    if columns == 'all':
+        if 'id' in df:
+            df_numeric_columns = df.select_dtypes('number').drop(['id'], axis=1)
+        else:
+            df_numeric_columns = df.select_dtypes('number')
+    else:
+        df_numeric_columns = df[columns]
+    df_max = df_numeric_columns.max().max()
+    df_min = df_numeric_columns.min().min()
+    ranges = [
+        ((df_max - df_min) * i) + df_min
+        for i in bounds
+    ]
+    styles = [
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(248, 248, 248)'
+        },
+        {
+            'if': {
+                'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
+            },
+            'textAlign': 'left'
+        }
+    ]
+    legend = []
+    color_scale = [
+        'rgb(215,48,39)',
+        'rgb(244,109,67)',
+        'rgb(253,174,97)',
+        'rgb(254,224,139)',
+        'rgb(255,255,191)',
+        'rgb(217,239,139)',
+        'rgb(166,217,106)',
+        'rgb(102,189,99)',
+        'rgb(26,152,80)'
+        ]
+    for i in range(1, len(bounds)):
+        min_bound = ranges[i - 1]
+        max_bound = ranges[i]
+        backgroundColor = color_scale[i - 1]
+        # color = 'white' if i > len(bounds) / 2. else 'inherit'
+
+        for column in df_numeric_columns:
+            styles.append({
+                'if': {
+                    'filter_query': (
+                        '{{{column}}} >= {min_bound}' +
+                        (' && {{{column}}} < {max_bound}' if (i < len(bounds) - 1) else '')
+                    ).format(column=column, min_bound=min_bound, max_bound=max_bound),
+                    'column_id': column
+                },
+                'backgroundColor': backgroundColor,
+                'color': 'black'
+            })
+        legend.append(
+            html.Div(style={'display': 'inline-block', 'width': '60px'}, children=[
+                html.Div(
+                    style={
+                        'backgroundColor': backgroundColor,
+                        'borderLeft': '1px rgb(50, 50, 50) solid',
+                        'height': '10px'
+                    }
+                ),
+                html.Small(round(min_bound), style={'paddingLeft': '2px'})
+            ])
+        )
+        full_scale = html.Small(color_scale, style={'paddingLeft': '2px'})
+
+    return (styles, html.Div(legend, style={'padding': '5px 0 5px 0'}), full_scale)
+
+
+(styles, legend, full_scale) = discrete_background_color_bins(df_static)
+
 # Dash App rendering
 app = dash.Dash(__name__)
 
-app.layout = dash_table.DataTable(
-    id='table',
-    columns=[{"name": i, "id": i} for i in df_static.columns],
-    data=df_static.to_dict('records'),
-)
+app.layout = html.Div([
+    html.Div(legend, style={'float': 'right'}),
+    dash_table.DataTable(
+        id='elolgtable',
+        columns=[{
+                'id': 'name',
+                'name': 'Team',
+                'type': 'text'
+            }, {
+                'id': 'shortName',
+                'name': 'TeamShort',
+                'type': 'text'
+            }, {
+                'id': 'tla',
+                'name': 'TLA',
+                'type': 'text'
+            }, {
+                'id': 'eloNow',
+                'name': 'Elo (Cur.)',
+                'type': 'numeric',
+                'format': Format(
+                    precision=0,
+                    scheme=Scheme.fixed
+                )
+            }],
+        data=df_static.to_dict('records'),
+        sort_action='native',
+        style_data_conditional=styles,
+        style_header={
+            'backgroundColor': 'rgb(230, 230, 230)',
+            'fontWeight': 'bold'
+        }
+    )
+])
 
 # Run Server
 if __name__ == '__main__':
