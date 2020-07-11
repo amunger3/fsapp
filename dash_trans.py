@@ -79,15 +79,16 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
                     'column_id': column
                 },
                 'backgroundColor': backgroundColor,
-                'color': 'black'
+                'color': 'rgb(16, 16, 16)',
+                'fontWeight': 'bold'
             })
         legend.append(
             html.Div(style={'display': 'inline-block', 'width': '60px'}, children=[
                 html.Div(
                     style={
                         'backgroundColor': backgroundColor,
-                        'borderLeft': '1px rgb(50, 50, 50) solid',
-                        'height': '10px'
+                        'borderLeft': '1px rgb(64, 64, 64) solid',
+                        'height': '16px'
                     }
                 ),
                 html.Small(round(min_bound), style={'paddingLeft': '2px'})
@@ -107,19 +108,10 @@ app.layout = html.Div([
     html.Div(legend, style={'float': 'right'}),
     dash_table.DataTable(
         id='elolgtable',
-        columns=[{
-                'id': 'name',
-                'name': 'Team',
-                'type': 'text'
-            }, {
-                'id': 'shortName',
-                'name': 'TeamShort',
-                'type': 'text'
-            }, {
-                'id': 'tla',
-                'name': 'TLA',
-                'type': 'text'
-            }, {
+        columns=[
+            {'id': 'shortName', 'name': 'Team', 'type': 'text'},
+            {'id': 'tla', 'name': 'TLA', 'type': 'text'},
+            {
                 'id': 'eloNow',
                 'name': 'Elo (Cur.)',
                 'type': 'numeric',
@@ -127,14 +119,28 @@ app.layout = html.Div([
                     precision=0,
                     scheme=Scheme.fixed
                 )
-            }],
+            }
+            ],
         data=df_static.to_dict('records'),
         sort_action='native',
+        style_cell={
+            'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
+            'fontSize': '17px'
+        },
         style_data_conditional=styles,
         style_header={
-            'backgroundColor': 'rgb(230, 230, 230)',
+            'backgroundColor': 'rgb(50, 23, 77)',
+            'color':  'rgb(248, 255, 236)',
             'fontWeight': 'bold'
-        }
+        },
+        style_header_conditional=[
+            {
+                'if': {
+                    'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
+                    },
+                'textAlign': 'left'
+            }
+        ]
     )
 ])
 
