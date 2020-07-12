@@ -16,7 +16,6 @@
         "uikit": "^3.5.4"
     },
     "scripts": {
-        "heroku:stage": "heroku run python fs.py --app fs-mir-stage",
-        "heroku:pro": "heroku run python fs.py --app fs-mir-pro"
+        "serve": "python ./dashapp.py"
     }
 }
