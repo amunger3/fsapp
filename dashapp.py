@@ -1,3 +1,7 @@
+import os
+import json
+from pathlib import Path
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -6,11 +10,15 @@ from dash_table.Format import Format, Scheme, Sign, Symbol
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
+import requests
+import requests_cache
 
-import json
-from pathlib import Path
+
+# Initialize requests cache
+requests_cache.install_cache('fbd_cache', backend='sqlite', expire_after=86400)
 
 
+# Load requested JSON files as objects
 def json_load_obj(filename):
     approot = Path.cwd()
     file_nx = filename + '.json'
