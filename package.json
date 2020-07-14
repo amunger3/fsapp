@@ -10,10 +10,18 @@
         "football",
         "data-analytics"
     ],
-    "author": "Alex Munger <munger.alex@gmail.com>",
+    "author": {
+        "name": "Alex Munger",
+        "email": "munger.alex@gmail.com",
+        "url": "https://amunger3.github.io"
+    },
+    "repository": {
+        "type": "GitHub",
+        "url": "https://github.com/amunger3/fsapp.git"
+    },
     "license": "MIT",
     "dependencies": {
-        "uikit": "^3.5.4"
+        "uikit": "^3.5.5"
     },
     "scripts": {
         "serve": "python ./dashapp.py"
