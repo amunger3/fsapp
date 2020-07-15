@@ -3,29 +3,30 @@ from run_calcs import EloRunCalc
 import numpy as np
 import pandas as pd
 
+# NOTE: this file must be run from the project root to load the existing HDF Store
 
-def robustFrame(lga='PL'):
+
+def hdf5_handler(lg_key='PL'):
 
     LC = LeagueConfigs()
-    hdf = pd.HDFStore('storage.h5')
-    lga_hdf = lga.lower()
+    hdf = pd.HDFStore('fbd_storage.h5')
+    lga_hdf = lg_key.lower()
 
-    # Updating tables?
+    # Updating arrays
     if hdf.__contains__(lga_hdf):
         print("data present at {0}...deleting key".format(lga_hdf))
         hdf.remove(lga_hdf)
 
-    pl_erc = EloRunCalc(LC._IDS[lga])
-    print("Storing DataFrame...")
-    df_epl = pl_erc.run_calcs()
-    pd_epl = pd.DataFrame.from_dict(df_epl['data'], orient='index')
-    hdf[lga_hdf] = pd_epl
+    pl_erc = EloRunCalc(LC._IDS[lg_key])
+    print("Storing DataFrame at /{0}".format(lga_hdf))
+    df_comp = pl_erc.run_calcs()
+    pd_comp = pd.DataFrame.from_dict(df_comp['data'], orient='index')
+    pd_comp.to_hdf('fbd_storage.h5', lga_hdf)
+    print("Storage of /{0} complete...".format(lga_hdf))
     hdf.close()
 
-    return pd_epl
+    return
 
 
-if __name__ == '__main__':
-    robustFrame(lga='FL1')
-    robustFrame(lga='SA')
-    robustFrame(lga='ELC')
+# if __name__ == '__main__':
+#     hdf5_handler(lg_key='BL')

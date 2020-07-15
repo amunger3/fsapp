@@ -34,6 +34,7 @@ mccabe==0.6.1
 mpmath==1.1.0
 msal==1.4.1
 nedoc==0.6
+numexpr==2.7.1
 numpy==1.19.0
 pandas==1.0.5
 plotly==4.8.2
@@ -51,6 +52,7 @@ requests-cache==0.5.2
 retrying==1.3.3
 six==1.15.0
 soupsieve==2.0.1
+tables==3.6.1
 toml==0.10.1
 tqdm==4.47.0
 urllib3==1.25.9
