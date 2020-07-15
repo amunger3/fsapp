@@ -1,6 +1,0 @@
-App process
-
-1. API-Handler retrieves JSON -->
-2. --> to pd.DataFrame immediately -->
-3. --> store as HDF5 -->
-4. --> App can work with pandas to retrieve
