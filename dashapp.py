@@ -84,15 +84,15 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
     ]
     legend = []
     color_scale = [
-        'rgb(215,48,39)',
-        'rgb(244,109,67)',
-        'rgb(253,174,97)',
+        'rgb(214,83,80)',
+        'rgb(242,129,95)',
+        'rgb(253,176,98)',
         'rgb(254,224,139)',
         'rgb(255,255,191)',
         'rgb(217,239,139)',
-        'rgb(166,217,106)',
-        'rgb(102,189,99)',
-        'rgb(26,152,80)'
+        'rgb(164,216,105)',
+        'rgb(108,211,105)',
+        'rgb(80,226,143)'
         ]
     for i in range(1, len(bounds)):
         min_bound = ranges[i - 1]
@@ -110,15 +110,25 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
                     'column_id': column
                 },
                 'backgroundColor': backgroundColor,
-                'color': 'rgb(16, 16, 16)',
-                'fontWeight': 'bold'
+                'color': 'rgb(8, 8, 8)',
+                'fontWeight': '500'
             })
+
+        legend_border_left = '1px rgb(64, 64, 64) solid'
+        legend_border_right = '1px rgb(64, 64, 64) solid'
+        if i == 1:
+            legend_border_left = '2px rgb(64, 64, 64) solid'
+        elif i == n_bins:
+            legend_border_right = '2px rgb(64, 64, 64) solid'
         legend.append(
             html.Div(style={'display': 'inline-block', 'width': '60px'}, children=[
                 html.Div(
                     style={
                         'backgroundColor': backgroundColor,
-                        'borderLeft': '1px rgb(64, 64, 64) solid',
+                        'borderLeft': legend_border_left,
+                        'borderRight': legend_border_right,
+                        'borderTop': '2px rgb(64, 64, 64) solid',
+                        'borderBottom': '2px rgb(64, 64, 64) solid',
                         'height': '16px'
                     }
                 ),
@@ -131,6 +141,20 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
 
 
 (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+
+elo_columns = [
+    {'id': 'shortName', 'name': 'Team', 'type': 'text'},
+    {'id': 'tla', 'name': 'TLA', 'type': 'text'},
+    {
+        'id': 'eloNow',
+        'name': 'Elo (Cur.)',
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    }
+]
 
 # Dash App rendering
 app = dash.Dash(
@@ -205,31 +229,19 @@ app.layout = html.Div([
                             ),
                             dash_table.DataTable(
                                 id='elolgtable',
-                                columns=[
-                                    {'id': 'shortName', 'name': 'Team', 'type': 'text'},
-                                    {'id': 'tla', 'name': 'TLA', 'type': 'text'},
-                                    {
-                                        'id': 'eloNow',
-                                        'name': 'Elo (Cur.)',
-                                        'type': 'numeric',
-                                        'format': Format(
-                                            precision=0,
-                                            scheme=Scheme.fixed
-                                        )
-                                    }
-                                    ],
+                                columns=elo_columns,
                                 data=df_static.to_dict('records'),
                                 sort_action='native',
                                 sort_mode='multi',
                                 style_cell={
-                                    'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
+                                    'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
                                     'fontSize': '17px'
                                 },
                                 style_data_conditional=styles,
                                 style_header={
                                     'backgroundColor': 'rgb(50, 23, 77)',
                                     'color':  'rgb(248, 255, 236)',
-                                    'fontWeight': 'bold'
+                                    'fontWeight': '500'
                                 },
                                 style_header_conditional=[
                                     {
