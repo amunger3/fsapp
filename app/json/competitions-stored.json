@@ -1,0 +1,233 @@
+{
+    "count": 9,
+    "filters": {
+        "plan": "TIER_ONE"
+    },
+    "competitions": [{
+            "id": 2024,
+            "area": {
+                "id": 2011,
+                "name": "Argentina",
+                "countryCode": "ARG",
+                "ensignUrl": null
+            },
+            "name": "Superliga Argentina",
+            "code": "ASL",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 539,
+                "startDate": "2019-07-27",
+                "endDate": "2020-03-01",
+                "currentMatchday": 22,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-03-10T12:10:19Z"
+        },
+        {
+            "id": 2021,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "Premier League",
+            "code": "PL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 468,
+                "startDate": "2019-08-09",
+                "endDate": "2020-07-25",
+                "currentMatchday": 35,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 27,
+            "lastUpdated": "2020-07-11T22:09:21Z"
+        },
+        {
+            "id": 2016,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "Championship",
+            "code": "ELC",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 503,
+                "startDate": "2019-08-02",
+                "endDate": "2020-07-22",
+                "currentMatchday": 43,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-07-11T22:09:22Z"
+        },
+        {
+            "id": 2015,
+            "area": {
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+            },
+            "name": "Ligue 1",
+            "code": "FL1",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 499,
+                "startDate": "2019-08-09",
+                "endDate": "2020-05-31",
+                "currentMatchday": 38,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 9,
+            "lastUpdated": "2020-05-22T00:00:04Z"
+        },
+        {
+            "id": 2002,
+            "area": {
+                "id": 2088,
+                "name": "Germany",
+                "countryCode": "DEU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+            },
+            "name": "Bundesliga",
+            "code": "BL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 474,
+                "startDate": "2019-08-16",
+                "endDate": "2020-06-27",
+                "currentMatchday": 34,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON",
+                    "RELEGATION_PROMOTION_PLAYOFF"
+                ]
+            },
+            "numberOfAvailableSeasons": 24,
+            "lastUpdated": "2020-07-06T23:44:00Z"
+        },
+        {
+            "id": 2019,
+            "area": {
+                "id": 2114,
+                "name": "Italy",
+                "countryCode": "ITA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
+            },
+            "name": "Serie A",
+            "code": "SA",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 530,
+                "startDate": "2019-08-24",
+                "endDate": "2020-08-02",
+                "currentMatchday": 32,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 15,
+            "lastUpdated": "2020-07-11T22:09:23Z"
+        },
+        {
+            "id": 2003,
+            "area": {
+                "id": 2163,
+                "name": "Netherlands",
+                "countryCode": "NLD",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
+            },
+            "name": "Eredivisie",
+            "code": "DED",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 481,
+                "startDate": "2019-08-09",
+                "endDate": "2020-03-08",
+                "currentMatchday": 34,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 10,
+            "lastUpdated": "2020-05-09T00:00:08Z"
+        },
+        {
+            "id": 2017,
+            "area": {
+                "id": 2187,
+                "name": "Portugal",
+                "countryCode": "PRT",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg"
+            },
+            "name": "Primeira Liga",
+            "code": "PPL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 484,
+                "startDate": "2019-08-10",
+                "endDate": "2020-07-26",
+                "currentMatchday": 31,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 9,
+            "lastUpdated": "2020-07-11T22:09:28Z"
+        },
+        {
+            "id": 2014,
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "countryCode": "ESP",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
+            },
+            "name": "Primera Division",
+            "code": "PD",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 519,
+                "startDate": "2019-08-16",
+                "endDate": "2020-07-19",
+                "currentMatchday": 36,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 27,
+            "lastUpdated": "2020-07-11T22:09:29Z"
+        }
+    ]
+}

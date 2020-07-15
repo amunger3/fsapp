@@ -17,6 +17,9 @@ import requests_cache
 # Initialize requests cache
 requests_cache.install_cache('fbd_cache', backend='sqlite', expire_after=86400)
 
+# Load HDF5 Storage
+hdf_file = 'fbd_storage.h5'
+
 
 # Load requested JSON files as objects
 def json_load_obj(filename):
@@ -31,16 +34,19 @@ def json_load_obj(filename):
 
 
 # Competition selections
-comps_pop = json_load_obj('competitions-plus3')
-df_comps = pd.DataFrame(comps_pop['competitions'])
+# comps_pop = json_load_obj('competitions-plus3')
+# df_comps = pd.DataFrame(comps_pop['competitions'])
+df_comps = pd.read_hdf(hdf_file, 'comps')
 df_comps.rename(columns={'name': 'label', 'code': 'value'}, inplace=True)
 df_compini = df_comps[['label', 'value']]
 
 
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
-    table_elo = json_load_obj(comp_code)
-    df_x = pd.DataFrame.from_dict(table_elo['data'], orient='index')
+    # table_elo = json_load_obj(comp_code)
+    # df_x = pd.DataFrame.from_dict(table_elo['data'], orient='index')
+    hdf_key = comp_code.lower()
+    df_x = pd.read_hdf(hdf_file, hdf_key)
     df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
     return df_static
 
