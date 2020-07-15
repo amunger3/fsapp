@@ -21,30 +21,29 @@ requests_cache.install_cache('fbd_cache', backend='sqlite', expire_after=86400)
 hdf_file = 'fbd_storage.h5'
 
 
-# Load requested JSON files as objects
-def json_load_obj(filename):
-    approot = Path.cwd()
-    file_nx = filename + '.json'
-    tojsondir = ['app', 'json', file_nx]
-    fullpath = approot.joinpath(*tojsondir)
-    fpo = open(fullpath, 'r')
-    json_fpo = json.load(fpo)
-    fpo.close()
-    return json_fpo
-
-
 # Competition selections
-# comps_pop = json_load_obj('competitions-plus3')
-# df_comps = pd.DataFrame(comps_pop['competitions'])
 df_comps = pd.read_hdf(hdf_file, 'comps')
 df_comps.rename(columns={'name': 'label', 'code': 'value'}, inplace=True)
+df_compsix = df_comps.set_index('value', drop=False)
 df_compini = df_comps[['label', 'value']]
+
+
+def set_table_header(comp_code):
+    comp_name = df_compsix.loc[comp_code]['label']
+    area_name = df_compsix.loc[comp_code]['area']['name']
+    year_str = '/'.join([
+        df_compsix.loc[comp_code]['currentSeason']['startDate'].split('-')[0][-2:],
+        df_compsix.loc[comp_code]['currentSeason']['endDate'].split('-')[0][-2:]
+        ])
+    table_header_str = area_name + ': ' + comp_name + ' ' + year_str
+    return table_header_str
+
+
+card_title = set_table_header('PL')
 
 
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
-    # table_elo = json_load_obj(comp_code)
-    # df_x = pd.DataFrame.from_dict(table_elo['data'], orient='index')
     hdf_key = comp_code.lower()
     df_x = pd.read_hdf(hdf_file, hdf_key)
     df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
@@ -190,8 +189,9 @@ app.layout = html.Div([
                 children=[
                     html.Div(
                         html.H3(
-                            "English Premier League Elo Ratings 2019-2020",
-                            className="uk-card-title"
+                            children=card_title,
+                            className="uk-card-title",
+                            id="tablecard-title"
                         ),
                         className="uk-card-header"
                     ),
@@ -246,11 +246,13 @@ app.layout = html.Div([
 
 # Callbacks
 @app.callback(
-    Output('elolgtable', 'data'),
+    [Output('elolgtable', 'data'),
+    Output('tablecard-title', 'children')],
     [Input('comps-dropdown', 'value')])
 def update_table(value):
+    card_title = set_table_header(value)
     df_static = comp_elo_df(value)
-    return df_static.to_dict('records')
+    return df_static.to_dict('records'), card_title
 
 
 # Run Server
