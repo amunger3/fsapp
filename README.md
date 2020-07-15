@@ -86,9 +86,3 @@ to recieve an API key.
 | 2145 | MLS  | MLS                   | USA         |
 | 2001 | CL   | UEFA Champions League | Europe      |
 | 2146 | EL   | UEFA Europa League    | Europe      |
-
-
-## TODO
-
-- [ ] Refactor xl_py.main() without so many loops. Just write the lists all at once.
-- [ ] Expand the data constructions towards pandas and away from JSON.
