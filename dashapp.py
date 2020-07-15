@@ -45,8 +45,8 @@ card_title = set_table_header('PL')
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
     hdf_key = comp_code.lower()
-    df_x = pd.read_hdf(hdf_file, hdf_key)
-    df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
+    df_static = pd.read_hdf(hdf_file, hdf_key)
+    # df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
     return df_static
 
 
@@ -130,7 +130,7 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
     return (styles, html.Div(legend, style={'padding': '5px 0 5px 0'}), full_scale)
 
 
-(styles, legend, full_scale) = discrete_background_color_bins(comp_elo_df('PL'))
+(styles, legend, full_scale) = discrete_background_color_bins(df_static)
 
 # Dash App rendering
 app = dash.Dash(
@@ -198,7 +198,11 @@ app.layout = html.Div([
                     html.Div(
                         className="uk-card-body",
                         children=[
-                            html.Div(legend, style={'float': 'right'}),
+                            html.Div(
+                                children=legend,
+                                style={'float': 'right'},
+                                id="colorbins-legend"
+                            ),
                             dash_table.DataTable(
                                 id='elolgtable',
                                 columns=[
@@ -216,6 +220,7 @@ app.layout = html.Div([
                                     ],
                                 data=df_static.to_dict('records'),
                                 sort_action='native',
+                                sort_mode='multi',
                                 style_cell={
                                     'fontFamily': 'Nunito, Roboto, Inter, Arial, sans-serif',
                                     'fontSize': '17px'
@@ -247,12 +252,15 @@ app.layout = html.Div([
 # Callbacks
 @app.callback(
     [Output('elolgtable', 'data'),
-    Output('tablecard-title', 'children')],
+    Output('elolgtable', 'style_data_conditional'),
+    Output('tablecard-title', 'children'),
+    Output('colorbins-legend', 'children')],
     [Input('comps-dropdown', 'value')])
 def update_table(value):
-    card_title = set_table_header(value)
     df_static = comp_elo_df(value)
-    return df_static.to_dict('records'), card_title
+    card_title = set_table_header(value)
+    (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+    return df_static.to_dict('records'), styles, card_title, legend
 
 
 # Run Server
