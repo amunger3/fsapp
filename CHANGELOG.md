@@ -13,6 +13,11 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.2.1 (2020-07-15)
+
+- [ENHANCEMENT] Edited conditional styles for readability and color contrast.
+- [BUGFIX] conditional styles and their legend now update with table selection.
+
 ### Version 0.2.0 (2020-07-15)
 
 #### Minor Release
