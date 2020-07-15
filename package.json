@@ -29,6 +29,7 @@
         "grunt-contrib-copy": "^1.0.0"
     },
     "scripts": {
+        "build": "grunt copy",
         "serve": "python ./dashapp.py"
     }
 }
