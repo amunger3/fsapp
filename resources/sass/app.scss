@@ -1,0 +1,22 @@
+// app.scss
+
+// 1. Your custom variables and variable overwrites.
+@import "theme/breadcrumb.scss";
+@import "theme/navbar.scss";
+@import "theme/variables.scss";
+
+// ... import all
+// 2. Import default variables and available mixins.
+@import "uikit/variables.scss";
+@import "uikit/mixins.scss";
+
+// 3. Your custom mixin overwrites.
+@import "theme/breadcrumb-mixins.scss";
+@import "theme/navbar-mixins.scss";
+@import "theme/variables-mixins.scss";
+
+// 4. Import UIkit
+@import "uikit/uikit.scss";
+
+// 5. Import Primary.scss
+@import "primary.scss";
