@@ -1,6 +1,6 @@
 {
     "name": "elo-football-ratings",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "Dash app showing Elo football ratings deployed on Heroku",
     "keywords": [
         "python",
@@ -27,11 +27,12 @@
         "grunt": "^1.2.1",
         "grunt-cli": "^1.3.2",
         "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-sass": "^1.0.0",
         "grunt-sass": "^3.1.0",
         "node-sass": "^4.14.1"
     },
     "scripts": {
-        "build": "grunt copy",
+        "build": "grunt copy && grunt sass",
         "serve": "python ./dashapp.py"
     }
 }

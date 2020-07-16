@@ -159,7 +159,7 @@ elo_columns = [
 # Dash App rendering
 app = dash.Dash(
     __name__,
-    assets_ignore='.*main.*',
+    assets_ignore='.*dash-default.*',
     meta_tags=[
         {
             'http-equiv': 'X-UA-Compatible',
@@ -178,23 +178,33 @@ app.layout = html.Div([
     html.Nav(
         html.Div(
             html.Div(
-                html.Ul(
-                    className="uk-navbar-nav",
+                html.Div(
                     children=[
-                        html.Li(
-                            html.A(
-                                "Home",
-                                href="/"
-                            ),
-                            className=""
-                        )
-                    ]
+                        html.A(
+                            "Elo Football",
+                            href="/",
+                            className="uk-navbar-item uk-logo"
+                        ),
+                        html.Ul(
+                            className="uk-navbar-nav",
+                            children=[
+                                html.Li(
+                                    html.A(
+                                        "Home",
+                                        href="/"
+                                    ),
+                                    className="uk-active"
+                                )
+                            ]
+                        ),
+                    ],
+                    className="uk-navbar-left"
                 ),
-                className="uk-navbar-center"
+                className="uk-navbar"
             ),
             className="uk-container"
         ),
-        className="uk-navbar uk-navbar-transparent"
+        className="uk-navbar-transparent"
     ),
     html.Div(
         className="uk-container uk-margin-medium",

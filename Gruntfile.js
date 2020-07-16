@@ -8,15 +8,26 @@ module.exports = function(grunt) {
                     { expand: true, cwd: 'node_modules/uikit/dist/css/', src: 'uikit.css', dest: 'assets/', filter: 'isFile' },
                     { expand: true, cwd: 'node_modules/uikit/dist/js/', src: 'uikit.js', dest: 'assets/', filter: 'isFile' },
                     { expand: true, cwd: 'node_modules/uikit/dist/js/', src: 'uikit-icons.js', dest: 'assets/', filter: 'isFile' },
-                    { expand: true, cwd: 'node_modules/uikit/src/scss/', src: '*', dest: 'resources/sass/uikit/', filter: 'isFile' },
-                    { expand: true, cwd: 'node_modules/uikit/src/js/', src: '*', dest: 'resources/js/uikit/', filter: 'isFile' },
+                    { expand: true, cwd: 'node_modules/uikit/src/scss/', src: '**', dest: 'resources/sass/uikit/', filter: 'isFile' },
+                    { expand: true, cwd: 'node_modules/uikit/src/js/', src: '**', dest: 'resources/js/uikit/', filter: 'isFile' },
                 ],
             },
+        },
+        sass: {
+            dist: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'assets/app.css': 'resources/sass/app.scss'
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('default', ['copy']);
+    grunt.registerTask('default', ['copy', 'sass']);
 
 };
