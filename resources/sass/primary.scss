@@ -1,0 +1,145 @@
+@import 'https://rsms.me/inter/inter.css';
+@import 'https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css';
+
+$sans: 'Inter', 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
+$serif: 'Noto Serif', 'Source Serif', Cambria, serif;
+$mono: 'Fira Code', 'Liberation Mono', Consolas, monospace;
+$gray0: #cecece;
+$gray1: #acbccc;
+$gray4: #454a4f;
+$gray6: #666666;
+$gray9: #9da5ab;
+$red1: #ff4143;
+$red2: #c33c33;
+$grad1: linear-gradient(to bottom, #d9d9d9, #c4c3c4);
+
+html,
+body {
+    background-color: $gray0;
+    background-size: cover;
+    color: $gray6;
+    font-family: $sans;
+    font-weight: 350;
+    line-height: 1rem;
+    margin: 0;
+}
+
+@supports (font-variation-settings: normal) {
+    html,
+    body {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+footer {
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $serif;
+    font-weight: normal;
+}
+
+nav {
+    font-family: $serif;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.37);
+    background-color: $gray4;
+    z-index: 99;
+}
+
+li.uk-active>a {
+    color: $red1 !important;
+}
+
+.code {
+    font-family: $mono;
+    font-feature-settings: "calt" 1;
+    text-rendering: optimizeLegibility;
+    width: 30em;
+    margin: 5em auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+@supports (font-variation-settings: normal) {
+    .code {
+        font-family: 'Fira Code VF', monospace;
+        font-variation-settings: 'wght' 400;
+    }
+}
+
+.footer {
+    display: none;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.variable {
+    font-family: 'Fira Code VF', monospace;
+    font-variation-settings: 'wght' 400;
+}
+
+i {
+    font-style: normal;
+    color: $red2;
+}
+
+b {
+    font-weight: inherit;
+    color: $red2;
+}
+
+.header {
+    background-image: $grad1;
+}
+
+.mainbox {
+    box-shadow: 0 4px 2.4rem -.4rem $gray9;
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+    margin-left: 6.4rem;
+    margin-right: 6.4rem;
+    overflow: hidden;
+    padding-bottom: 3.2rem;
+    position: relative;
+}
+
+tr.z1 {
+    background-color: rgb(226, 182, 252);
+}
+
+tr.z2 {
+    background-color: rgb(191, 223, 250);
+}
+
+tr.z3 {
+    background-color: rgb(204, 240, 174);
+}
+
+tr.z-2 {
+    background-color: rgb(245, 205, 168);
+}
+
+tr.z-1 {
+    background-color: rgb(248, 177, 177);
+}
+
+tr.z-10 {
+    background-color: rgb(248, 248, 250);
+}
