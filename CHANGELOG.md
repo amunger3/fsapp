@@ -13,6 +13,13 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.3.0 (2020-07-16)
+
+#### Minor Release
+
+- [ENHANCEMENT] Added custom UIKit theme and built from Sass.
+- [DEPENDENCY] Grunt-contrib-sass, Ruby, Ruby-sass
+
 ### Version 0.2.1 (2020-07-15)
 
 - [ENHANCEMENT] Edited conditional styles for readability and color contrast.

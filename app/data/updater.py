@@ -28,5 +28,8 @@ def hdf5_handler(lg_key='PL'):
     return
 
 
-# if __name__ == '__main__':
-#     hdf5_handler(lg_key='BL')
+if __name__ == '__main__':
+    active_comps = ['PL', 'PD', 'SA', 'ELC', 'PPL']
+    for comp in active_comps:
+        print('Updating {0}'.format(comp))
+        hdf5_handler(lg_key=comp)
