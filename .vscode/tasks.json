@@ -7,6 +7,11 @@
             "label": "update-comps",
             "type": "shell",
             "command": "python ./app/data/updater.py"
-        }
+        },
+        {
+            "label": "run-local",
+            "type": "shell",
+            "command": "python dashapp.py"
+        },
     ]
 }
