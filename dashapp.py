@@ -23,19 +23,29 @@ hdf_file = 'fbd_storage.h5'
 
 # Competition selections
 df_comps = pd.read_hdf(hdf_file, 'comps')
-df_comps.rename(columns={'name': 'label', 'code': 'value'}, inplace=True)
+df_comps.rename(columns={'code': 'value'}, inplace=True)
 df_compsix = df_comps.set_index('value', drop=False)
-df_compini = df_comps[['label', 'value']]
+
+
+# Competition Info Label
+def compi_concat(ix):
+    area = df_compsix.index.get_value(df_compsix['area'], ix)
+    cname = df_compsix.index.get_value(df_compsix['name'], ix)
+    cstr = ' — '.join([area['name'], cname])
+    return cstr
+
+
+df_compsix['label'] = df_compsix['value'].apply(compi_concat)
+df_compini = df_compsix[['label', 'value']]
 
 
 def set_table_header(comp_code):
-    comp_name = df_compsix.loc[comp_code]['label']
-    area_name = df_compsix.loc[comp_code]['area']['name']
+    comp_label = df_compsix.loc[comp_code]['label']
     year_str = '/'.join([
         df_compsix.loc[comp_code]['currentSeason']['startDate'].split('-')[0][-2:],
         df_compsix.loc[comp_code]['currentSeason']['endDate'].split('-')[0][-2:]
         ])
-    table_header_str = area_name + ': ' + comp_name + ' ' + year_str
+    table_header_str = ' '.join([comp_label, year_str])
     return table_header_str
 
 
@@ -46,8 +56,16 @@ card_title = set_table_header('PL')
 def comp_elo_df(comp_code):
     hdf_key = comp_code.lower()
     df_static = pd.read_hdf(hdf_file, hdf_key)
-    # df_static = df_x[['name', 'shortName', 'tla', 'eloNow']]
+    df_static['lastFix'] = df_static['fixtures'].apply(lambda x: df_static.loc[x[-1]]['shortName'])
+    res_map = {0: 'L', 0.5: 'D', 1: 'W'}
+    df_static['lastRes'] = df_static['results'].apply(lambda x: res_map[x[-1]])
+    df_static['lastDiff'] = df_static['eloRun'].apply(lambda x: x[-1] - x[-2])
     return df_static
+
+
+# df functions
+def get_last(ix):
+    return ix[-1]
 
 
 df_static = comp_elo_df('PL')
@@ -71,16 +89,14 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
         for i in bounds
     ]
     styles = [
-        {
-            'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(248, 248, 248)'
-        },
-        {
-            'if': {
-                'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
-            },
-            'textAlign': 'left'
-        }
+        {'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(248, 248, 248)'},
+        {'if': {'column_type': 'text'},
+            'textAlign': 'left'},
+        {'if': {'column_type': 'numeric'},
+            'textAlign': 'center'},
+        {'if': {'column_id': 'lastRes'},
+            'textAlign': 'center'},
     ]
     legend = []
     color_scale = [
@@ -143,17 +159,28 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
 (styles, legend, full_scale) = discrete_background_color_bins(df_static)
 
 elo_columns = [
-    {'id': 'shortName', 'name': 'Team', 'type': 'text'},
-    {'id': 'tla', 'name': 'TLA', 'type': 'text'},
+    {'id': 'shortName', 'name': ['Team', 'Name'], 'type': 'text'},
+    {'id': 'tla', 'name': ['Team', 'Short'], 'type': 'text'},
     {
         'id': 'eloNow',
-        'name': 'Elo (Cur.)',
+        'name': ['Team', 'Elo'],
         'type': 'numeric',
         'format': Format(
             precision=0,
             scheme=Scheme.fixed
         )
-    }
+    },
+    {
+        'id': 'lastDiff',
+        'name': ['Last Match', '+/-'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {'id': 'lastRes', 'name': ['Last Match', 'Result'], 'type': 'text'},
+    {'id': 'lastFix', 'name': ['Last Match', 'vs.'], 'type': 'text'},
 ]
 
 # Dash App rendering
@@ -194,7 +221,14 @@ app.layout = html.Div([
                                         href="/"
                                     ),
                                     className="uk-active"
-                                )
+                                ),
+                                html.Li(
+                                    html.A(
+                                        "Reset",
+                                        href="#"
+                                    ),
+                                    className=""
+                                ),
                             ]
                         ),
                     ],
@@ -210,14 +244,17 @@ app.layout = html.Div([
         className="uk-container uk-margin-medium",
         children=[
             html.Div([
+                html.P(
+                    "Choose a Competition:",
+                    className="uk-text-lead"
+                ),
                 dcc.Dropdown(
                     id='comps-dropdown',
                     options=df_compini.to_dict('records'),
                     placeholder="Select a Competition",
                     value='PL'
                 ),
-                html.Div(id='comps-output-container')
-            ]),
+            ], className="uk-margin-small"),
             html.Div(
                 className="uk-card uk-card-default",
                 children=[
@@ -242,30 +279,61 @@ app.layout = html.Div([
                                 columns=elo_columns,
                                 data=df_static.to_dict('records'),
                                 sort_action='native',
-                                sort_mode='multi',
                                 style_cell={
                                     'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
                                     'fontSize': '17px'
                                 },
+                                style_cell_conditional=[
+                                    {'if': {'column_id': 'shortName'},
+                                    'width': '30%'},
+                                    {'if': {'column_id': 'eloNow'},
+                                    'width': '10%'},
+                                    {'if': {'column_id': 'lastDiff'},
+                                    'width': '10%'},
+                                    {'if': {'column_id': 'lastRes'},
+                                    'width': '10%'},
+                                ],
                                 style_data_conditional=styles,
                                 style_header={
-                                    'backgroundColor': 'rgb(50, 23, 77)',
-                                    'color':  'rgb(248, 255, 236)',
-                                    'fontWeight': '500'
+                                    'backgroundColor': 'rgb(69, 74, 79)',
+                                    'color':  'rgb(233, 233, 240)',
+                                    'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
+                                    'fontSize': '18px',
+                                    'fontWeight': '400',
+                                    'paddingLeft': '8px',
+                                    'paddingRight': '8px',
                                 },
                                 style_header_conditional=[
-                                    {
-                                        'if': {
-                                            'column_type': 'text'  # 'text' | 'any' | 'datetime' | 'numeric'
-                                            },
-                                        'textAlign': 'left'
-                                    }
-                                ]
+                                    {'if': {'column_type': 'text'},
+                                        'textAlign': 'left'},
+                                    {'if': {'column_type': 'numeric'},
+                                        'textAlign': 'center'},
+                                ],
+                                merge_duplicate_headers=True,
+                                style_as_list_view=False,
                             )
                         ]
                     )
                 ]
-            )
+            ),
+            html.Div(
+                html.Div(
+                    children=[
+                        html.P(
+                            children=[
+                                "Created by Alex Munger | ",
+                                html.A(
+                                    "GitHub",
+                                    href="https://amunger3.github.io"
+                                ),
+                            ],
+                            className="uk-text-center"
+                        ),
+                    ],
+                    className="uk-container"
+                ),
+                className="uk-margin-medium"
+            ),
         ]
     )
 ])

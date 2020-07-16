@@ -13,9 +13,16 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.4.0 (2020-07-16)
+
+#### Minor Release 0.4
+
+- [ENHANCEMENT] Added last match results to data table.
+- [ENHANCEMENT] Lots of UI improvements.
+
 ### Version 0.3.0 (2020-07-16)
 
-#### Minor Release
+#### Minor Release 0.3
 
 - [ENHANCEMENT] Added custom UIKit theme and built from Sass.
 - [DEPENDENCY] Grunt-contrib-sass, Ruby, Ruby-sass
@@ -27,7 +34,7 @@ Changelog labels are any of the following:
 
 ### Version 0.2.0 (2020-07-15)
 
-#### Minor Release
+#### Minor Release 0.2
 
 - [CODEQUALITY] Pandas backend now stores HDF5; no more JSON I/O.
 - [CODEQUALITY] grunt used to copy static web assets from UIKit.

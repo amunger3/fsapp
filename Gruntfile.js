@@ -5,7 +5,6 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, cwd: 'node_modules/uikit/dist/css/', src: 'uikit.css', dest: 'assets/', filter: 'isFile' },
                     { expand: true, cwd: 'node_modules/uikit/dist/js/', src: 'uikit.js', dest: 'assets/', filter: 'isFile' },
                     { expand: true, cwd: 'node_modules/uikit/dist/js/', src: 'uikit-icons.js', dest: 'assets/', filter: 'isFile' },
                     { expand: true, cwd: 'node_modules/uikit/src/scss/', src: '**', dest: 'resources/sass/uikit/', filter: 'isFile' },
