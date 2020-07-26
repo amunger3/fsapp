@@ -13,6 +13,12 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.4.1 (2020-07-26)
+
+- [ENHANCEMENT] Added Elo Rank column to DataTable.
+- [CODEQUALITY] Uninstalled unused Python packages.
+- [DEPENDENCY] Updated to Plotly 4.9.
+
 ### Version 0.4.0 (2020-07-16)
 
 #### Minor Release 0.4
