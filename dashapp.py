@@ -60,6 +60,7 @@ def comp_elo_df(comp_code):
     res_map = {0: 'L', 0.5: 'D', 1: 'W'}
     df_static['lastRes'] = df_static['results'].apply(lambda x: res_map[x[-1]])
     df_static['lastDiff'] = df_static['eloRun'].apply(lambda x: x[-1] - x[-2])
+    df_static['eloRk'] = df_static['eloNow'].rank(ascending=False)
     return df_static
 
 
@@ -159,6 +160,15 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
 (styles, legend, full_scale) = discrete_background_color_bins(df_static)
 
 elo_columns = [
+    {
+        'id': 'eloRk',
+        'name': ['Rk.', 'No.'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
     {'id': 'shortName', 'name': ['Team', 'Name'], 'type': 'text'},
     {'id': 'tla', 'name': ['Team', 'Short'], 'type': 'text'},
     {
@@ -284,6 +294,8 @@ app.layout = html.Div([
                                     'fontSize': '17px'
                                 },
                                 style_cell_conditional=[
+                                    {'if': {'column_id': 'eloRk'},
+                                    'width': '10%'},
                                     {'if': {'column_id': 'shortName'},
                                     'width': '30%'},
                                     {'if': {'column_id': 'eloNow'},
