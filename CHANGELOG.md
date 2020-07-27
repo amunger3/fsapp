@@ -13,6 +13,10 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.4.2 (2020-07-26)
+
+- [OTHER] Updated runtime to Python 3.8.5.
+
 ### Version 0.4.1 (2020-07-26)
 
 - [ENHANCEMENT] Added Elo Rank column to DataTable.
