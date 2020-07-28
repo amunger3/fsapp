@@ -16,14 +16,12 @@ class FBDataHandler:
                             'EL' : '2146'
                         }
         AZ = re.search(r"([A-Z])\w+", league_id)
-
         if AZ:
             self.league_id = self.league_ids[league_id]
         else:
             self.league_id = league_id
 
     def _get(self, url):
-        """Handles all api.football-data.org requests."""
         req = requests.get(self.baseUrl + url, headers=self.headers)
         status_code = req.status_code
         if status_code == requests.codes.ok:
@@ -33,7 +31,6 @@ class FBDataHandler:
             return
 
     def get_teams(self):
-        """Fetches all teams in the league for setup."""
         req = self._get('competitions/{id}/teams'.format(id=self.league_id))
         return req.json()
 
@@ -54,7 +51,6 @@ class FBDataHandler:
         return tmsInit
 
     def get_league_results(self):
-        """Fetches all results for a league season for analysis."""
         print("Getting league results...")
         req = self._get('competitions/{id}/matches'.format(id=self.league_id))
         return req.json()
