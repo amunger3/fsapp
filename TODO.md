@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] [WORKFLOW] Add tests. Becoming a nightmare without.
+- [ ] [IDEA] Other competition formats (UCL?).
 - [ ] [APPEARANCE] Dash: DataTable filtering, more info, DAQ widgets, etc.
 - [ ] [WORKFLOW] Incorporate a workflow.
 - [ ] [AUTOMATE] Automate API fetching to update ratings.

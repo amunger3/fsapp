@@ -4,7 +4,7 @@ import requests
 
 class FBDataHandler:
 
-    def __init__(self, league_id):
+    def __init__(self, league_id, season='2019', stage='REGULAR_SEASON', status='FINISHED'):
         self.baseUrl = 'https://api.football-data.org/v2/'
         self.apiToken = '065434220db543f6aafdb8565d85d359'
         self.headers = { 'X-Auth-Token': self.apiToken }
@@ -20,9 +20,12 @@ class FBDataHandler:
             self.league_id = self.league_ids[league_id]
         else:
             self.league_id = league_id
+        self.season = season
+        self.stage = stage
+        self.status = status
 
-    def _get(self, url):
-        req = requests.get(self.baseUrl + url, headers=self.headers)
+    def _get(self, url, params={}):
+        req = requests.get(self.baseUrl + url, headers=self.headers, params=params)
         status_code = req.status_code
         if status_code == requests.codes.ok:
             return req
@@ -31,7 +34,8 @@ class FBDataHandler:
             return
 
     def get_teams(self):
-        req = self._get('competitions/{id}/teams'.format(id=self.league_id))
+        params = {'season': self.season, 'stage': self.stage}
+        req = self._get('competitions/{id}/teams'.format(id=self.league_id), params=params)
         return req.json()
 
     def df_setup(self):
@@ -51,6 +55,7 @@ class FBDataHandler:
         return tmsInit
 
     def get_league_results(self):
+        params = {'season': self.season, 'stage': self.stage, 'status': self.status}
         print("Getting league results...")
-        req = self._get('competitions/{id}/matches'.format(id=self.league_id))
+        req = self._get('competitions/{id}/matches'.format(id=self.league_id), params=params)
         return req.json()
