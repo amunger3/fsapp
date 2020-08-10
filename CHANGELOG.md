@@ -13,6 +13,17 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.5.0 (2020-08-09)
+
+#### Minor Release 0.5
+
+- [BUGFIX] Bundesliga now working, all query filters are functional.
+- [DEPENDENCY] Added PyTest, to implement in future release.
+- [DEPENDENCY] Pandas upgraded to 1.1.0, throwing a deprecation warning — to keep in mind.
+- [DEPENDENCY] Dash upgraded to 1.14. No significant effects.
+- [OTHER] All 2019-2020 season Elo ratings finalized.
+- [CODEQUALITY] Rework of class responsibilities; will be easier to expand to multi-year/multi-stage.
+
 ### Version 0.4.2 (2020-07-26)
 
 - [OTHER] Updated runtime to Python 3.8.5.
@@ -40,14 +51,14 @@ Changelog labels are any of the following:
 ### Version 0.2.1 (2020-07-15)
 
 - [ENHANCEMENT] Edited conditional styles for readability and color contrast.
-- [BUGFIX] conditional styles and their legend now update with table selection.
+- [BUGFIX] Conditional styles and their legend now update with table selection.
 
 ### Version 0.2.0 (2020-07-15)
 
 #### Minor Release 0.2
 
 - [CODEQUALITY] Pandas backend now stores HDF5; no more JSON I/O.
-- [CODEQUALITY] grunt used to copy static web assets from UIKit.
+- [CODEQUALITY] Grunt used to copy static web assets from UIKit.
 - [DEPENDENCY] Grunt (dev) (NPM).
 - [DEPENDENCY] UIKit upgraded to v3.5.5.
 
