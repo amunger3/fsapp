@@ -50,7 +50,16 @@ class FBDataHandler:
                 'eloRun':    [1500],
                 'eloNow':    1500,
                 'fixtures':  [],
-                'results':   []
+                'results':   [],
+                'tablePos':  0,
+                'matches':   0,
+                'won':       0,
+                'draw':      0,
+                'lost':      0,
+                'points':    0,
+                'goalsFor':  0,
+                'goalsAga':  0,
+                'goalDiff':  0
             }
         return tmsInit
 
@@ -58,4 +67,10 @@ class FBDataHandler:
         params = {'season': self.season, 'stage': self.stage, 'status': self.status}
         print("Getting league results...")
         req = self._get('competitions/{id}/matches'.format(id=self.league_id), params=params)
+        return req.json()
+
+    def get_standings(self):
+        params = {'season': self.season, 'stage': self.stage, 'standingType': 'TOTAL'}
+        print("Getting league standings...")
+        req = self._get('competitions/{id}/standings'.format(id=self.league_id), params=params)
         return req.json()
