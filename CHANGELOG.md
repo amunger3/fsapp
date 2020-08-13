@@ -13,6 +13,11 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.5.2 (2020-08-13)
+
+- [CODEQUALITY] Updated 'comps' DataFrame to remove Pandas warning.
+- [ENHANCEMENT] Customized app title and icon.
+
 ### Version 0.5.1 (2020-08-13)
 
 - [DEPENDENCY] Updated UIKit to 3.5.6.

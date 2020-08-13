@@ -22,20 +22,7 @@ hdf_file = 'fbd_storage.h5'
 
 
 # Competition selections
-df_comps = pd.read_hdf(hdf_file, 'comps')
-df_comps.rename(columns={'code': 'value'}, inplace=True)
-df_compsix = df_comps.set_index('value', drop=False)
-
-
-# Competition Info Label
-def compi_concat(ix):
-    area = df_compsix.index.get_value(df_compsix['area'], ix)
-    cname = df_compsix.index.get_value(df_compsix['name'], ix)
-    cstr = ' — '.join([area['name'], cname])
-    return cstr
-
-
-df_compsix['label'] = df_compsix['value'].apply(compi_concat)
+df_compsix = pd.read_hdf(hdf_file, 'comps')
 df_compini = df_compsix[['label', 'value']]
 
 
@@ -44,7 +31,7 @@ def set_table_header(comp_code):
     year_str = '/'.join([
         df_compsix.loc[comp_code]['currentSeason']['startDate'].split('-')[0][-2:],
         df_compsix.loc[comp_code]['currentSeason']['endDate'].split('-')[0][-2:]
-        ])
+    ])
     table_header_str = ' '.join([comp_label, year_str])
     return table_header_str
 
@@ -206,7 +193,9 @@ app = dash.Dash(
             'name': 'viewport',
             'content': 'width=device-width, initial-scale=1.0'
         }
-    ]
+    ],
+    title='Football Elo Ratings',
+    update_title=None
 )
 
 server = app.server
@@ -235,7 +224,7 @@ app.layout = html.Div([
                                 html.Li(
                                     html.A(
                                         "Reset",
-                                        href="#"
+                                        href="/"
                                     ),
                                     className=""
                                 ),
@@ -333,7 +322,7 @@ app.layout = html.Div([
                     children=[
                         html.P(
                             children=[
-                                "Created by Alex Munger | ",
+                                "Created by Alex Munger – 2020 | ",
                                 html.A(
                                     "GitHub",
                                     href="https://amunger3.github.io"
