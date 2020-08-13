@@ -13,6 +13,12 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.6.0 (2020-08-13)
+
+#### Minor Release 0.6
+
+- [ENHANCEMENT] Standings API incorporated into DataTable.
+
 ### Version 0.5.2 (2020-08-13)
 
 - [CODEQUALITY] Updated 'comps' DataFrame to remove Pandas warning.

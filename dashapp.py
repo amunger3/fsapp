@@ -43,7 +43,7 @@ card_title = set_table_header('PL')
 def comp_elo_df(comp_code):
     hdf_key = comp_code.lower()
     df_static = pd.read_hdf(hdf_file, hdf_key)
-    df_static['lastFix'] = df_static['fixtures'].apply(lambda x: df_static.loc[x[-1]]['shortName'])
+    df_static['lastFix'] = df_static['fixtures'].apply(lambda x: df_static.loc[x[-1]]['tla'])
     res_map = {0: 'L', 0.5: 'D', 1: 'W'}
     df_static['lastRes'] = df_static['results'].apply(lambda x: res_map[x[-1]])
     df_static['lastDiff'] = df_static['eloRun'].apply(lambda x: x[-1] - x[-2])
@@ -149,7 +149,16 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
 elo_columns = [
     {
         'id': 'eloRk',
-        'name': ['Rk.', 'No.'],
+        'name': ['Pos.', 'Elo'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'tablePos',
+        'name': ['Pos.', 'Pts'],
         'type': 'numeric',
         'format': Format(
             precision=0,
@@ -157,10 +166,81 @@ elo_columns = [
         )
     },
     {'id': 'shortName', 'name': ['Team', 'Name'], 'type': 'text'},
-    {'id': 'tla', 'name': ['Team', 'Short'], 'type': 'text'},
     {
         'id': 'eloNow',
         'name': ['Team', 'Elo'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'matches',
+        'name': ['Season', 'MP'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'won',
+        'name': ['Season', 'W'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'lost',
+        'name': ['Season', 'L'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'draw',
+        'name': ['Season', 'D'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'points',
+        'name': ['Season', 'Pts'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'goalsFor',
+        'name': ['Goals', 'GF'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'goalsAga',
+        'name': ['Goals', 'GA'],
+        'type': 'numeric',
+        'format': Format(
+            precision=0,
+            scheme=Scheme.fixed
+        )
+    },
+    {
+        'id': 'goalDiff',
+        'name': ['Goals', 'GD'],
         'type': 'numeric',
         'format': Format(
             precision=0,
@@ -176,7 +256,7 @@ elo_columns = [
             scheme=Scheme.fixed
         )
     },
-    {'id': 'lastRes', 'name': ['Last Match', 'Result'], 'type': 'text'},
+    {'id': 'lastRes', 'name': ['Last Match', 'Res'], 'type': 'text'},
     {'id': 'lastFix', 'name': ['Last Match', 'vs.'], 'type': 'text'},
 ]
 
@@ -284,15 +364,35 @@ app.layout = html.Div([
                                 },
                                 style_cell_conditional=[
                                     {'if': {'column_id': 'eloRk'},
-                                    'width': '10%'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'tablePos'},
+                                    'width': '5%'},
                                     {'if': {'column_id': 'shortName'},
-                                    'width': '30%'},
+                                    'width': '20%'},
                                     {'if': {'column_id': 'eloNow'},
                                     'width': '10%'},
+                                    {'if': {'column_id': 'matches'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'won'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'lost'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'draw'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'points'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'goalsFor'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'goalsAga'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'goalDiff'},
+                                    'width': '5%'},
                                     {'if': {'column_id': 'lastDiff'},
-                                    'width': '10%'},
+                                    'width': '5%'},
                                     {'if': {'column_id': 'lastRes'},
-                                    'width': '10%'},
+                                    'width': '5%'},
+                                    {'if': {'column_id': 'lastFix'},
+                                    'width': '5%'},
                                 ],
                                 style_data_conditional=styles,
                                 style_header={
