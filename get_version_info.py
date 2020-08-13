@@ -25,7 +25,7 @@ def read_from_package_json(write=False):
         ))
 
         with open(package_info_file, 'w') as f:
-            f.write(json.dumps(package_info))
+            f.write(json.dumps(package_info, indent=4))
 
     return package_info
 
@@ -48,8 +48,26 @@ def read_from_setup_cfg():
     return config_info
 
 
+def ver_up(level='patch'):
+
+    pkg = read_from_package_json(write=False)
+    cfg = read_from_setup_cfg()
+    if pkg['version'] == cfg['version']:
+        major, minor, patch = pkg['version'].split('.')
+        ver_dict = {
+            'major': int(major),
+            'minor': int(minor),
+            'patch': int(patch)
+        }
+        ver_dict[level] += 1
+        upd_vstr = '.'.join([str(val) for val in ver_dict.values()])
+        print(upd_vstr)
+
+        return
+
+
 if __name__ == '__main__':
-    package_info = read_from_package_json(write=False)
+    package_info = read_from_package_json(write=True)
     config_info = read_from_setup_cfg()
     if package_info == config_info:
         print("Package version configurations synced!")
