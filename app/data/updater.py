@@ -1,6 +1,5 @@
 from static import LeagueConfigs
 from run_calcs import EloRunCalc
-import numpy as np
 import pandas as pd
 
 # NOTE: this file must be run from the project root to load the existing HDF Store
