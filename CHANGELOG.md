@@ -13,6 +13,13 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.7.0 (2020-11-13)
+
+#### Minor Release 0.7
+
+- [OTHER] Updated to 2020-2021 Season.
+- [OTHER] New runtime: Python 3.9.0.
+
 ### Version 0.6.0 (2020-08-13)
 
 #### Minor Release 0.6
