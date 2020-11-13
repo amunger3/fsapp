@@ -1,4 +1,3 @@
-import re
 import requests
 
 import json
@@ -8,7 +7,7 @@ from pathlib import Path
 def write_tojsondir(w_df, name):
     cwd = Path.cwd()
     file_nx = name + '.json'
-    dir_desc = ['json', file_nx]
+    dir_desc = ['app', 'json', file_nx]
 
     w_dir = cwd.joinpath(*dir_desc)
     jd = json.dumps(w_df, indent=4)
@@ -76,3 +75,7 @@ def reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None):
             nameadd = 'all'
         name = '-'.join(['competitions', nameadd])
         write_tojsondir(comps_df, name)
+
+
+if __name__ == '__main__':
+    reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None)

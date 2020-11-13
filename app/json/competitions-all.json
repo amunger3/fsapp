@@ -1,5 +1,5 @@
 {
-    "count": 149,
+    "count": 150,
     "filters": {},
     "competitions": [
         {
@@ -28,6 +28,56 @@
             "lastUpdated": "2018-06-04T23:54:04Z"
         },
         {
+            "id": 2023,
+            "area": {
+                "id": 2011,
+                "name": "Argentina",
+                "countryCode": "ARG",
+                "ensignUrl": null
+            },
+            "name": "Primera B Nacional",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 547,
+                "startDate": "2019-08-16",
+                "endDate": "2020-06-14",
+                "currentMatchday": 30,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-09-10T13:44:34Z"
+        },
+        {
+            "id": 2024,
+            "area": {
+                "id": 2011,
+                "name": "Argentina",
+                "countryCode": "ARG",
+                "ensignUrl": null
+            },
+            "name": "Superliga Argentina",
+            "code": "ASL",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 539,
+                "startDate": "2019-07-27",
+                "endDate": "2020-03-01",
+                "currentMatchday": 22,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-09-10T13:44:41Z"
+        },
+        {
             "id": 2025,
             "area": {
                 "id": 2011,
@@ -53,54 +103,29 @@
             "lastUpdated": "2019-05-03T05:08:18Z"
         },
         {
-            "id": 2023,
+            "id": 2149,
             "area": {
                 "id": 2011,
                 "name": "Argentina",
                 "countryCode": "ARG",
                 "ensignUrl": null
             },
-            "name": "Primera B Nacional",
+            "name": "Copa Liga Profesional",
             "code": null,
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 547,
-                "startDate": "2019-08-16",
-                "endDate": "2020-06-14",
-                "currentMatchday": 30,
+                "id": 653,
+                "startDate": "2020-11-01",
+                "endDate": "2021-01-24",
+                "currentMatchday": 3,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "1ST_PHASE"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-15T00:00:02Z"
-        },
-        {
-            "id": 2024,
-            "area": {
-                "id": 2011,
-                "name": "Argentina",
-                "countryCode": "ARG",
-                "ensignUrl": null
-            },
-            "name": "Superliga Argentina",
-            "code": "ASL",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 539,
-                "startDate": "2019-07-27",
-                "endDate": "2020-03-01",
-                "currentMatchday": 22,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-10T12:10:19Z"
+            "numberOfAvailableSeasons": 1,
+            "lastUpdated": "2020-11-13T00:00:07Z"
         },
         {
             "id": 2147,
@@ -118,7 +143,7 @@
                 "id": 465,
                 "startDate": "2019-06-06",
                 "endDate": "2021-11-16",
-                "currentMatchday": 7,
+                "currentMatchday": 9,
                 "winner": null,
                 "availableStages": [
                     "ROUND_1",
@@ -126,7 +151,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 2,
-            "lastUpdated": "2020-06-03T00:00:01Z"
+            "lastUpdated": "2020-11-11T00:00:07Z"
         },
         {
             "id": 2008,
@@ -143,15 +168,18 @@
             "currentSeason": {
                 "id": 548,
                 "startDate": "2019-10-11",
-                "endDate": "2020-05-17",
-                "currentMatchday": 29,
+                "endDate": "2020-08-19",
+                "currentMatchday": 27,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "ELIMINATION_FINALS",
+                    "SEMI_FINALS",
+                    "GRAND_FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-25T00:00:01Z"
+            "lastUpdated": "2020-09-10T13:45:20Z"
         },
         {
             "id": 2026,
@@ -185,6 +213,31 @@
             "lastUpdated": "2019-10-23T23:59:22Z"
         },
         {
+            "id": 2020,
+            "area": {
+                "id": 2016,
+                "name": "Austria",
+                "countryCode": "AUT",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
+            },
+            "name": "Erste Liga",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 626,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-21",
+                "currentMatchday": 10,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T23:59:07Z"
+        },
+        {
             "id": 2012,
             "area": {
                 "id": 2016,
@@ -197,21 +250,17 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 470,
-                "startDate": "2019-07-22",
-                "endDate": "2020-07-05",
-                "currentMatchday": 10,
+                "id": 620,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-31",
+                "currentMatchday": 8,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND",
-                    "EUROPA_LEAGUE_PLAYOFF_SEMI_FINALS",
-                    "EUROPA_LEAGUE_PLAYOFF_FINAL"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:17:00Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T21:35:45Z"
         },
         {
             "id": 2022,
@@ -232,10 +281,10 @@
                 "currentMatchday": null,
                 "winner": {
                     "id": 2022,
-                    "name": "SKN Sankt P\u00f6lten",
+                    "name": "spusu SKN St. P\u00f6lten",
                     "shortName": "St. P\u00f6lten",
                     "tla": "STP",
-                    "crestUrl": null
+                    "crestUrl": "https://crests.football-data.org/2022.svg"
                 },
                 "availableStages": [
                     "RELEGATION_PROMOTION_PLAYOFF"
@@ -257,47 +306,19 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 491,
-                "startDate": "2019-07-14",
-                "endDate": "2020-05-01",
+                "id": 627,
+                "startDate": "2020-08-28",
+                "endDate": "2021-05-01",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "ROUND_OF_64",
                     "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_OF_16"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-29T22:32:27Z"
-        },
-        {
-            "id": 2020,
-            "area": {
-                "id": 2016,
-                "name": "Austria",
-                "countryCode": "AUT",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
-            },
-            "name": "Erste Liga",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 471,
-                "startDate": "2019-07-21",
-                "endDate": "2020-07-31",
-                "currentMatchday": 27,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:17:00Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T10:30:03Z"
         },
         {
             "id": 2028,
@@ -312,26 +333,48 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 535,
-                "startDate": "2019-07-28",
-                "endDate": "2020-05-31",
+                "id": 654,
+                "startDate": "2020-08-23",
+                "endDate": "2021-05-31",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
+                    "PRELIMINARY_ROUND",
                     "ROUND_1",
                     "ROUND_2",
                     "ROUND_3",
                     "ROUND_4",
                     "ROUND_5",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_OF_32"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-21T00:00:02Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-09-10T13:46:14Z"
+        },
+        {
+            "id": 2033,
+            "area": {
+                "id": 2023,
+                "name": "Belgium",
+                "countryCode": "BEL",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg"
+            },
+            "name": "Division 1B",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 610,
+                "startDate": "2020-08-21",
+                "endDate": "2021-05-31",
+                "currentMatchday": 10,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T12:15:03Z"
         },
         {
             "id": 2009,
@@ -346,43 +389,17 @@
             "emblemUrl": null,
             "plan": "TIER_TWO",
             "currentSeason": {
-                "id": 520,
-                "startDate": "2019-07-26",
-                "endDate": "2020-05-24",
-                "currentMatchday": 30,
+                "id": 609,
+                "startDate": "2020-08-08",
+                "endDate": "2021-05-31",
+                "currentMatchday": 13,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-14T18:01:21Z"
-        },
-        {
-            "id": 2032,
-            "area": {
-                "id": 2023,
-                "name": "Belgium",
-                "countryCode": "BEL",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg"
-            },
-            "name": "Playoffs II",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 34,
-                "startDate": "2018-03-31",
-                "endDate": "2018-05-23",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "PLAYOFFS_II",
-                    "PLAYOFFS_II_FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 1,
-            "lastUpdated": "2018-06-02T13:08:02Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-09T02:30:02Z"
         },
         {
             "id": 2010,
@@ -410,32 +427,30 @@
             "lastUpdated": "2019-07-21T23:00:07Z"
         },
         {
-            "id": 2033,
+            "id": 2032,
             "area": {
                 "id": 2023,
                 "name": "Belgium",
                 "countryCode": "BEL",
                 "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg"
             },
-            "name": "Division 1B",
+            "name": "Playoffs II",
             "code": null,
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 521,
-                "startDate": "2019-08-02",
-                "endDate": "2019-05-31",
+                "id": 34,
+                "startDate": "2018-03-31",
+                "endDate": "2018-05-23",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
-                    "1ST_PHASE",
-                    "2ND_PHASE",
-                    "PROMOTION_PLAY_OFFS",
-                    "PLAYOFFS_III"
+                    "PLAYOFFS_II",
+                    "PLAYOFFS_II_FINAL"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-25T00:00:02Z"
+            "numberOfAvailableSeasons": 1,
+            "lastUpdated": "2018-06-02T13:08:02Z"
         },
         {
             "id": 2034,
@@ -475,59 +490,9 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 501,
-                "startDate": "2019-07-20",
-                "endDate": "2020-05-30",
-                "currentMatchday": 23,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-04T00:00:05Z"
-        },
-        {
-            "id": 2038,
-            "area": {
-                "id": 2032,
-                "name": "Brazil",
-                "countryCode": "BRA",
-                "ensignUrl": null
-            },
-            "name": "S\u00e9rie D",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 595,
-                "startDate": "2020-05-17",
-                "endDate": "2020-11-22",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "PRELIMINARY_ROUND"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-09T00:00:03Z"
-        },
-        {
-            "id": 2013,
-            "area": {
-                "id": 2032,
-                "name": "Brazil",
-                "countryCode": "BRA",
-                "ensignUrl": null
-            },
-            "name": "S\u00e9rie A",
-            "code": "BSA",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 589,
-                "startDate": "2020-05-03",
-                "endDate": "2020-12-06",
+                "id": 598,
+                "startDate": "2020-08-01",
+                "endDate": "2021-05-30",
                 "currentMatchday": 15,
                 "winner": null,
                 "availableStages": [
@@ -535,57 +500,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 4,
-            "lastUpdated": "2020-07-11T00:00:11Z"
-        },
-        {
-            "id": 2036,
-            "area": {
-                "id": 2032,
-                "name": "Brazil",
-                "countryCode": "BRA",
-                "ensignUrl": null
-            },
-            "name": "S\u00e9rie C",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 594,
-                "startDate": "2020-05-02",
-                "endDate": "2020-10-31",
-                "currentMatchday": 10,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-10T00:00:16Z"
-        },
-        {
-            "id": 2029,
-            "area": {
-                "id": 2032,
-                "name": "Brazil",
-                "countryCode": "BRA",
-                "ensignUrl": null
-            },
-            "name": "S\u00e9rie B",
-            "code": "BSB",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 593,
-                "startDate": "2020-05-01",
-                "endDate": "2020-11-28",
-                "currentMatchday": 14,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-09T00:00:14Z"
+            "lastUpdated": "2020-11-09T23:59:18Z"
         },
         {
             "id": 2037,
@@ -608,11 +523,115 @@
                 "availableStages": [
                     "ROUND_1",
                     "ROUND_2",
-                    "ROUND_3"
+                    "ROUND_3",
+                    "ROUND_4",
+                    "ROUND_OF_16",
+                    "QUARTER_FINALS"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-19T00:00:05Z"
+            "lastUpdated": "2020-11-12T10:31:39Z"
+        },
+        {
+            "id": 2038,
+            "area": {
+                "id": 2032,
+                "name": "Brazil",
+                "countryCode": "BRA",
+                "ensignUrl": null
+            },
+            "name": "S\u00e9rie D",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 595,
+                "startDate": "2020-05-17",
+                "endDate": "2020-11-22",
+                "currentMatchday": 12,
+                "winner": null,
+                "availableStages": [
+                    "PRELIMINARY_ROUND",
+                    "GROUP_STAGE"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-13T21:11:20Z"
+        },
+        {
+            "id": 2036,
+            "area": {
+                "id": 2032,
+                "name": "Brazil",
+                "countryCode": "BRA",
+                "ensignUrl": null
+            },
+            "name": "S\u00e9rie C",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 594,
+                "startDate": "2020-05-02",
+                "endDate": "2020-10-31",
+                "currentMatchday": 13,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-13T00:00:08Z"
+        },
+        {
+            "id": 2029,
+            "area": {
+                "id": 2032,
+                "name": "Brazil",
+                "countryCode": "BRA",
+                "ensignUrl": null
+            },
+            "name": "S\u00e9rie B",
+            "code": "BSB",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 593,
+                "startDate": "2020-05-01",
+                "endDate": "2020-11-28",
+                "currentMatchday": 21,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-13T21:11:19Z"
+        },
+        {
+            "id": 2013,
+            "area": {
+                "id": 2032,
+                "name": "Brazil",
+                "countryCode": "BRA",
+                "ensignUrl": null
+            },
+            "name": "S\u00e9rie A",
+            "code": "BSA",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 589,
+                "startDate": "2020-08-09",
+                "endDate": "2021-02-24",
+                "currentMatchday": 21,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T21:10:06Z"
         },
         {
             "id": 2039,
@@ -627,22 +646,19 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 576,
-                "startDate": "2019-09-04",
-                "endDate": "2020-05-20",
+                "id": 639,
+                "startDate": "2020-09-08",
+                "endDate": "2021-05-30",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "PRELIMINARY_ROUND",
-                    "ROUND_OF_32",
                     "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_OF_32"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-02T01:40:01Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T10:40:05Z"
         },
         {
             "id": 2040,
@@ -657,22 +673,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 492,
-                "startDate": "2019-07-12",
-                "endDate": "2020-06-14",
-                "currentMatchday": 26,
+                "id": 611,
+                "startDate": "2020-08-08",
+                "endDate": "2021-05-30",
+                "currentMatchday": 13,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "LOWER_TABLE_ROUND",
-                    "CHAMPIONSHIP_ROUND",
-                    "RELEGATION_PLAYOFF",
-                    "EUROPA_LEAGUE_PLAYOFF_QUARTER_FINALS",
-                    "EUROPA_LEAGUE_PLAYOFF_SEMI_FINALS"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:41Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T18:48:49Z"
         },
         {
             "id": 2041,
@@ -697,7 +708,32 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-24T00:00:06Z"
+            "lastUpdated": "2020-09-10T13:48:36Z"
+        },
+        {
+            "id": 2048,
+            "area": {
+                "id": 2045,
+                "name": "Chile",
+                "countryCode": "CHL",
+                "ensignUrl": null
+            },
+            "name": "Primera Divisi\u00f3n",
+            "code": "CPD",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 560,
+                "startDate": "2020-01-24",
+                "endDate": "2020-11-28",
+                "currentMatchday": 18,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T20:29:40Z"
         },
         {
             "id": 2042,
@@ -751,31 +787,6 @@
             "lastUpdated": "2019-03-24T20:10:07Z"
         },
         {
-            "id": 2048,
-            "area": {
-                "id": 2045,
-                "name": "Chile",
-                "countryCode": "CHL",
-                "ensignUrl": null
-            },
-            "name": "Primera Divisi\u00f3n",
-            "code": "CPD",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 560,
-                "startDate": "2020-01-24",
-                "endDate": "2020-11-28",
-                "currentMatchday": 18,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 4,
-            "lastUpdated": "2020-05-23T00:00:03Z"
-        },
-        {
             "id": 2044,
             "area": {
                 "id": 2046,
@@ -791,14 +802,54 @@
                 "id": 587,
                 "startDate": "2020-02-22",
                 "endDate": "2020-10-31",
-                "currentMatchday": 17,
+                "currentMatchday": 14,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "9TH_PLACE_QUARTER_FINALS",
+                    "QUARTER_FINALS",
+                    "9TH_PLACE_SEMI_FINALS",
+                    "5TH_PLACE_SEMI_FINALS",
+                    "13TH_PLACE_SEMI_FINALS",
+                    "SEMI_FINALS",
+                    "9TH_PLACE",
+                    "7TH_PLACE",
+                    "5TH_PLACE",
+                    "13TH_PLACE",
+                    "11TH_PLACE",
+                    "15TH_PLACE",
+                    "3RD_PLACE",
+                    "FINAL",
+                    "RELEGATION_PROMOTION_PLAYOFF"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T00:00:12Z"
+            "lastUpdated": "2020-11-12T16:29:39Z"
+        },
+        {
+            "id": 2045,
+            "area": {
+                "id": 2049,
+                "name": "Colombia",
+                "countryCode": "COL",
+                "ensignUrl": null
+            },
+            "name": "Liga Postob\u00f3n",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 559,
+                "startDate": "2020-01-25",
+                "endDate": "2020-12-06",
+                "currentMatchday": 20,
+                "winner": null,
+                "availableStages": [
+                    "APERTURA"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-13T16:38:20Z"
         },
         {
             "id": 2046,
@@ -826,31 +877,6 @@
             "lastUpdated": "2018-06-05T00:02:32Z"
         },
         {
-            "id": 2045,
-            "area": {
-                "id": 2049,
-                "name": "Colombia",
-                "countryCode": "COL",
-                "ensignUrl": null
-            },
-            "name": "Liga Postob\u00f3n",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 559,
-                "startDate": "2020-01-25",
-                "endDate": "2020-12-06",
-                "currentMatchday": 20,
-                "winner": null,
-                "availableStages": [
-                    "APERTURA"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-01T00:00:01Z"
-        },
-        {
             "id": 2047,
             "area": {
                 "id": 2058,
@@ -859,21 +885,21 @@
                 "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg"
             },
             "name": "Prva Liga",
-            "code": null,
+            "code": "PRVA",
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 493,
-                "startDate": "2019-07-20",
-                "endDate": "2020-07-25",
-                "currentMatchday": 34,
+                "id": 621,
+                "startDate": "2020-08-15",
+                "endDate": "2021-05-30",
+                "currentMatchday": 12,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:41Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T19:47:13Z"
         },
         {
             "id": 2049,
@@ -888,22 +914,44 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 502,
-                "startDate": "2019-07-13",
-                "endDate": "2020-06-14",
-                "currentMatchday": 30,
+                "id": 612,
+                "startDate": "2020-08-22",
+                "endDate": "2021-05-30",
+                "currentMatchday": 11,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND",
-                    "EUROPA_LEAGUE_PLAYOFF_QUARTER_FINALS",
-                    "EUROPA_LEAGUE_PLAYOFF_SEMI_FINALS",
-                    "EUROPA_LEAGUE_PLAYOFF_FINAL"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T00:00:12Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T10:50:05Z"
+        },
+        {
+            "id": 2051,
+            "area": {
+                "id": 2065,
+                "name": "Denmark",
+                "countryCode": "DNK",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg"
+            },
+            "name": "DBU Pokalen",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 640,
+                "startDate": "2020-09-01",
+                "endDate": "2021-05-13",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "ROUND_1",
+                    "ROUND_2",
+                    "ROUND_3"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-12T23:59:20Z"
         },
         {
             "id": 2050,
@@ -918,21 +966,17 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 494,
-                "startDate": "2019-07-12",
-                "endDate": "2020-07-26",
-                "currentMatchday": 7,
+                "id": 622,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-30",
+                "currentMatchday": 9,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND",
-                    "EUROPA_LEAGUE_PLAYOFF_QUARTER_FINALS",
-                    "RELEGATION_PLAYOFF_FINAL"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:41Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-09T00:55:05Z"
         },
         {
             "id": 2141,
@@ -951,37 +995,6 @@
             "lastUpdated": "2018-07-13T13:34:22Z"
         },
         {
-            "id": 2051,
-            "area": {
-                "id": 2065,
-                "name": "Denmark",
-                "countryCode": "DNK",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg"
-            },
-            "name": "DBU Pokalen",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 534,
-                "startDate": "2019-08-06",
-                "endDate": "2020-06-10",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "ROUND_1",
-                    "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_4",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-01T23:59:38Z"
-        },
-        {
             "id": 2052,
             "area": {
                 "id": 2069,
@@ -997,216 +1010,16 @@
                 "id": 561,
                 "startDate": "2020-02-16",
                 "endDate": "2020-12-19",
-                "currentMatchday": 16,
+                "currentMatchday": 22,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-30T00:00:04Z"
-        },
-        {
-            "id": 2053,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "National League",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 533,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-30",
-                "currentMatchday": 46,
-                "winner": null,
-                "availableStages": [
+                    "1ST_PHASE",
                     "REGULAR_SEASON",
-                    "PROMOTION_PLAY_OFFS_ROUND_1"
+                    "2ND_PHASE"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-24T00:00:09Z"
-        },
-        {
-            "id": 2021,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "Premier League",
-            "code": "PL",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 468,
-                "startDate": "2019-08-09",
-                "endDate": "2020-07-25",
-                "currentMatchday": 35,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 27,
-            "lastUpdated": "2020-07-11T20:16:41Z"
-        },
-        {
-            "id": 2056,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "FA Community Shield",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 472,
-                "startDate": "2019-08-04",
-                "endDate": "2019-08-04",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-08-05T17:15:08Z"
-        },
-        {
-            "id": 2054,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "League Two",
-            "code": "EL2",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 512,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-25",
-                "currentMatchday": 46,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
-                    "PROMOTION_PLAY_OFFS_SEMI_FINALS",
-                    "PROMOTION_PLAY_OFFS_FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-30T00:20:00Z"
-        },
-        {
-            "id": 2055,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "FA Cup",
-            "code": "FAC",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 540,
-                "startDate": "2019-08-10",
-                "endDate": "2020-05-23",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "EXTRA_PRELIMINARY_ROUND",
-                    "EXTRA_PRELIMINARY_ROUND_REPLAYS",
-                    "PRELIMINARY_ROUND",
-                    "PRELIMINARY_ROUND_REPLAYS",
-                    "1ST_QUALIFYING_ROUND",
-                    "1ST_QUALIFYING_ROUND_REPLAYS",
-                    "2ND_QUALIFYING_ROUND",
-                    "2ND_QUALIFYING_ROUND_REPLAYS",
-                    "3RD_QUALIFYING_ROUND",
-                    "3RD_QUALIFYING_ROUND_REPLAYS",
-                    "4TH_QUALIFYING_ROUND",
-                    "4TH_QUALIFYING_ROUND_REPLAYS",
-                    "ROUND_1",
-                    "ROUND_1_REPLAYS",
-                    "ROUND_2",
-                    "ROUND_2_REPLAYS",
-                    "ROUND_3",
-                    "ROUND_3_REPLAYS",
-                    "ROUND_OF_32",
-                    "ROUND_OF_32_REPLAYS",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-29T17:20:02Z"
-        },
-        {
-            "id": 2016,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "Championship",
-            "code": "ELC",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 503,
-                "startDate": "2019-08-02",
-                "endDate": "2020-07-22",
-                "currentMatchday": 43,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:42Z"
-        },
-        {
-            "id": 2030,
-            "area": {
-                "id": 2072,
-                "name": "England",
-                "countryCode": "ENG",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            },
-            "name": "League One",
-            "code": "EL1",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 504,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-26",
-                "currentMatchday": 46,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
-                    "PROMOTION_PLAY_OFFS_SEMI_FINALS",
-                    "PROMOTION_PLAY_OFFS_FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 11,
-            "lastUpdated": "2020-07-07T15:40:10Z"
+            "lastUpdated": "2020-11-13T00:00:10Z"
         },
         {
             "id": 2139,
@@ -1221,23 +1034,203 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 505,
-                "startDate": "2019-08-12",
-                "endDate": "2020-03-01",
+                "id": 623,
+                "startDate": "2020-09-05",
+                "endDate": "2021-02-28",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "ROUND_1",
                     "ROUND_2",
-                    "ROUND_OF_32",
+                    "ROUND_3",
                     "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
+                    "QUARTER_FINALS"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-10-02T01:30:03Z"
+        },
+        {
+            "id": 2056,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "FA Community Shield",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 613,
+                "startDate": "2020-08-29",
+                "endDate": "2020-08-29",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
                     "FINAL"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-01T23:59:29Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-09-07T20:57:30Z"
+        },
+        {
+            "id": 2055,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "FA Cup",
+            "code": "FAC",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 641,
+                "startDate": "2020-09-01",
+                "endDate": "2021-05-15",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "EXTRA_PRELIMINARY_ROUND",
+                    "PRELIMINARY_ROUND",
+                    "1ST_QUALIFYING_ROUND",
+                    "2ND_QUALIFYING_ROUND",
+                    "3RD_QUALIFYING_ROUND",
+                    "4TH_QUALIFYING_ROUND",
+                    "ROUND_1",
+                    "ROUND_2"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-10T03:05:03Z"
+        },
+        {
+            "id": 2053,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "National League",
+            "code": "ENL",
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 650,
+                "startDate": "2020-10-02",
+                "endDate": "2021-06-13",
+                "currentMatchday": 38,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T11:10:09Z"
+        },
+        {
+            "id": 2054,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "League Two",
+            "code": "EL2",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 630,
+                "startDate": "2020-09-12",
+                "endDate": "2021-06-29",
+                "currentMatchday": 12,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T21:11:20Z"
+        },
+        {
+            "id": 2030,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "League One",
+            "code": "EL1",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 629,
+                "startDate": "2020-09-12",
+                "endDate": "2021-07-13",
+                "currentMatchday": 12,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 12,
+            "lastUpdated": "2020-11-13T00:00:11Z"
+        },
+        {
+            "id": 2016,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "Championship",
+            "code": "ELC",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 628,
+                "startDate": "2020-09-12",
+                "endDate": "2021-08-04",
+                "currentMatchday": 12,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-07T19:25:17Z"
+        },
+        {
+            "id": 2021,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "Premier League",
+            "code": "PL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 619,
+                "startDate": "2020-09-12",
+                "endDate": "2021-05-23",
+                "currentMatchday": 9,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 28,
+            "lastUpdated": "2020-11-09T01:30:05Z"
         },
         {
             "id": 2057,
@@ -1255,46 +1248,47 @@
                 "id": 586,
                 "startDate": "2020-03-06",
                 "endDate": "2020-11-07",
-                "currentMatchday": 12,
+                "currentMatchday": 27,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "RELEGATION_ROUND",
+                    "5TH_PLACE",
+                    "CHAMPIONSHIP_ROUND"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:42Z"
+            "lastUpdated": "2020-11-13T00:00:12Z"
         },
         {
-            "id": 2001,
+            "id": 2146,
             "area": {
                 "id": 2077,
                 "name": "Europe",
                 "countryCode": "EUR",
                 "ensignUrl": null
             },
-            "name": "UEFA Champions League",
-            "code": "CL",
-            "emblemUrl": "https://upload.wikimedia.org/wikipedia/en/b/bf/UEFA_Champions_League_logo_2.svg",
-            "plan": "TIER_ONE",
+            "name": "UEFA Europa League",
+            "code": "EL",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
             "currentSeason": {
-                "id": 495,
-                "startDate": "2019-06-25",
-                "endDate": "2020-08-23",
-                "currentMatchday": 6,
+                "id": 631,
+                "startDate": "2020-08-18",
+                "endDate": "2021-05-26",
+                "currentMatchday": 4,
                 "winner": null,
                 "availableStages": [
-                    "PRELIMINARY_SEMI_FINALS",
-                    "PRELIMINARY_FINAL",
+                    "PRELIMINARY_ROUND",
                     "1ST_QUALIFYING_ROUND",
                     "2ND_QUALIFYING_ROUND",
                     "3RD_QUALIFYING_ROUND",
                     "PLAY_OFF_ROUND",
-                    "GROUP_STAGE",
-                    "ROUND_OF_16"
+                    "GROUP_STAGE"
                 ]
             },
-            "numberOfAvailableSeasons": 19,
-            "lastUpdated": "2020-03-17T00:00:04Z"
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-06T15:20:01Z"
         },
         {
             "id": 2018,
@@ -1319,7 +1313,38 @@
                 ]
             },
             "numberOfAvailableSeasons": 2,
-            "lastUpdated": "2020-06-17T15:45:06Z"
+            "lastUpdated": "2020-09-10T13:51:03Z"
+        },
+        {
+            "id": 2001,
+            "area": {
+                "id": 2077,
+                "name": "Europe",
+                "countryCode": "EUR",
+                "ensignUrl": null
+            },
+            "name": "UEFA Champions League",
+            "code": "CL",
+            "emblemUrl": "https://upload.wikimedia.org/wikipedia/en/b/bf/UEFA_Champions_League_logo_2.svg",
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 642,
+                "startDate": "2020-08-08",
+                "endDate": "2021-05-29",
+                "currentMatchday": 4,
+                "winner": null,
+                "availableStages": [
+                    "PRELIMINARY_SEMI_FINALS",
+                    "PRELIMINARY_FINAL",
+                    "1ST_QUALIFYING_ROUND",
+                    "2ND_QUALIFYING_ROUND",
+                    "3RD_QUALIFYING_ROUND",
+                    "PLAY_OFF_ROUND",
+                    "GROUP_STAGE"
+                ]
+            },
+            "numberOfAvailableSeasons": 20,
+            "lastUpdated": "2020-11-05T03:35:02Z"
         },
         {
             "id": 2058,
@@ -1347,39 +1372,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 1,
-            "lastUpdated": "2018-06-05T00:06:08Z"
-        },
-        {
-            "id": 2146,
-            "area": {
-                "id": 2077,
-                "name": "Europe",
-                "countryCode": "EUR",
-                "ensignUrl": null
-            },
-            "name": "UEFA Europa League",
-            "code": "EL",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 506,
-                "startDate": "2019-06-27",
-                "endDate": "2020-08-21",
-                "currentMatchday": 6,
-                "winner": null,
-                "availableStages": [
-                    "PRELIMINARY_ROUND",
-                    "1ST_QUALIFYING_ROUND",
-                    "2ND_QUALIFYING_ROUND",
-                    "3RD_QUALIFYING_ROUND",
-                    "PLAY_OFF_ROUND",
-                    "GROUP_STAGE",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16"
-                ]
-            },
-            "numberOfAvailableSeasons": 2,
-            "lastUpdated": "2020-03-18T00:00:02Z"
+            "lastUpdated": "2020-09-07T20:55:12Z"
         },
         {
             "id": 2007,
@@ -1436,7 +1429,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-28T19:23:19Z"
+            "lastUpdated": "2020-10-03T21:02:45Z"
         },
         {
             "id": 2031,
@@ -1454,146 +1447,15 @@
                 "id": 591,
                 "startDate": "2020-04-11",
                 "endDate": "2020-11-28",
-                "currentMatchday": 11,
+                "currentMatchday": 22,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:42Z"
-        },
-        {
-            "id": 2136,
-            "area": {
-                "id": 2081,
-                "name": "France",
-                "countryCode": "FRA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
-            },
-            "name": "Troph\u00e9e des Champions",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 466,
-                "startDate": "2019-08-03",
-                "endDate": "2019-08-03",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-08-04T05:45:13Z"
-        },
-        {
-            "id": 2144,
-            "area": {
-                "id": 2081,
-                "name": "France",
-                "countryCode": "FRA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
-            },
-            "name": "Playoffs 2/3",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 212,
-                "startDate": "2018-05-22",
-                "endDate": "2018-05-27",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
+                    "REGULAR_SEASON",
                     "RELEGATION_PROMOTION_PLAYOFF"
                 ]
             },
-            "numberOfAvailableSeasons": 1,
-            "lastUpdated": "2018-09-25T15:07:37Z"
-        },
-        {
-            "id": 2015,
-            "area": {
-                "id": 2081,
-                "name": "France",
-                "countryCode": "FRA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
-            },
-            "name": "Ligue 1",
-            "code": "FL1",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 499,
-                "startDate": "2019-08-09",
-                "endDate": "2020-05-31",
-                "currentMatchday": 38,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 9,
-            "lastUpdated": "2020-05-22T00:00:04Z"
-        },
-        {
-            "id": 2142,
-            "area": {
-                "id": 2081,
-                "name": "France",
-                "countryCode": "FRA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
-            },
-            "name": "Ligue 2",
-            "code": "FL2",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 500,
-                "startDate": "2019-07-26",
-                "endDate": "2020-05-31",
-                "currentMatchday": 38,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 22,
-            "lastUpdated": "2020-05-14T00:00:03Z"
-        },
-        {
-            "id": 2138,
-            "area": {
-                "id": 2081,
-                "name": "France",
-                "countryCode": "FRA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
-            },
-            "name": "Coupe de France",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 563,
-                "startDate": "2019-11-06",
-                "endDate": "2020-04-27",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "ROUND_7",
-                    "ROUND_8",
-                    "ROUND_OF_64",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
-                ]
-            },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-24T00:00:10Z"
+            "lastUpdated": "2020-11-13T00:00:12Z"
         },
         {
             "id": 2135,
@@ -1625,7 +1487,80 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-03T00:00:10Z"
+            "lastUpdated": "2020-09-10T13:52:55Z"
+        },
+        {
+            "id": 2142,
+            "area": {
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+            },
+            "name": "Ligue 2",
+            "code": "FL2",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 597,
+                "startDate": "2020-08-22",
+                "endDate": "2021-05-15",
+                "currentMatchday": 11,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 23,
+            "lastUpdated": "2020-11-08T03:24:35Z"
+        },
+        {
+            "id": 2015,
+            "area": {
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+            },
+            "name": "Ligue 1",
+            "code": "FL1",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 596,
+                "startDate": "2020-08-22",
+                "endDate": "2021-05-23",
+                "currentMatchday": 11,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 10,
+            "lastUpdated": "2020-11-09T02:40:06Z"
+        },
+        {
+            "id": 2136,
+            "area": {
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+            },
+            "name": "Troph\u00e9e des Champions",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 655,
+                "startDate": "2021-01-01",
+                "endDate": "2021-01-31",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": []
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2019-08-04T05:45:13Z"
         },
         {
             "id": 2143,
@@ -1653,55 +1588,87 @@
             "lastUpdated": "2018-07-12T14:32:17Z"
         },
         {
-            "id": 2004,
+            "id": 2144,
             "area": {
-                "id": 2088,
-                "name": "Germany",
-                "countryCode": "DEU",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
             },
-            "name": "2. Bundesliga",
-            "code": "BL2",
+            "name": "Playoffs 2/3",
+            "code": null,
             "emblemUrl": null,
-            "plan": "TIER_TWO",
+            "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 475,
-                "startDate": "2019-07-26",
-                "endDate": "2020-06-28",
-                "currentMatchday": 34,
+                "id": 212,
+                "startDate": "2018-05-22",
+                "endDate": "2018-05-27",
+                "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 24,
-            "lastUpdated": "2020-07-11T18:10:43Z"
-        },
-        {
-            "id": 2140,
-            "area": {
-                "id": 2088,
-                "name": "Germany",
-                "countryCode": "DEU",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
-            },
-            "name": "3. Liga",
-            "code": "BL3",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 476,
-                "startDate": "2019-07-11",
-                "endDate": "2020-07-04",
-                "currentMatchday": 38,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
                     "RELEGATION_PROMOTION_PLAYOFF"
                 ]
             },
-            "numberOfAvailableSeasons": 8,
-            "lastUpdated": "2020-07-11T20:16:42Z"
+            "numberOfAvailableSeasons": 1,
+            "lastUpdated": "2018-09-25T15:07:37Z"
+        },
+        {
+            "id": 2138,
+            "area": {
+                "id": 2081,
+                "name": "France",
+                "countryCode": "FRA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+            },
+            "name": "Coupe de France",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 563,
+                "startDate": "2019-11-06",
+                "endDate": "2020-04-27",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "ROUND_7",
+                    "ROUND_8",
+                    "ROUND_OF_64",
+                    "ROUND_OF_32",
+                    "ROUND_OF_16",
+                    "QUARTER_FINALS",
+                    "SEMI_FINALS",
+                    "FINAL"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-07-25T20:40:00Z"
+        },
+        {
+            "id": 2011,
+            "area": {
+                "id": 2088,
+                "name": "Germany",
+                "countryCode": "DEU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+            },
+            "name": "DFB-Pokal",
+            "code": "DFB",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 604,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-13",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "ROUND_OF_64",
+                    "ROUND_OF_32"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-03T20:30:31Z"
         },
         {
             "id": 2129,
@@ -1716,22 +1683,95 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 477,
-                "startDate": "2019-07-11",
-                "endDate": "2020-05-30",
-                "currentMatchday": 38,
+                "id": 602,
+                "startDate": "2020-08-15",
+                "endDate": "2021-06-05",
+                "currentMatchday": 14,
                 "winner": null,
                 "availableStages": [
-                    "BAYERN",
-                    "NORD",
+                    "NORDOST",
                     "S_DWEST",
                     "WEST",
-                    "NORDOST",
-                    "PROMOTION_PLAY_OFFS"
+                    "NORD"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-01T00:05:02Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T18:20:11Z"
+        },
+        {
+            "id": 2140,
+            "area": {
+                "id": 2088,
+                "name": "Germany",
+                "countryCode": "DEU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+            },
+            "name": "3. Liga",
+            "code": "BL3",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 601,
+                "startDate": "2020-09-18",
+                "endDate": "2021-05-22",
+                "currentMatchday": 10,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 9,
+            "lastUpdated": "2020-11-13T21:11:20Z"
+        },
+        {
+            "id": 2004,
+            "area": {
+                "id": 2088,
+                "name": "Germany",
+                "countryCode": "DEU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+            },
+            "name": "2. Bundesliga",
+            "code": "BL2",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 600,
+                "startDate": "2020-09-18",
+                "endDate": "2021-05-23",
+                "currentMatchday": 8,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 25,
+            "lastUpdated": "2020-11-10T03:00:03Z"
+        },
+        {
+            "id": 2002,
+            "area": {
+                "id": 2088,
+                "name": "Germany",
+                "countryCode": "DEU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+            },
+            "name": "Bundesliga",
+            "code": "BL1",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 599,
+                "startDate": "2020-09-18",
+                "endDate": "2021-05-15",
+                "currentMatchday": 8,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 25,
+            "lastUpdated": "2020-11-08T22:47:32Z"
         },
         {
             "id": 2133,
@@ -1763,32 +1803,6 @@
             "lastUpdated": "2018-06-05T00:09:39Z"
         },
         {
-            "id": 2002,
-            "area": {
-                "id": 2088,
-                "name": "Germany",
-                "countryCode": "DEU",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
-            },
-            "name": "Bundesliga",
-            "code": "BL1",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 474,
-                "startDate": "2019-08-16",
-                "endDate": "2020-06-27",
-                "currentMatchday": 34,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_PROMOTION_PLAYOFF"
-                ]
-            },
-            "numberOfAvailableSeasons": 24,
-            "lastUpdated": "2020-07-06T23:44:00Z"
-        },
-        {
             "id": 2134,
             "area": {
                 "id": 2088,
@@ -1801,74 +1815,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 478,
-                "startDate": "2019-08-03",
-                "endDate": "2019-08-03",
+                "id": 605,
+                "startDate": "2020-09-30",
+                "endDate": "2020-09-30",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "FINAL"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-08-04T05:50:12Z"
-        },
-        {
-            "id": 2011,
-            "area": {
-                "id": 2088,
-                "name": "Germany",
-                "countryCode": "DEU",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
-            },
-            "name": "DFB-Pokal",
-            "code": "DFB",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 473,
-                "startDate": "2019-08-09",
-                "endDate": "2020-07-04",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "ROUND_OF_64",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-04T23:47:43Z"
-        },
-        {
-            "id": 2132,
-            "area": {
-                "id": 2093,
-                "name": "Greece",
-                "countryCode": "GRC",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg"
-            },
-            "name": "Super League",
-            "code": "GSL",
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 532,
-                "startDate": "2019-08-24",
-                "endDate": "2020-05-30",
-                "currentMatchday": 1,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:43Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-10-01T16:15:04Z"
         },
         {
             "id": 2131,
@@ -1883,25 +1840,43 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 552,
-                "startDate": "2019-08-25",
-                "endDate": "2020-05-23",
+                "id": 656,
+                "startDate": "2020-11-01",
+                "endDate": "2021-05-30",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "ROUND_1",
-                    "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_4",
-                    "ROUND_5",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_2"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-30T00:00:09Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-04T00:00:13Z"
+        },
+        {
+            "id": 2132,
+            "area": {
+                "id": 2093,
+                "name": "Greece",
+                "countryCode": "GRC",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg"
+            },
+            "name": "Super League",
+            "code": "GSL",
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 652,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-30",
+                "currentMatchday": 9,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-09T18:10:19Z"
         },
         {
             "id": 2130,
@@ -1932,7 +1907,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-04T17:00:01Z"
+            "lastUpdated": "2020-09-10T13:55:24Z"
         },
         {
             "id": 2128,
@@ -1947,17 +1922,17 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 531,
-                "startDate": "2019-08-03",
-                "endDate": "2020-06-27",
-                "currentMatchday": 33,
+                "id": 614,
+                "startDate": "2020-08-14",
+                "endDate": "2021-05-15",
+                "currentMatchday": 11,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-28T16:20:11Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T23:59:13Z"
         },
         {
             "id": 2127,
@@ -1975,14 +1950,14 @@
                 "id": 585,
                 "startDate": "2020-04-22",
                 "endDate": "2020-09-26",
-                "currentMatchday": 6,
+                "currentMatchday": 10,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T00:00:14Z"
+            "lastUpdated": "2020-11-07T00:00:17Z"
         },
         {
             "id": 2126,
@@ -2007,7 +1982,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-11T00:00:07Z"
+            "lastUpdated": "2020-09-10T13:55:39Z"
         },
         {
             "id": 2125,
@@ -2018,23 +1993,46 @@
                 "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg"
             },
             "name": "Ligat ha'Al",
+            "code": "ILH",
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 632,
+                "startDate": "2020-08-29",
+                "endDate": "2021-05-22",
+                "currentMatchday": 7,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-10T14:05:03Z"
+        },
+        {
+            "id": 2124,
+            "area": {
+                "id": 2114,
+                "name": "Italy",
+                "countryCode": "ITA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
+            },
+            "name": "Supercoppa",
             "code": null,
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 513,
-                "startDate": "2019-08-24",
-                "endDate": "2020-07-07",
-                "currentMatchday": 10,
+                "id": 565,
+                "startDate": "2019-12-22",
+                "endDate": "2019-12-22",
+                "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "CHAMPIONSHIP_ROUND",
-                    "RELEGATION_ROUND"
+                    "FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-08T16:40:08Z"
+            "lastUpdated": "2020-09-10T12:14:03Z"
         },
         {
             "id": 2122,
@@ -2049,24 +2047,20 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 549,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-13",
+                "id": 657,
+                "startDate": "2020-09-22",
+                "endDate": "2021-05-19",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "ROUND_1",
                     "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_4",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_OF_32",
+                    "ROUND_OF_16"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-18T02:25:04Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-10-28T21:04:34Z"
         },
         {
             "id": 2123,
@@ -2093,61 +2087,14 @@
                     "RELEGATION_PLAYOFF",
                     "PROMOTION_PLAY_OFFS_ROUND_1",
                     "PROMOTION_PLAY_OFFS_ROUND_2",
-                    "PROMOTION_PLAY_OFFS_ROUND_3"
+                    "PROMOTION_PLAY_OFFS_ROUND_3",
+                    "PROMOTION_PLAY_OFFS_QUARTER_FINALS",
+                    "PROMOTION_PLAY_OFFS_SEMI_FINALS",
+                    "PROMOTION_PLAY_OFFS_FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-10T00:30:04Z"
-        },
-        {
-            "id": 2019,
-            "area": {
-                "id": 2114,
-                "name": "Italy",
-                "countryCode": "ITA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
-            },
-            "name": "Serie A",
-            "code": "SA",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 530,
-                "startDate": "2019-08-24",
-                "endDate": "2020-08-02",
-                "currentMatchday": 32,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 15,
-            "lastUpdated": "2020-07-11T20:16:43Z"
-        },
-        {
-            "id": 2124,
-            "area": {
-                "id": 2114,
-                "name": "Italy",
-                "countryCode": "ITA",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
-            },
-            "name": "Supercoppa",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 565,
-                "startDate": "2019-12-22",
-                "endDate": "2019-12-22",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-01-17T08:15:01Z"
+            "lastUpdated": "2020-09-10T12:13:47Z"
         },
         {
             "id": 2121,
@@ -2162,17 +2109,42 @@
             "emblemUrl": null,
             "plan": "TIER_TWO",
             "currentSeason": {
-                "id": 541,
-                "startDate": "2019-08-24",
-                "endDate": "2020-07-31",
-                "currentMatchday": 33,
+                "id": 649,
+                "startDate": "2020-09-26",
+                "endDate": "2021-06-06",
+                "currentMatchday": 7,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 15,
-            "lastUpdated": "2020-07-11T02:40:07Z"
+            "numberOfAvailableSeasons": 16,
+            "lastUpdated": "2020-11-13T00:00:17Z"
+        },
+        {
+            "id": 2019,
+            "area": {
+                "id": 2114,
+                "name": "Italy",
+                "countryCode": "ITA",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
+            },
+            "name": "Serie A",
+            "code": "SA",
+            "emblemUrl": "https://crests.football-data.org/SA.svg",
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 638,
+                "startDate": "2020-09-20",
+                "endDate": "2021-05-23",
+                "currentMatchday": 8,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 16,
+            "lastUpdated": "2020-11-09T02:30:13Z"
         },
         {
             "id": 2118,
@@ -2190,14 +2162,42 @@
                 "id": 581,
                 "startDate": "2020-02-16",
                 "endDate": "2020-10-31",
-                "currentMatchday": 2,
+                "currentMatchday": 6,
                 "winner": null,
                 "availableStages": [
-                    "GROUP_STAGE"
+                    "GROUP_STAGE",
+                    "QUARTER_FINALS",
+                    "SEMI_FINALS",
+                    "FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-05T00:00:03Z"
+            "lastUpdated": "2020-11-06T13:05:17Z"
+        },
+        {
+            "id": 2117,
+            "area": {
+                "id": 2116,
+                "name": "Japan",
+                "countryCode": "JPN",
+                "ensignUrl": null
+            },
+            "name": "J. League Division 2",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 582,
+                "startDate": "2020-02-23",
+                "endDate": "2020-12-20",
+                "currentMatchday": 34,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-11T23:59:03Z"
         },
         {
             "id": 2119,
@@ -2215,14 +2215,14 @@
                 "id": 583,
                 "startDate": "2020-02-21",
                 "endDate": "2020-12-19",
-                "currentMatchday": 4,
+                "currentMatchday": 33,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:43Z"
+            "lastUpdated": "2020-11-13T00:00:18Z"
         },
         {
             "id": 2120,
@@ -2250,31 +2250,6 @@
             "lastUpdated": "2020-02-09T05:35:08Z"
         },
         {
-            "id": 2117,
-            "area": {
-                "id": 2116,
-                "name": "Japan",
-                "countryCode": "JPN",
-                "ensignUrl": null
-            },
-            "name": "J. League Division 2",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 582,
-                "startDate": "2020-02-23",
-                "endDate": "2020-12-20",
-                "currentMatchday": 4,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
-        },
-        {
             "id": 2116,
             "area": {
                 "id": 2129,
@@ -2290,14 +2265,14 @@
                 "id": 579,
                 "startDate": "2020-03-13",
                 "endDate": "2020-11-14",
-                "currentMatchday": 7,
+                "currentMatchday": 36,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T00:00:15Z"
+            "lastUpdated": "2020-11-07T23:59:17Z"
         },
         {
             "id": 2115,
@@ -2315,14 +2290,14 @@
                 "id": 590,
                 "startDate": "2020-03-06",
                 "endDate": "2020-11-07",
-                "currentMatchday": 9,
+                "currentMatchday": 30,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
+            "lastUpdated": "2020-11-13T00:00:18Z"
         },
         {
             "id": 2114,
@@ -2337,17 +2312,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 529,
-                "startDate": "2019-08-23",
-                "endDate": "2020-04-25",
-                "currentMatchday": 26,
+                "id": 633,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-30",
+                "currentMatchday": 7,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-23T00:00:04Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-07T23:59:17Z"
         },
         {
             "id": 2112,
@@ -2372,36 +2347,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-07-16T21:25:01Z"
-        },
-        {
-            "id": 2113,
-            "area": {
-                "id": 2149,
-                "name": "Mexico",
-                "countryCode": "MEX",
-                "ensignUrl": null
-            },
-            "name": "Liga MX",
-            "code": "LMX",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 514,
-                "startDate": "2019-07-20",
-                "endDate": "2020-05-27",
-                "currentMatchday": 19,
-                "winner": null,
-                "availableStages": [
-                    "APERTURA",
-                    "APERTURA_QUARTER_FINALS",
-                    "APERTURA_SEMI_FINALS",
-                    "APERTURA_FINAL",
-                    "CLAUSURA"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-10T00:00:02Z"
+            "lastUpdated": "2020-09-10T13:57:18Z"
         },
         {
             "id": 2111,
@@ -2430,32 +2376,33 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-14T00:00:13Z"
+            "lastUpdated": "2020-11-05T11:16:35Z"
         },
         {
-            "id": 2005,
+            "id": 2113,
             "area": {
-                "id": 2163,
-                "name": "Netherlands",
-                "countryCode": "NLD",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
+                "id": 2149,
+                "name": "Mexico",
+                "countryCode": "MEX",
+                "ensignUrl": null
             },
-            "name": "Jupiler League",
-            "code": "DJL",
+            "name": "Liga MX",
+            "code": "LMX",
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 482,
-                "startDate": "2019-08-09",
-                "endDate": "2020-05-01",
-                "currentMatchday": 38,
+                "id": 606,
+                "startDate": "2020-07-24",
+                "endDate": "2021-05-27",
+                "currentMatchday": 17,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "APERTURA",
+                    "APERTURA_RECLASIFICACI_N"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-30T00:00:06Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-09T18:31:39Z"
         },
         {
             "id": 2109,
@@ -2487,7 +2434,57 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-18T00:00:10Z"
+            "lastUpdated": "2020-09-10T14:06:41Z"
+        },
+        {
+            "id": 2005,
+            "area": {
+                "id": 2163,
+                "name": "Netherlands",
+                "countryCode": "NLD",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
+            },
+            "name": "Jupiler League",
+            "code": "DJL",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 616,
+                "startDate": "2020-08-28",
+                "endDate": "2021-05-14",
+                "currentMatchday": 12,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T21:11:01Z"
+        },
+        {
+            "id": 2003,
+            "area": {
+                "id": 2163,
+                "name": "Netherlands",
+                "countryCode": "NLD",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
+            },
+            "name": "Eredivisie",
+            "code": "DED",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 615,
+                "startDate": "2020-09-12",
+                "endDate": "2021-05-16",
+                "currentMatchday": 9,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 11,
+            "lastUpdated": "2020-11-09T00:55:11Z"
         },
         {
             "id": 2110,
@@ -2513,31 +2510,6 @@
             },
             "numberOfAvailableSeasons": 3,
             "lastUpdated": "2019-07-28T00:20:08Z"
-        },
-        {
-            "id": 2003,
-            "area": {
-                "id": 2163,
-                "name": "Netherlands",
-                "countryCode": "NLD",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg"
-            },
-            "name": "Eredivisie",
-            "code": "DED",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 481,
-                "startDate": "2019-08-09",
-                "endDate": "2020-03-08",
-                "currentMatchday": 34,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 10,
-            "lastUpdated": "2020-05-09T00:00:08Z"
         },
         {
             "id": 2108,
@@ -2567,7 +2539,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-02-16T05:35:10Z"
+            "lastUpdated": "2020-09-10T14:06:21Z"
         },
         {
             "id": 2107,
@@ -2592,32 +2564,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-03-20T00:00:16Z"
-        },
-        {
-            "id": 2105,
-            "area": {
-                "id": 2173,
-                "name": "Norway",
-                "countryCode": "NOR",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg"
-            },
-            "name": "1. divisjon",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 578,
-                "startDate": "2020-04-04",
-                "endDate": "2020-12-07",
-                "currentMatchday": 3,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-07T23:26:21Z"
+            "lastUpdated": "2020-09-10T14:06:12Z"
         },
         {
             "id": 2106,
@@ -2635,14 +2582,39 @@
                 "id": 577,
                 "startDate": "2020-04-04",
                 "endDate": "2020-12-19",
-                "currentMatchday": 7,
+                "currentMatchday": 25,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
+            "lastUpdated": "2020-11-09T01:30:13Z"
+        },
+        {
+            "id": 2105,
+            "area": {
+                "id": 2173,
+                "name": "Norway",
+                "countryCode": "NOR",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg"
+            },
+            "name": "1. divisjon",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 578,
+                "startDate": "2020-04-04",
+                "endDate": "2020-12-07",
+                "currentMatchday": 27,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-08T23:59:17Z"
         },
         {
             "id": 2104,
@@ -2724,7 +2696,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-09T00:00:09Z"
+            "lastUpdated": "2020-09-10T14:05:42Z"
         },
         {
             "id": 2101,
@@ -2745,11 +2717,12 @@
                 "currentMatchday": 19,
                 "winner": null,
                 "availableStages": [
-                    "APERTURA"
+                    "APERTURA",
+                    "CLAUSURA"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-30T00:00:06Z"
+            "lastUpdated": "2020-11-13T21:11:01Z"
         },
         {
             "id": 2099,
@@ -2764,17 +2737,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 498,
-                "startDate": "2019-07-13",
-                "endDate": "2020-07-13",
+                "id": 607,
+                "startDate": "2020-08-09",
+                "endDate": "2020-08-09",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "FINAL"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-07-13T23:31:59Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-10-10T14:30:08Z"
         },
         {
             "id": 2100,
@@ -2789,23 +2762,19 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 497,
-                "startDate": "2019-08-07",
-                "endDate": "2020-07-24",
+                "id": 643,
+                "startDate": "2020-08-08",
+                "endDate": "2021-05-30",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "PRELIMINARY_ROUND",
-                    "ROUND_1",
-                    "ROUND_2",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_OF_64",
+                    "ROUND_OF_32"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-09T16:10:06Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T00:00:19Z"
         },
         {
             "id": 2098,
@@ -2820,24 +2789,19 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 554,
-                "startDate": "2019-09-01",
-                "endDate": "2020-05-24",
+                "id": 659,
+                "startDate": "2020-09-27",
+                "endDate": "2021-05-23",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "ROUND_1",
                     "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_4",
-                    "ROUND_5",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
+                    "ROUND_3"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-23T00:00:08Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-12T03:40:06Z"
         },
         {
             "id": 2096,
@@ -2852,17 +2816,42 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 527,
-                "startDate": "2019-08-11",
-                "endDate": "2020-05-17",
-                "currentMatchday": 34,
+                "id": 645,
+                "startDate": "2020-09-13",
+                "endDate": "2021-05-19",
+                "currentMatchday": 9,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-16T00:00:09Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T00:00:19Z"
+        },
+        {
+            "id": 2017,
+            "area": {
+                "id": 2187,
+                "name": "Portugal",
+                "countryCode": "PRT",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg"
+            },
+            "name": "Primeira Liga",
+            "code": "PPL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 644,
+                "startDate": "2020-09-20",
+                "endDate": "2021-05-19",
+                "currentMatchday": 8,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 10,
+            "lastUpdated": "2020-11-09T02:50:13Z"
         },
         {
             "id": 2097,
@@ -2890,31 +2879,6 @@
             "lastUpdated": "2019-08-05T22:35:11Z"
         },
         {
-            "id": 2017,
-            "area": {
-                "id": 2187,
-                "name": "Portugal",
-                "countryCode": "PRT",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg"
-            },
-            "name": "Primeira Liga",
-            "code": "PPL",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 484,
-                "startDate": "2019-08-10",
-                "endDate": "2020-07-26",
-                "currentMatchday": 31,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 9,
-            "lastUpdated": "2020-07-11T20:16:44Z"
-        },
-        {
             "id": 2095,
             "area": {
                 "id": 2192,
@@ -2930,41 +2894,15 @@
                 "id": 574,
                 "startDate": "2020-02-14",
                 "endDate": "2020-10-23",
-                "currentMatchday": 25,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-10T00:00:20Z"
-        },
-        {
-            "id": 2094,
-            "area": {
-                "id": 2194,
-                "name": "Romania",
-                "countryCode": "ROU",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg"
-            },
-            "name": "Liga I",
-            "code": "RL1",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 523,
-                "startDate": "2019-07-13",
-                "endDate": "2020-08-01",
-                "currentMatchday": 9,
+                "currentMatchday": 35,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND"
+                    "FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
+            "lastUpdated": "2020-11-10T16:20:03Z"
         },
         {
             "id": 2092,
@@ -2990,7 +2928,32 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
+            "lastUpdated": "2020-09-10T14:04:47Z"
+        },
+        {
+            "id": 2094,
+            "area": {
+                "id": 2194,
+                "name": "Romania",
+                "countryCode": "ROU",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg"
+            },
+            "name": "Liga I",
+            "code": "RL1",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 624,
+                "startDate": "2020-08-21",
+                "endDate": "2021-05-30",
+                "currentMatchday": 10,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T00:00:19Z"
         },
         {
             "id": 2093,
@@ -3018,29 +2981,33 @@
             "lastUpdated": "2019-07-07T00:20:01Z"
         },
         {
-            "id": 2091,
+            "id": 2089,
             "area": {
                 "id": 2195,
                 "name": "Russia",
                 "countryCode": "RUS",
                 "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"
             },
-            "name": "Russian Super Cup",
+            "name": "Russian Cup",
             "code": null,
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 516,
-                "startDate": "2019-07-06",
-                "endDate": "2019-07-06",
-                "currentMatchday": null,
+                "id": 646,
+                "startDate": "2020-08-05",
+                "endDate": "2021-05-12",
+                "currentMatchday": 3,
                 "winner": null,
                 "availableStages": [
-                    "FINAL"
+                    "ROUND_1",
+                    "ROUND_2",
+                    "ROUND_3",
+                    "ROUND_4",
+                    "ROUND_OF_16"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2019-07-07T00:25:01Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-05T16:40:06Z"
         },
         {
             "id": 2088,
@@ -3055,17 +3022,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 486,
-                "startDate": "2019-07-07",
-                "endDate": "2020-05-16",
-                "currentMatchday": 38,
+                "id": 634,
+                "startDate": "2020-08-01",
+                "endDate": "2021-10-03",
+                "currentMatchday": 22,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-16T18:37:56Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-12T13:00:08Z"
         },
         {
             "id": 2137,
@@ -3080,49 +3047,17 @@
             "emblemUrl": null,
             "plan": "TIER_TWO",
             "currentSeason": {
-                "id": 487,
-                "startDate": "2019-07-28",
-                "endDate": "2020-07-22",
-                "currentMatchday": 28,
+                "id": 617,
+                "startDate": "2020-08-09",
+                "endDate": "2021-05-16",
+                "currentMatchday": 15,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:44Z"
-        },
-        {
-            "id": 2089,
-            "area": {
-                "id": 2195,
-                "name": "Russia",
-                "countryCode": "RUS",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"
-            },
-            "name": "Russian Cup",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 543,
-                "startDate": "2019-07-20",
-                "endDate": "2020-05-22",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "ROUND_1",
-                    "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_4",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-25T15:35:03Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T21:46:47Z"
         },
         {
             "id": 2090,
@@ -3148,6 +3083,31 @@
             },
             "numberOfAvailableSeasons": 1,
             "lastUpdated": "2018-06-05T00:24:32Z"
+        },
+        {
+            "id": 2091,
+            "area": {
+                "id": 2195,
+                "name": "Russia",
+                "countryCode": "RUS",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"
+            },
+            "name": "Russian Super Cup",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 647,
+                "startDate": "2020-08-07",
+                "endDate": "2020-08-07",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "FINAL"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2019-07-07T00:25:01Z"
         },
         {
             "id": 2087,
@@ -3182,36 +3142,12 @@
                     "ROUND_OF_16",
                     "ROUND_OF_16_REPLAYS",
                     "QUARTER_FINALS",
-                    "SEMI_FINALS"
+                    "SEMI_FINALS",
+                    "FINAL"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-11T00:00:11Z"
-        },
-        {
-            "id": 2084,
-            "area": {
-                "id": 2204,
-                "name": "Scotland",
-                "countryCode": "SCO",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg"
-            },
-            "name": "Premier League",
-            "code": "SPL",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 508,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-30",
-                "currentMatchday": 33,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-04T00:00:14Z"
+            "lastUpdated": "2020-11-01T18:22:14Z"
         },
         {
             "id": 2085,
@@ -3226,17 +3162,42 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 509,
-                "startDate": "2019-08-03",
-                "endDate": "2020-05-02",
-                "currentMatchday": 36,
+                "id": 608,
+                "startDate": "2020-10-17",
+                "endDate": "2021-05-30",
+                "currentMatchday": 5,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-01T00:00:34Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-07T19:30:49Z"
+        },
+        {
+            "id": 2084,
+            "area": {
+                "id": 2204,
+                "name": "Scotland",
+                "countryCode": "SCO",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg"
+            },
+            "name": "Premier League",
+            "code": "SPL",
+            "emblemUrl": null,
+            "plan": "TIER_TWO",
+            "currentSeason": {
+                "id": 603,
+                "startDate": "2020-08-01",
+                "endDate": "2021-05-30",
+                "currentMatchday": 15,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T21:24:59Z"
         },
         {
             "id": 2086,
@@ -3279,15 +3240,16 @@
             "currentSeason": {
                 "id": 517,
                 "startDate": "2019-08-04",
-                "endDate": "2020-05-11",
-                "currentMatchday": 1,
+                "endDate": "2020-09-05",
+                "currentMatchday": 30,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "RELEGATION_PROMOTION_PLAYOFF"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-08T00:00:13Z"
+            "lastUpdated": "2020-09-10T14:04:13Z"
         },
         {
             "id": 2080,
@@ -3312,7 +3274,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-30T00:00:12Z"
+            "lastUpdated": "2020-09-10T14:02:11Z"
         },
         {
             "id": 2081,
@@ -3333,11 +3295,13 @@
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
-                    "ROUND_1"
+                    "ROUND_1",
+                    "ROUND_2",
+                    "ROUND_OF_16"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-02-28T10:25:01Z"
+            "lastUpdated": "2020-11-06T17:30:29Z"
         },
         {
             "id": 2082,
@@ -3362,83 +3326,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 2,
-            "lastUpdated": "2020-03-30T00:00:05Z"
-        },
-        {
-            "id": 2014,
-            "area": {
-                "id": 2224,
-                "name": "Spain",
-                "countryCode": "ESP",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
-            },
-            "name": "Primera Division",
-            "code": "PD",
-            "emblemUrl": null,
-            "plan": "TIER_ONE",
-            "currentSeason": {
-                "id": 519,
-                "startDate": "2019-08-16",
-                "endDate": "2020-07-19",
-                "currentMatchday": 36,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 27,
-            "lastUpdated": "2020-07-11T20:16:45Z"
-        },
-        {
-            "id": 2077,
-            "area": {
-                "id": 2224,
-                "name": "Spain",
-                "countryCode": "ESP",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
-            },
-            "name": "Segunda Divisi\u00f3n",
-            "code": "SD",
-            "emblemUrl": null,
-            "plan": "TIER_TWO",
-            "currentSeason": {
-                "id": 526,
-                "startDate": "2019-08-17",
-                "endDate": "2020-07-19",
-                "currentMatchday": 40,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 8,
-            "lastUpdated": "2020-07-11T20:16:45Z"
-        },
-        {
-            "id": 2078,
-            "area": {
-                "id": 2224,
-                "name": "Spain",
-                "countryCode": "ESP",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
-            },
-            "name": "Supercopa de Espa\u00f1a",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 510,
-                "startDate": "2020-01-08",
-                "endDate": "2020-01-12",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "SEMI_FINALS",
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-01-13T10:40:04Z"
+            "lastUpdated": "2020-11-13T21:11:01Z"
         },
         {
             "id": 2079,
@@ -3470,32 +3358,83 @@
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-17T00:00:19Z"
+            "lastUpdated": "2020-09-10T14:01:55Z"
         },
         {
-            "id": 2073,
+            "id": 2077,
             "area": {
-                "id": 2233,
-                "name": "Sweden",
-                "countryCode": "SWE",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg"
+                "id": 2224,
+                "name": "Spain",
+                "countryCode": "ESP",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
             },
-            "name": "Allsvenskan",
-            "code": "ALL",
+            "name": "Segunda Divisi\u00f3n",
+            "code": "SD",
             "emblemUrl": null,
-            "plan": "TIER_THREE",
+            "plan": "TIER_TWO",
             "currentSeason": {
-                "id": 573,
-                "startDate": "2020-04-05",
-                "endDate": "2020-12-06",
-                "currentMatchday": 7,
+                "id": 636,
+                "startDate": "2020-09-13",
+                "endDate": "2021-06-15",
+                "currentMatchday": 12,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
+            "numberOfAvailableSeasons": 9,
+            "lastUpdated": "2020-11-13T21:11:01Z"
+        },
+        {
+            "id": 2014,
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "countryCode": "ESP",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
+            },
+            "name": "Primera Division",
+            "code": "PD",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 635,
+                "startDate": "2020-09-13",
+                "endDate": "2021-05-23",
+                "currentMatchday": 10,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 28,
+            "lastUpdated": "2020-11-09T02:50:14Z"
+        },
+        {
+            "id": 2078,
+            "area": {
+                "id": 2224,
+                "name": "Spain",
+                "countryCode": "ESP",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
+            },
+            "name": "Supercopa de Espa\u00f1a",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 510,
+                "startDate": "2020-01-08",
+                "endDate": "2020-01-12",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "SEMI_FINALS",
+                    "FINAL"
+                ]
+            },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T18:43:44Z"
+            "lastUpdated": "2020-01-13T10:40:04Z"
         },
         {
             "id": 2074,
@@ -3513,39 +3452,39 @@
                 "id": 572,
                 "startDate": "2020-04-05",
                 "endDate": "2020-11-07",
-                "currentMatchday": 6,
+                "currentMatchday": 27,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:45Z"
+            "lastUpdated": "2020-11-10T02:55:04Z"
         },
         {
-            "id": 2075,
+            "id": 2073,
             "area": {
                 "id": 2233,
                 "name": "Sweden",
                 "countryCode": "SWE",
                 "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg"
             },
-            "name": "Playoffs 2/3",
-            "code": null,
+            "name": "Allsvenskan",
+            "code": "ALL",
             "emblemUrl": null,
-            "plan": "TIER_FOUR",
+            "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 79,
-                "startDate": "2017-11-08",
-                "endDate": "2017-11-11",
-                "currentMatchday": null,
+                "id": 573,
+                "startDate": "2020-04-05",
+                "endDate": "2020-12-06",
+                "currentMatchday": 28,
                 "winner": null,
                 "availableStages": [
-                    "RELEGATION_PROMOTION_PLAYOFF"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 1,
-            "lastUpdated": "2018-06-05T00:28:43Z"
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-11-08T21:52:40Z"
         },
         {
             "id": 2076,
@@ -3573,6 +3512,31 @@
             "lastUpdated": "2018-06-05T00:28:54Z"
         },
         {
+            "id": 2075,
+            "area": {
+                "id": 2233,
+                "name": "Sweden",
+                "countryCode": "SWE",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg"
+            },
+            "name": "Playoffs 2/3",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 79,
+                "startDate": "2017-11-08",
+                "endDate": "2017-11-11",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "RELEGATION_PROMOTION_PLAYOFF"
+                ]
+            },
+            "numberOfAvailableSeasons": 1,
+            "lastUpdated": "2018-06-05T00:28:43Z"
+        },
+        {
             "id": 2071,
             "area": {
                 "id": 2234,
@@ -3585,20 +3549,19 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 489,
-                "startDate": "2019-08-20",
-                "endDate": "2020-06-14",
+                "id": 660,
+                "startDate": "2020-08-28",
+                "endDate": "2021-05-24",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
-                    "ROUND_OF_64",
-                    "ROUND_OF_32",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS"
+                    "ROUND_1",
+                    "ROUND_2",
+                    "ROUND_OF_16"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-15T15:40:05Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-09-10T14:00:46Z"
         },
         {
             "id": 2072,
@@ -3613,42 +3576,17 @@
             "emblemUrl": null,
             "plan": "TIER_THREE",
             "currentSeason": {
-                "id": 488,
-                "startDate": "2019-07-20",
-                "endDate": "2020-08-02",
-                "currentMatchday": 30,
+                "id": 658,
+                "startDate": "2020-09-19",
+                "endDate": "2021-05-21",
+                "currentMatchday": 8,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:45Z"
-        },
-        {
-            "id": 2070,
-            "area": {
-                "id": 2247,
-                "name": "Turkey",
-                "countryCode": "TUR",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
-            },
-            "name": "S\u00fcper Lig",
-            "code": "TSL",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 546,
-                "startDate": "2019-08-18",
-                "endDate": "2020-07-26",
-                "currentMatchday": 32,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:45Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T21:32:33Z"
         },
         {
             "id": 2068,
@@ -3666,14 +3604,41 @@
                 "id": 545,
                 "startDate": "2019-08-18",
                 "endDate": "2020-07-19",
-                "currentMatchday": 33,
+                "currentMatchday": 34,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON",
+                    "PROMOTION_PLAY_OFFS_SEMI_FINALS",
+                    "PROMOTION_PLAY_OFFS_FINAL"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-09-10T14:00:30Z"
+        },
+        {
+            "id": 2070,
+            "area": {
+                "id": 2247,
+                "name": "Turkey",
+                "countryCode": "TUR",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
+            },
+            "name": "S\u00fcper Lig",
+            "code": "TSL",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 637,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-16",
+                "currentMatchday": 9,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:45Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T20:30:41Z"
         },
         {
             "id": 2069,
@@ -3699,6 +3664,62 @@
             },
             "numberOfAvailableSeasons": 3,
             "lastUpdated": "2019-08-07T21:11:21Z"
+        },
+        {
+            "id": 2065,
+            "area": {
+                "id": 2253,
+                "name": "Ukraine",
+                "countryCode": "UKR",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg"
+            },
+            "name": "Kubok Ukrainy",
+            "code": null,
+            "emblemUrl": null,
+            "plan": "TIER_FOUR",
+            "currentSeason": {
+                "id": 551,
+                "startDate": "2019-08-07",
+                "endDate": "2020-07-08",
+                "currentMatchday": null,
+                "winner": null,
+                "availableStages": [
+                    "ROUND_1",
+                    "ROUND_2",
+                    "ROUND_3",
+                    "ROUND_OF_16",
+                    "QUARTER_FINALS",
+                    "SEMI_FINALS",
+                    "FINAL"
+                ]
+            },
+            "numberOfAvailableSeasons": 3,
+            "lastUpdated": "2020-09-10T14:00:09Z"
+        },
+        {
+            "id": 2064,
+            "area": {
+                "id": 2253,
+                "name": "Ukraine",
+                "countryCode": "UKR",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg"
+            },
+            "name": "Premier Liha",
+            "code": "UPL",
+            "emblemUrl": null,
+            "plan": "TIER_THREE",
+            "currentSeason": {
+                "id": 625,
+                "startDate": "2020-08-21",
+                "endDate": "2021-05-30",
+                "currentMatchday": 9,
+                "winner": null,
+                "availableStages": [
+                    "REGULAR_SEASON"
+                ]
+            },
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-08T23:23:40Z"
         },
         {
             "id": 2066,
@@ -3738,75 +3759,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 525,
-                "startDate": "2019-07-21",
-                "endDate": "2019-07-21",
+                "id": 648,
+                "startDate": "2020-08-25",
+                "endDate": "2020-08-25",
                 "currentMatchday": null,
                 "winner": null,
                 "availableStages": [
                     "FINAL"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
+            "numberOfAvailableSeasons": 4,
             "lastUpdated": "2019-07-28T23:59:39Z"
-        },
-        {
-            "id": 2064,
-            "area": {
-                "id": 2253,
-                "name": "Ukraine",
-                "countryCode": "UKR",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg"
-            },
-            "name": "Premier Liha",
-            "code": "UPL",
-            "emblemUrl": null,
-            "plan": "TIER_THREE",
-            "currentSeason": {
-                "id": 490,
-                "startDate": "2019-07-28",
-                "endDate": "2020-07-19",
-                "currentMatchday": 8,
-                "winner": null,
-                "availableStages": [
-                    "REGULAR_SEASON",
-                    "RELEGATION_ROUND",
-                    "CHAMPIONSHIP_ROUND"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:45Z"
-        },
-        {
-            "id": 2065,
-            "area": {
-                "id": 2253,
-                "name": "Ukraine",
-                "countryCode": "UKR",
-                "ensignUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg"
-            },
-            "name": "Kubok Ukrainy",
-            "code": null,
-            "emblemUrl": null,
-            "plan": "TIER_FOUR",
-            "currentSeason": {
-                "id": 551,
-                "startDate": "2019-08-07",
-                "endDate": "2020-07-08",
-                "currentMatchday": null,
-                "winner": null,
-                "availableStages": [
-                    "ROUND_1",
-                    "ROUND_2",
-                    "ROUND_3",
-                    "ROUND_OF_16",
-                    "QUARTER_FINALS",
-                    "SEMI_FINALS",
-                    "FINAL"
-                ]
-            },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-09T16:25:07Z"
         },
         {
             "id": 2145,
@@ -3824,15 +3787,21 @@
                 "id": 571,
                 "startDate": "2020-02-29",
                 "endDate": "2020-11-10",
-                "currentMatchday": null,
+                "currentMatchday": 3,
                 "winner": null,
                 "availableStages": [
                     "REGULAR_SEASON",
-                    "MLS_IS_BACK_GROUP_STAGE"
+                    "MLS_IS_BACK_GROUP_STAGE",
+                    "MLS_IS_BACK_ROUND_OF_16",
+                    "MLS_IS_BACK_QUARTER_FINALS",
+                    "MLS_IS_BACK_SEMI_FINALS",
+                    "MLS_IS_BACK_FINAL",
+                    "WILD_CARD_PLAYOFFS",
+                    "CONFERENCE_QUARTER_FINALS"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T09:13:05Z"
+            "lastUpdated": "2020-11-09T19:24:00Z"
         },
         {
             "id": 2063,
@@ -3850,14 +3819,17 @@
                 "id": 588,
                 "startDate": "2020-02-15",
                 "endDate": "2020-11-28",
-                "currentMatchday": 15,
+                "currentMatchday": 5,
                 "winner": null,
                 "availableStages": [
-                    "APERTURA"
+                    "APERTURA",
+                    "CLAUSURA",
+                    "APERTURA_CHAMPIONSHIP_GROUP",
+                    "INTERMEDIATE_ROUND"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-05-30T00:00:09Z"
+            "lastUpdated": "2020-11-13T12:10:13Z"
         },
         {
             "id": 2148,
@@ -3900,14 +3872,15 @@
                 "id": 566,
                 "startDate": "2020-01-26",
                 "endDate": "2020-12-12",
-                "currentMatchday": 20,
+                "currentMatchday": 38,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "GROUP_STAGE"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-06-06T00:00:11Z"
+            "lastUpdated": "2020-11-13T21:11:01Z"
         },
         {
             "id": 2061,
@@ -3925,14 +3898,16 @@
                 "id": 570,
                 "startDate": "2020-02-22",
                 "endDate": "2020-11-04",
-                "currentMatchday": 9,
+                "currentMatchday": 6,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON"
+                    "REGULAR_SEASON",
+                    "CHAMPIONSHIP_ROUND",
+                    "RELEGATION_ROUND"
                 ]
             },
             "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-07-11T20:16:46Z"
+            "lastUpdated": "2020-11-09T15:35:18Z"
         },
         {
             "id": 2060,
@@ -3947,19 +3922,17 @@
             "emblemUrl": null,
             "plan": "TIER_FOUR",
             "currentSeason": {
-                "id": 518,
-                "startDate": "2019-08-16",
-                "endDate": "2020-05-30",
-                "currentMatchday": 22,
+                "id": 651,
+                "startDate": "2020-09-11",
+                "endDate": "2021-05-30",
+                "currentMatchday": 17,
                 "winner": null,
                 "availableStages": [
-                    "REGULAR_SEASON",
-                    "CHAMPIONSHIP_ROUND",
-                    "RELEGATION_ROUND"
+                    "REGULAR_SEASON"
                 ]
             },
-            "numberOfAvailableSeasons": 3,
-            "lastUpdated": "2020-04-24T00:00:20Z"
+            "numberOfAvailableSeasons": 4,
+            "lastUpdated": "2020-11-13T21:11:02Z"
         },
         {
             "id": 2000,
@@ -3983,7 +3956,7 @@
                     "name": "France",
                     "shortName": "France",
                     "tla": "FRA",
-                    "crestUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
+                    "crestUrl": "https://crests.football-data.org/773.svg"
                 },
                 "availableStages": [
                     "GROUP_STAGE",
@@ -3995,7 +3968,7 @@
                 ]
             },
             "numberOfAvailableSeasons": 2,
-            "lastUpdated": "2018-08-23T12:16:17Z"
+            "lastUpdated": "2020-09-10T13:58:14Z"
         }
     ]
 }
