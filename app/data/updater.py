@@ -29,7 +29,7 @@ def hdf5_handler(lg_key='PL'):
 
 
 if __name__ == '__main__':
-    active_comps = ['ASL', 'BL', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
+    active_comps = ['ASL', 'BSA', 'BL', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
     for comp in active_comps:
         print('Updating {0}'.format(comp))
         hdf5_handler(lg_key=comp)
