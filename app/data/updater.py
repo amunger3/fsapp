@@ -17,7 +17,7 @@ def hdf5_handler(lg_key='PL'):
         print("data present at {0}...deleting key".format(lga_hdf))
         hdf.remove(lga_hdf)
 
-    pl_erc = EloRunCalc(LC._IDS[lg_key], season='2019', stage='REGULAR_SEASON', status='FINISHED')
+    pl_erc = EloRunCalc(LC._IDS[lg_key], season='2020', stage='REGULAR_SEASON', status='FINISHED')
     print("Storing DataFrame at /{0}".format(lga_hdf))
     df_comp = pl_erc.run_calcs()
     pd_comp = pd.DataFrame.from_dict(df_comp['data'], orient='index')
