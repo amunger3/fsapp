@@ -39,7 +39,7 @@ more-itertools==8.6.0
 mpmath==1.1.0
 msal==1.6.0
 nedoc==0.6
-numexpr==2.7.2
+numexpr==2.7.1
 numpy==1.19.3
 packaging==20.4
 pandas==1.1.4
