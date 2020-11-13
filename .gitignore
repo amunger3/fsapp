@@ -41,11 +41,5 @@ coverage.xml
 # NPM
 node_modules
 
-# PyCharm
-.idea
-
 # Sass
 .sass-cache
-
-# VSCode
-.vscode/settings.json
