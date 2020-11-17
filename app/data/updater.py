@@ -4,11 +4,12 @@ import pandas as pd
 
 # NOTE: this file must be run from the project root to load the existing HDF Store
 
+LC = LeagueConfigs()
+hdf = pd.HDFStore('fbd_storage.h5')
+
 
 def hdf5_handler(lg_key='PL'):
 
-    LC = LeagueConfigs()
-    hdf = pd.HDFStore('fbd_storage.h5')
     lga_hdf = lg_key.lower()
 
     # Updating arrays
