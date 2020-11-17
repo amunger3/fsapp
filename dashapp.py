@@ -357,7 +357,7 @@ app.layout = html.Div([
                                 data=df_static.to_dict('records'),
                                 sort_action='native',
                                 style_cell={
-                                    'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
+                                    'fontFamily': 'Inter var, Inter, Roboto, Nunito, Arial, sans-serif',
                                     'fontSize': '17px'
                                 },
                                 style_cell_conditional=[
@@ -446,10 +446,16 @@ app.layout = html.Div([
     Output('colorbins-legend', 'children')],
     [Input('comps-dropdown', 'value')])
 def update_table(value):
-    df_static = comp_elo_df(value)
-    card_title = set_table_header(value)
-    (styles, legend, full_scale) = discrete_background_color_bins(df_static)
-    return df_static.to_dict('records'), styles, card_title, legend
+    if value:
+        df_static = comp_elo_df(value)
+        card_title = set_table_header(value)
+        (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+        return df_static.to_dict('records'), styles, card_title, legend
+    else:
+        df_static = comp_elo_df('/agg/all')
+        card_title = 'Showing all leagues.'
+        (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+        return df_static.to_dict('records'), styles, card_title, legend
 
 
 # Run Server
