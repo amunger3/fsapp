@@ -303,28 +303,14 @@ layout_index = html.Div([
                                 ),
                                 className=""
                             ),
-                        ],
-                        className="uk-navbar-nav"
-                    ),
-                ],
-                className="uk-navbar-left"
-            ),
-            html.Div(
-                children=[
-                    html.Ul(
-                        children=[
                             html.Li(
-                                html.A(
-                                    "URL",
-                                    href="/page-alt"
-                                ),
-                                className=""
+                                id="page-location"
                             ),
                         ],
                         className="uk-navbar-nav"
                     ),
                 ],
-                className="uk-navbar-right"
+                className="uk-navbar-left"
             ),
         ],
         className="uk-navbar-container uk-navbar-transparent"
@@ -332,100 +318,160 @@ layout_index = html.Div([
     html.Div(
         className="uk-container uk-margin-medium",
         children=[
-            html.Div([
-                html.P(
-                    "Choose a Competition:",
-                    className="uk-text-lead"
-                ),
-                dcc.Dropdown(
-                    id='comps-dropdown',
-                    options=df_compini.to_dict('records'),
-                    placeholder="Select a Competition",
-                    value='PL'
-                ),
-            ], className="uk-margin-small"),
-            html.Div(
-                className="uk-card uk-card-default",
+            dcc.Tabs(
+                id='tabs',
+                value='league-view',
+                parent_className='tabs',
+                className='tabs-container',
                 children=[
-                    html.Div(
-                        html.H3(
-                            children=card_title,
-                            className="uk-card-title",
-                            id="tablecard-title"
-                        ),
-                        className="uk-card-header"
-                    ),
-                    html.Div(
-                        className="uk-card-body",
+                    dcc.Tab(
+                        label='Leagues',
+                        value='league-view',
+                        className='tab',
+                        selected_className='tab--selected',
                         children=[
                             html.Div(
-                                children=legend,
-                                style={'float': 'right'},
-                                id="colorbins-legend"
+                                className="uk-card uk-card-default",
+                                id="tab-content-1",
+                                children=[
+                                    html.Div(
+                                        html.H3(
+                                            children=card_title,
+                                            className="uk-card-title",
+                                            id="tablecard-title-1"
+                                        ),
+                                        className="uk-card-header"
+                                    ),
+                                    html.Div(
+                                        className="uk-card-body",
+                                        children=[
+                                            html.Div([
+                                                html.P(
+                                                    "Choose a Competition:",
+                                                    className="uk-text-lead"
+                                                ),
+                                                dcc.Dropdown(
+                                                    id='comps-dropdown',
+                                                    options=df_compini.to_dict('records'),
+                                                    placeholder="Select a Competition",
+                                                    value='PL'
+                                                ),
+                                            ],
+                                            className="uk-margin-small"
+                                            ),
+                                            html.Div(
+                                                children=legend,
+                                                style={'float': 'right'},
+                                                id="colorbins-legend"
+                                            ),
+                                            dash_table.DataTable(
+                                                id='elolgtable',
+                                                columns=elo_columns,
+                                                data=df_static.to_dict('records'),
+                                                sort_action='native',
+                                                style_cell={
+                                                    'fontFamily': 'Inter var, Inter, Roboto, Nunito, Arial, sans-serif',
+                                                    'fontSize': '17px'
+                                                },
+                                                style_cell_conditional=[
+                                                    {'if': {'column_id': 'eloRk'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'tablePos'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'shortName'},
+                                                    'width': '20%'},
+                                                    {'if': {'column_id': 'eloNow'},
+                                                    'width': '10%'},
+                                                    {'if': {'column_id': 'matches'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'won'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'lost'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'draw'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'points'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'goalsFor'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'goalsAga'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'goalDiff'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'lastDiff'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'lastRes'},
+                                                    'width': '5%'},
+                                                    {'if': {'column_id': 'lastFix'},
+                                                    'width': '5%'},
+                                                ],
+                                                style_data_conditional=styles,
+                                                style_header={
+                                                    'backgroundColor': 'rgb(69, 74, 79)',
+                                                    'color':  'rgb(233, 233, 240)',
+                                                    'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
+                                                    'fontSize': '18px',
+                                                    'fontWeight': '400',
+                                                    'paddingLeft': '8px',
+                                                    'paddingRight': '8px',
+                                                },
+                                                style_header_conditional=[
+                                                    {'if': {'column_type': 'text'},
+                                                        'textAlign': 'left'},
+                                                    {'if': {'column_type': 'numeric'},
+                                                        'textAlign': 'center'},
+                                                ],
+                                                merge_duplicate_headers=True,
+                                                style_as_list_view=False,
+                                            )
+                                        ]
+                                    )
+                                ],
                             ),
-                            dash_table.DataTable(
-                                id='elolgtable',
-                                columns=elo_columns,
-                                data=df_static.to_dict('records'),
-                                sort_action='native',
-                                style_cell={
-                                    'fontFamily': 'Inter var, Inter, Roboto, Nunito, Arial, sans-serif',
-                                    'fontSize': '17px'
-                                },
-                                style_cell_conditional=[
-                                    {'if': {'column_id': 'eloRk'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'tablePos'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'shortName'},
-                                    'width': '20%'},
-                                    {'if': {'column_id': 'eloNow'},
-                                    'width': '10%'},
-                                    {'if': {'column_id': 'matches'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'won'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'lost'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'draw'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'points'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'goalsFor'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'goalsAga'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'goalDiff'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'lastDiff'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'lastRes'},
-                                    'width': '5%'},
-                                    {'if': {'column_id': 'lastFix'},
-                                    'width': '5%'},
+                        ],
+                    ),
+                    dcc.Tab(
+                        label='Teams',
+                        value='team-view',
+                        className='tab',
+                        selected_className='tab--selected',
+                        children=[
+                            html.Div(
+                                className="uk-card uk-card-default",
+                                id="tab-content-2",
+                                children=[
+                                    html.Div(
+                                        html.H3(
+                                            children=card_title,
+                                            className="uk-card-title",
+                                            id="tablecard-title-2"
+                                        ),
+                                        className="uk-card-header"
+                                    ),
+                                    html.Div(
+                                        className="uk-card-body",
+                                        children=[
+                                            html.Div([
+                                                html.P(
+                                                    "Select Teams",
+                                                    className="uk-text-lead"
+                                                ),
+                                            ],
+                                            className="uk-margin-small"
+                                            ),
+                                            dcc.Checklist(
+                                                id='teams-chklist',
+                                                options=[],
+                                                value=[],
+                                                labelStyle={'display': 'block'}
+                                            ),
+                                        ],
+                                    ),
                                 ],
-                                style_data_conditional=styles,
-                                style_header={
-                                    'backgroundColor': 'rgb(69, 74, 79)',
-                                    'color':  'rgb(233, 233, 240)',
-                                    'fontFamily': 'Inter, Roboto, Nunito, Arial, sans-serif',
-                                    'fontSize': '18px',
-                                    'fontWeight': '400',
-                                    'paddingLeft': '8px',
-                                    'paddingRight': '8px',
-                                },
-                                style_header_conditional=[
-                                    {'if': {'column_type': 'text'},
-                                        'textAlign': 'left'},
-                                    {'if': {'column_type': 'numeric'},
-                                        'textAlign': 'center'},
-                                ],
-                                merge_duplicate_headers=True,
-                                style_as_list_view=False,
-                            )
-                        ]
-                    )
-                ]
+                            ),
+                        ],
+                    ),
+                ],
             ),
             html.Div(
                 html.Div(
@@ -449,29 +495,37 @@ layout_index = html.Div([
     )
 ])
 
-
 server = app.server
 app.layout = layout_index
 
 
 # Callbacks
+
+@app.callback(dash.dependencies.Output('page-location', 'children'),
+              [dash.dependencies.Input('url', 'pathname')])
+def display_page(pathname):
+    return html.A(pathname, href="#")
+
 @app.callback(
     [Output('elolgtable', 'data'),
     Output('elolgtable', 'style_data_conditional'),
-    Output('tablecard-title', 'children'),
-    Output('colorbins-legend', 'children')],
+    Output('tablecard-title-1', 'children'),
+    Output('colorbins-legend', 'children'),
+    Output('teams-chklist', 'options')],
     [Input('comps-dropdown', 'value')])
 def update_table(value):
     if value:
         df_static = comp_elo_df(value)
         card_title = set_table_header(value)
+        teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
-        return df_static.to_dict('records'), styles, card_title, legend
+        return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
     else:
         df_static = comp_elo_df('/agg/all')
         card_title = 'All Leagues'
+        teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
-        return df_static.to_dict('records'), styles, card_title, legend
+        return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
 
 
 # Run Server

@@ -23,6 +23,7 @@ $nav-header-font-size: 1.0rem !default;
 // Colors
 //
 
+$Gy-F: #f8f8f8;
 $Gy-E: #e9e9f0;
 $Gy-D: #d9d9e0;
 $Gy-0: #ceced0;
@@ -68,21 +69,22 @@ $Bx-1: #d98500;
 $Ut-1: #dc5b23;
 $Ws-1: #ff0000;
 
-$global-link-color: $Yo-O !default;
-$global-link-hover-color: $Yy-P !default;
-
-$global-secondary-background: $Gy-4 !default;
-$global-inverse-color: $Gy-E !default;
 $grad-1: linear-gradient(to bottom, $Gy-D, $Gy-C);
+
+$global-link-color:           $Yo-O !default;
+$global-link-hover-color:     $Yy-P !default;
+$global-muted-background:     $Gy-F !default;
+$global-secondary-background: $Gy-4 !default;
+$global-inverse-color:        $Gy-E !default;
 
 //
 // Backgrounds
 //
 
-$base-body-background: $Gy-0 !default;
-$base-body-color: $Gy-6 !default;
-$progress-background: $Gy-0 !default;
-$progress-bar-background: $Gn-1 !default;
+$base-body-background:        $Gy-0 !default;
+$base-body-color:             $Gy-6 !default;
+$progress-background:         $Gy-0 !default;
+$progress-bar-background:     $Gn-1 !default;
 $table-row-active-background: $Yy-P !default;
 
 //
@@ -99,16 +101,12 @@ $base-body-line-height: 1rem !default;
 // Controls
 //
 
-$breadcrumb-item-font-size: 0.875rem !default;
-$breadcrumb-item-color: $Rr-2 !default;
-$breadcrumb-item-hover-color: $Rr-1 !default;
+$breadcrumb-item-font-size:             0.875rem !default;
+$breadcrumb-item-color:                 $Rr-2 !default;
+$breadcrumb-item-hover-color:           $Rr-1 !default;
 $breadcrumb-item-hover-text-decoration: underline !default;
-$breadcrumb-item-active-color: $Gy-6 !default;
-$breadcrumb-divider: "/" !default;
-$breadcrumb-divider-margin-horizontal: 0.5rem !default;
-$breadcrumb-divider-font-size: 1rem !default;
-$breadcrumb-divider-color: $Gy-6 !default;
-
-//
-// Z-index
-//
+$breadcrumb-item-active-color:          $Gy-6 !default;
+$breadcrumb-divider:                    "/" !default;
+$breadcrumb-divider-margin-horizontal:  0.5rem !default;
+$breadcrumb-divider-font-size:          1.0rem !default;
+$breadcrumb-divider-color:              $Gy-6 !default;
