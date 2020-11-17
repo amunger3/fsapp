@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] [APPEARANCE] Finish Team graphing functionality.
 - [ ] [WORKFLOW] Add tests.
 - [ ] [IDEA] Other competition formats (UCL?).
 - [ ] [APPEARANCE] Dash: DataTable filtering, more info, DAQ widgets, etc.

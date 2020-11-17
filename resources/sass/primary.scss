@@ -4,14 +4,20 @@
 $sans:  Inter, 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
 $serif: 'Noto Serif', 'Source Serif', Cambria, serif;
 $mono:  'Fira Code', 'Liberation Mono', Consolas, monospace;
-$gray0: #cecece;
+$gray0: #ceced0;
 $gray1: #acbccc;
+$gray2: #242527;
 $gray4: #454a4f;
 $gray6: #666666;
 $gray9: #9da5ab;
+$grayA: #aeb0cc;
+$grayC: #c0c0c6;
+$grayD: #d9d9e0;
+$grayE: #e9e9f0;
+$grayF: #f8f8f8;
 $red1:  #ff4143;
 $red2:  #c33c33;
-$grad1: linear-gradient(to bottom, #d9d9d9, #c4c3c4);
+$grad1: linear-gradient(to bottom, $grayD, $grayC);
 
 html,
 body {
@@ -40,6 +46,16 @@ h2,
 h3 {
     font-family: $serif;
     font-weight: normal;
+}
+
+i {
+    font-style: normal;
+    color: $red2;
+}
+
+b {
+    font-weight: inherit;
+    color: $red2;
 }
 
 nav {
@@ -95,16 +111,6 @@ li.uk-active>a {
     font-variation-settings: 'wght' 400;
 }
 
-i {
-    font-style: normal;
-    color: $red2;
-}
-
-b {
-    font-weight: inherit;
-    color: $red2;
-}
-
 .header {
     background-image: $grad1;
 }
@@ -118,6 +124,41 @@ b {
     overflow: hidden;
     padding-bottom: 3.2rem;
     position: relative;
+}
+
+.tabs-container {
+    width: 85%;
+}
+
+.tabs {
+    border-top-left-radius: 3px;
+    background-color: $gray0;
+    padding: 0px 24px;
+    border-bottom: 1px solid $gray0;
+}
+
+.tab {
+    color: $gray2 !important;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top: 2px solid transparent !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    background-color: $gray6;
+    padding: 12px !important;
+    font-family: $sans;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab--selected {
+    background-color: $grayF !important;
+    color: $gray4 !important;
+    box-shadow: 1px 1px 0px $gray0 !important;
+    border-right: 1px solid $gray0 !important;
+    border-top: 3px solid $red2 !important;
 }
 
 tr.z1 {

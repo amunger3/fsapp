@@ -13,6 +13,12 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.8.0 (2020-11-17)
+
+#### Minor Release 0.8
+
+- [ENHANCEMENT] Added Teams tab, for future graphing capabilities.
+
 ### Version 0.7.0 (2020-11-13)
 
 #### Minor Release 0.7

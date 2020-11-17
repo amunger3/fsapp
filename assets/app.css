@@ -12,7 +12,7 @@
 @import 'https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css';
 html {
   /* 1 */
-  font-family: "Inter", "Nunito", "Roboto", "Open Sans", "Segoe UI", Arial, sans-serif;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   font-weight: 350;
   line-height: 1rem;
@@ -45,7 +45,7 @@ a:hover {
  */
 a,
 .uk-link {
-  color: #da7d02;
+  color: #d15711;
   text-decoration: none;
   cursor: pointer;
 }
@@ -54,7 +54,7 @@ a:hover,
 .uk-link:hover,
 .uk-link-toggle:hover .uk-link,
 .uk-link-toggle:focus .uk-link {
-  color: #f0bb76;
+  color: #f0ad76;
   text-decoration: underline;
 }
 
@@ -88,7 +88,7 @@ strong {
 :not(pre) > kbd,
 :not(pre) > samp {
   /* 1 */
-  font-family: "Fira Code", "Liberation Mono", "Consolas", monospace;
+  font-family: "Fira Code", "Liberation Mono", Consolas, monospace;
   /* 2 */
   font-size: 0.875rem;
   /* 3 */
@@ -261,7 +261,7 @@ h6, .uk-h6,
 .uk-heading-xlarge,
 .uk-heading-2xlarge {
   margin: 0 0 20px 0;
-  font-family: "Inter", "Nunito", "Roboto", "Open Sans", "Segoe UI", Arial, sans-serif;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
   font-weight: normal;
   color: #333;
   text-transform: none;
@@ -415,7 +415,7 @@ blockquote footer {
  * 1. Contain overflow in all browsers.
  */
 pre {
-  font: 0.875rem / 1.5 "Fira Code", "Liberation Mono", "Consolas", monospace;
+  font: 0.875rem / 1.5 "Fira Code", "Liberation Mono", Consolas, monospace;
   color: #666;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -424,7 +424,7 @@ pre {
 }
 
 pre code {
-  font-family: "Fira Code", "Liberation Mono", "Consolas", monospace;
+  font-family: "Fira Code", "Liberation Mono", Consolas, monospace;
 }
 
 /* Selection pseudo-element
@@ -1098,14 +1098,14 @@ a.uk-link-reset,
  */
 .uk-table-hover > tr:hover,
 .uk-table-hover tbody tr:hover {
-  background: #f0bb76;
+  background: #f0ad76;
 }
 
 /* Active state
  ========================================================================== */
 .uk-table > tr.uk-active,
 .uk-table tbody tr.uk-active {
-  background: #f0bb76;
+  background: #f0ad76;
 }
 
 /* Size modifier
@@ -2324,13 +2324,13 @@ select.uk-form-width-xsmall {
   line-height: 1.5;
   background: none;
   /* 2 */
-  color: #da7d02;
+  color: #d15711;
 }
 
 /* Hover + Focus */
 .uk-button-link:hover,
 .uk-button-link:focus {
-  color: #f0bb76;
+  color: #f0ad76;
   text-decoration: underline;
 }
 
@@ -2883,7 +2883,7 @@ select.uk-form-width-xsmall {
 /* Title
  ========================================================================== */
 .uk-card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.4;
 }
 
@@ -5322,7 +5322,7 @@ ul.uk-nav-sub {
 .uk-nav-header {
   padding: 5px 0;
   text-transform: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .uk-nav-header:not(:first-child) {
@@ -5589,8 +5589,8 @@ ul.uk-nav-sub {
   min-height: 80px;
   padding: 0 15px;
   /* 3 */
-  font-size: 1.25rem;
-  font-family: "Inter", "Nunito", "Roboto", "Open Sans", "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
   /* 4 */
   text-decoration: none;
 }
@@ -8784,7 +8784,7 @@ iframe.uk-cover {
  */
 .uk-logo {
   font-size: 1.5rem;
-  font-family: "Inter", "Nunito", "Roboto", "Open Sans", "Segoe UI", Arial, sans-serif;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
   color: #666;
   /* 1 */
   text-decoration: none;
@@ -11473,7 +11473,7 @@ h3 {
 }
 html,
 body {
-  background-color: #cecece;
+  background-color: #ceced0;
   background-size: cover;
   color: #666666;
   font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
@@ -11497,6 +11497,16 @@ h2,
 h3 {
   font-family: "Noto Serif", "Source Serif", Cambria, serif;
   font-weight: normal;
+}
+
+i {
+  font-style: normal;
+  color: #c33c33;
+}
+
+b {
+  font-weight: inherit;
+  color: #c33c33;
 }
 
 nav {
@@ -11551,18 +11561,8 @@ li.uk-active > a {
   font-variation-settings: "wght" 400;
 }
 
-i {
-  font-style: normal;
-  color: #c33c33;
-}
-
-b {
-  font-weight: inherit;
-  color: #c33c33;
-}
-
 .header {
-  background-image: linear-gradient(to bottom, #d9d9d9, #c4c3c4);
+  background-image: linear-gradient(to bottom, #d9d9e0, #c0c0c6);
 }
 
 .mainbox {
@@ -11574,6 +11574,41 @@ b {
   overflow: hidden;
   padding-bottom: 3.2rem;
   position: relative;
+}
+
+.tabs-container {
+  width: 85%;
+}
+
+.tabs {
+  border-top-left-radius: 3px;
+  background-color: #ceced0;
+  padding: 0px 24px;
+  border-bottom: 1px solid #ceced0;
+}
+
+.tab {
+  color: #242527 !important;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top: 2px solid transparent !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+  background-color: #666666;
+  padding: 12px !important;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab--selected {
+  background-color: #f8f8f8 !important;
+  color: #454a4f !important;
+  box-shadow: 1px 1px 0px #ceced0 !important;
+  border-right: 1px solid #ceced0 !important;
+  border-top: 3px solid #c33c33 !important;
 }
 
 tr.z1 {
