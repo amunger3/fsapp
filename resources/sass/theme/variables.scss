@@ -11,13 +11,13 @@
 // Typography
 //
 
-$global-font-family: 'Inter', 'Nunito', 'Roboto', 'Open Sans', 'Segoe UI', Arial, sans-serif;
-$base-code-font-family: 'Fira Code', 'Liberation Mono', 'Consolas', monospace;
+$global-font-family: Inter, 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
+$base-code-font-family: 'Fira Code', 'Liberation Mono', Consolas, monospace;
 $base-body-font-weight: 350 !default;
 $base-strong-font-weight: 500 !default;
-$card-title-font-size: 2rem !default;
+$card-title-font-size: 1.5rem !default;
 $nav-header-text-transform: none !default;
-$nav-header-font-size: 1.25rem !default;
+$nav-header-font-size: 1.0rem !default;
 
 //
 // Colors
@@ -51,9 +51,9 @@ $Bs-N: #fffbe6;
 $Yd-M: #344955;
 $Yd-X: #232f34;
 $Yd-L: #4a6572;
-$Yy-P: #f0bb76;
-$Yo-Y: #f9aa33;
-$Yo-O: #da7d02;
+$Yy-P: #f0ad76;
+$Yo-Y: #f7981c;
+$Yo-O: #d15711;
 
 $Pk-1: #e138e8;
 $Mg-1: #d9008f;
@@ -63,7 +63,7 @@ $Sb-1: #0085d0;
 $Tq-1: #00d9cc;
 $Lg-1: #00d90a;
 $Yg-1: #85d900;
-$Ct-1: #ffcc00;
+$Ct-1: #ffdd1d;
 $Bx-1: #d98500;
 $Ut-1: #dc5b23;
 $Ws-1: #ff0000;
