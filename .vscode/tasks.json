@@ -13,5 +13,13 @@
             "type": "shell",
             "command": "python dashapp.py"
         },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: build",
+            "detail": "grunt copy && grunt sass"
+        }
     ]
 }

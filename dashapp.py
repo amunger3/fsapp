@@ -276,46 +276,58 @@ app = dash.Dash(
     update_title=None
 )
 
-server = app.server
-
-app.layout = html.Div([
+layout_index = html.Div([
+    dcc.Location(id='url', refresh=False),
     html.Nav(
-        html.Div(
+        children=[
             html.Div(
-                html.Div(
-                    children=[
-                        html.A(
-                            "Elo Football",
-                            href="/",
-                            className="uk-navbar-item uk-logo"
-                        ),
-                        html.Ul(
-                            className="uk-navbar-nav",
-                            children=[
-                                html.Li(
-                                    html.A(
-                                        "Home",
-                                        href="/"
-                                    ),
-                                    className="uk-active"
+                children=[
+                    html.A(
+                        "Elo Football",
+                        href="/",
+                        className="uk-navbar-item uk-logo"
+                    ),
+                    html.Ul(
+                        children=[
+                            html.Li(
+                                html.A(
+                                    "Home",
+                                    href="/"
                                 ),
-                                html.Li(
-                                    html.A(
-                                        "Reset",
-                                        href="/"
-                                    ),
-                                    className=""
+                                className="uk-active"
+                            ),
+                            html.Li(
+                                html.A(
+                                    "PageAlt",
+                                    href="/page-alt"
                                 ),
-                            ]
-                        ),
-                    ],
-                    className="uk-navbar-left"
-                ),
-                className="uk-navbar"
+                                className=""
+                            ),
+                        ],
+                        className="uk-navbar-nav"
+                    ),
+                ],
+                className="uk-navbar-left"
             ),
-            className="uk-container"
-        ),
-        className="uk-navbar-transparent"
+            html.Div(
+                children=[
+                    html.Ul(
+                        children=[
+                            html.Li(
+                                html.A(
+                                    "URL",
+                                    href="/page-alt"
+                                ),
+                                className=""
+                            ),
+                        ],
+                        className="uk-navbar-nav"
+                    ),
+                ],
+                className="uk-navbar-right"
+            ),
+        ],
+        className="uk-navbar-container uk-navbar-transparent"
     ),
     html.Div(
         className="uk-container uk-margin-medium",
@@ -438,6 +450,10 @@ app.layout = html.Div([
 ])
 
 
+server = app.server
+app.layout = layout_index
+
+
 # Callbacks
 @app.callback(
     [Output('elolgtable', 'data'),
@@ -453,7 +469,7 @@ def update_table(value):
         return df_static.to_dict('records'), styles, card_title, legend
     else:
         df_static = comp_elo_df('/agg/all')
-        card_title = 'Showing all leagues.'
+        card_title = 'All Leagues'
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
         return df_static.to_dict('records'), styles, card_title, legend
 
