@@ -1,16 +1,16 @@
-@import 'https://rsms.me/inter/inter.css';
+@import './fonts/inter/inter.css';
 @import 'https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css';
 
-$sans: 'Inter', 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
+$sans:  Inter, 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
 $serif: 'Noto Serif', 'Source Serif', Cambria, serif;
-$mono: 'Fira Code', 'Liberation Mono', Consolas, monospace;
+$mono:  'Fira Code', 'Liberation Mono', Consolas, monospace;
 $gray0: #cecece;
 $gray1: #acbccc;
 $gray4: #454a4f;
 $gray6: #666666;
 $gray9: #9da5ab;
-$red1: #ff4143;
-$red2: #c33c33;
+$red1:  #ff4143;
+$red2:  #c33c33;
 $grad1: linear-gradient(to bottom, #d9d9d9, #c4c3c4);
 
 html,

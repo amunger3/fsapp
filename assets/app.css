@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  * 3. Style
  */
-@import 'https://rsms.me/inter/inter.css';
+@import './fonts/inter/inter.css';
 @import 'https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css';
 html {
   /* 1 */
@@ -11476,7 +11476,7 @@ body {
   background-color: #cecece;
   background-size: cover;
   color: #666666;
-  font-family: "Inter", "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
+  font-family: Inter, "Nunito", Roboto, "Open Sans", "Segoe UI", Arial, sans-serif;
   font-weight: 350;
   line-height: 1rem;
   margin: 0;
