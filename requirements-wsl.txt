@@ -138,7 +138,7 @@ threadpoolctl==2.1.0
 toml==0.10.2
 tqdm==4.52.0
 traitlets==5.0.5
-Twisted==18.9.0
+Twisted==20.3.0
 tzlocal==2.1
 ubuntu-advantage-tools==20.3
 ufw==0.36
