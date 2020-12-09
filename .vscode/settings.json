@@ -1,6 +1,5 @@
 {
     "python.pythonPath": "env\\Scripts\\python.exe",
-    "powershell.startAutomatically": false,
     "scm.countBadge": "focused",
     "scm.defaultViewMode": "tree"
 }
