@@ -9,6 +9,7 @@
 - [ ] [CLEANUP] Directory structure and filename standards: both are a mess.
 - [ ] [IDEA] Link Elo to other statistical indicators.
 - [ ] [RESEARCH] Research multi-year Elo logics.
+- [x] [UPGRADE] Upgrade to Python 3.9.
 - [x] [APPEARANCE] Appearance: customize layout and UIKit.
 - [x] [OPTIMIZE] Expand the data constructions towards pandas and away from JSON.
 - [x] [CLEANUP] General cleanup: there are a lot of deprecated files from Flask and JSON I/Os.
