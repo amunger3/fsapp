@@ -15,11 +15,9 @@ requests_cache.install_cache('fbd_cache', backend='sqlite', expire_after=86400)
 # Load HDF5 Storage
 hdf_file = 'fbd_storage.h5'
 
-
 # Competition selections
 df_compsix = pd.read_hdf(hdf_file, 'comps')
 df_compini = df_compsix[['label', 'value']]
-
 
 def set_table_header(comp_code):
     comp_label = df_compsix.loc[comp_code]['label']
@@ -30,9 +28,7 @@ def set_table_header(comp_code):
     table_header_str = ' '.join([comp_label, year_str])
     return table_header_str
 
-
 card_title = set_table_header('PL')
-
 
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
@@ -45,14 +41,11 @@ def comp_elo_df(comp_code):
     df_static['eloRk'] = df_static['eloNow'].rank(ascending=False)
     return df_static
 
-
 # df functions
 def get_last(ix):
     return ix[-1]
 
-
 df_static = comp_elo_df('PL')
-
 
 # Colorbins setup
 def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
@@ -498,9 +491,7 @@ layout_index = html.Div([
 server = app.server
 app.layout = layout_index
 
-
 # Callbacks
-
 @app.callback(dash.dependencies.Output('page-location', 'children'),
               [dash.dependencies.Input('url', 'pathname')])
 def display_page(pathname):
@@ -526,7 +517,6 @@ def update_table(value):
         teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
         return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
-
 
 # Run Server
 if __name__ == '__main__':
