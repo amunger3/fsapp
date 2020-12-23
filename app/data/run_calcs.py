@@ -1,7 +1,6 @@
 # Module imports
-print("Importing...")
 from FBApi import FBDataHandler
-import elo
+from elo import Elo
 
 # Built-in modules
 import json
@@ -25,61 +24,50 @@ class EloRunCalc:
         matchRes = self.matchReq['matches']
         standRes = self.standReq['standings']
 
-        print("Performing calculations...")
+        print('Performing calculations...')
         for match in matchRes:
-            team_1 = match['homeTeam']['id']
-            team_2 = match['awayTeam']['id']
-
-            score_1 = match['score']['fullTime']['homeTeam']
-            score_2 = match['score']['fullTime']['awayTeam']
-
-            if score_1 == score_2:
-                wght_1 = 0.5
-                wght_2 = 0.5
+            teams = (match['homeTeam']['id'], match['awayTeam']['id'])
+            scores = (match['score']['fullTime']['homeTeam'], match['score']['fullTime']['awayTeam'])
+            if scores[0] == scores[1]:
+                wts = (0.5, 0.5)
             else:
-                wght_1 = int(score_1 > score_2)
-                wght_2 = int(score_2 > score_1)
+                wts = (int(scores[0] > scores[1]), int(scores[1] > scores[0]))
 
-            tmDf['data'][team_1]['fixtures'].append(team_2)
-            tmDf['data'][team_1]['results'].append(wght_1)
-            tmDf['data'][team_2]['fixtures'].append(team_1)
-            tmDf['data'][team_2]['results'].append(wght_2)
+            tmDf['data'][teams[0]]['fixtures'].append(teams[1])
+            tmDf['data'][teams[0]]['results'].append(wts[0])
+            tmDf['data'][teams[1]]['fixtures'].append(teams[0])
+            tmDf['data'][teams[1]]['results'].append(wts[1])
 
-            cElo_1 = tmDf['data'][team_1]['eloNow']
-            cElo_2 = tmDf['data'][team_2]['eloNow']
+            cRs = tuple(tmDf['data'][tm]['eloNow'] for tm in teams)
+            nElo = Elo(R_tup=cRs, S_tup=wts)
 
-            nElos = elo.up_rating(cElo_1, cElo_2, wght_1, wght_2)
-            nElo_1 = nElos[0]
-            nElo_2 = nElos[1]
+            tmDf['data'][teams[0]]['eloRun'].append(float(nElo.Rnew[0]))
+            tmDf['data'][teams[0]]['eloNow'] = float(nElo.Rnew[0])
+            tmDf['data'][teams[1]]['eloRun'].append(float(nElo.Rnew[1]))
+            tmDf['data'][teams[1]]['eloNow'] = float(nElo.Rnew[1])
 
-            tmDf['data'][team_1]['eloRun'].append(float(nElo_1))
-            tmDf['data'][team_1]['eloNow'] = float(nElo_1)
-            tmDf['data'][team_2]['eloRun'].append(float(nElo_2))
-            tmDf['data'][team_2]['eloNow'] = float(nElo_2)
-
-        for lgPos in standRes[0]['table']:
-            team_id = lgPos['team']['id']
-            tmDf['data'][team_id]['tablePos'] = lgPos['position']
-            tmDf['data'][team_id]['matches'] = lgPos['playedGames']
-            tmDf['data'][team_id]['won'] = lgPos['won']
-            tmDf['data'][team_id]['draw'] = lgPos['draw']
-            tmDf['data'][team_id]['lost'] = lgPos['lost']
-            tmDf['data'][team_id]['points'] = lgPos['points']
-            tmDf['data'][team_id]['goalsFor'] = lgPos['goalsFor']
-            tmDf['data'][team_id]['goalsAga'] = lgPos['goalsAgainst']
-            tmDf['data'][team_id]['goalDiff'] = lgPos['goalDifference']
+        for lg_pos in standRes[0]['table']:
+            tm_id = lg_pos['team']['id']
+            tmDf['data'][tm_id]['tablePos'] = lg_pos['position']
+            tmDf['data'][tm_id]['matches'] = lg_pos['playedGames']
+            tmDf['data'][tm_id]['won'] = lg_pos['won']
+            tmDf['data'][tm_id]['draw'] = lg_pos['draw']
+            tmDf['data'][tm_id]['lost'] = lg_pos['lost']
+            tmDf['data'][tm_id]['points'] = lg_pos['points']
+            tmDf['data'][tm_id]['goalsFor'] = lg_pos['goalsFor']
+            tmDf['data'][tm_id]['goalsAga'] = lg_pos['goalsAgainst']
+            tmDf['data'][tm_id]['goalDiff'] = lg_pos['goalDifference']
 
         return tmDf
 
     def w_json(self, w_df, name):
         cwd = Path.cwd()
         file_nx = name + '.json'
-        dir_desc = ['json', file_nx]
+        dir_desc = ['app', 'json', file_nx]
 
         w_dir = cwd.joinpath(*dir_desc)
-        jd = json.dumps(w_df, indent=4)
+        jd = json.dumps(w_df, indent=4, ensure_ascii=False)
 
-        print("Writing JSON...")
-        fj = open(w_dir, 'w')
+        fj = open(w_dir, 'w', encoding='utf-8')
         fj.write(jd)
         fj.close()

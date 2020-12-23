@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] [UPGRADE] Use hdf5-1.12.0 with pandas/pytables for multiple open statements.
+- [ ] [APPEARANCE] Finish Team graphing functionality.
 - [ ] [APPEARANCE] Finish Team graphing functionality.
 - [ ] [WORKFLOW] Add tests.
 - [ ] [IDEA] Other competition formats (UCL?).
