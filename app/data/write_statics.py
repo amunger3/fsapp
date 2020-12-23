@@ -3,6 +3,8 @@ import requests
 import json
 from pathlib import Path
 
+from static import LeagueConfigs
+
 
 def write_tojsondir(w_df, name):
     cwd = Path.cwd()
@@ -10,10 +12,10 @@ def write_tojsondir(w_df, name):
     dir_desc = ['app', 'json', file_nx]
 
     w_dir = cwd.joinpath(*dir_desc)
-    jd = json.dumps(w_df, indent=4)
+    jd = json.dumps(w_df, indent=4, ensure_ascii=False)
 
     print("Writing JSON...")
-    fj = open(w_dir, 'w')
+    fj = open(w_dir, 'w', encoding='utf-8')
     fj.write(jd)
     fj.close()
 
@@ -66,9 +68,9 @@ class FBDataEntry:
         req = self._get('competitions', params=params)
         return req.json()
 
-    def get_teams(self):
+    def get_teams(self, comp_id):
         """Fetches all teams in the league for setup."""
-        req = self._get('competitions/{id}/teams'.format(id=self.league_id), params=None)
+        req = self._get('competitions/{0}/teams'.format(comp_id), params=None)
         return req.json()
 
 
@@ -87,6 +89,18 @@ def reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None):
         write_tojsondir(comps_df, name)
 
 
+def update_teams():
+    comps = write_comps_metas()
+    api_buddy = FBDataEntry()
+    master_teams = dict()
+    for comp in comps['competitions']:
+        tms_cdf = api_buddy.get_teams(str(comp['id']))
+        master_teams[str(comp['id'])] = tms_cdf
+    write_tojsondir(master_teams, 'teams')
+
+
+
+
 if __name__ == '__main__':
     # reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None)
-    write_comps_metas()
+    update_teams()

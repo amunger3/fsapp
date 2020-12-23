@@ -5,21 +5,12 @@ mp.dps = 15
 mp.pretty = True
 
 
-# Expected scores
-def exp_score(R_a, R_b):
-    Q_a = mp.power(10, (R_a / 400))
-    Q_b = mp.power(10, (R_b / 400))
-    E_a = mp.fdiv(Q_a, sum([Q_a, Q_b]))
-    E_b = mp.fdiv(Q_b, sum([Q_a, Q_b]))
-    return (E_a, E_b)
+class Elo:
 
-
-# Rating updates
-def up_rating(R_a, R_b, S_a, S_b):
-    K = 32
-    E_scores = exp_score(R_a, R_b)
-    E_a = E_scores[0]
-    E_b = E_scores[1]
-    Rnew_a = R_a + K * (S_a - E_a)
-    Rnew_b = R_b + K * (S_b - E_b)
-    return (Rnew_a, Rnew_b)
+    def __init__(self, R_tup=(1500, 1500), S_tup=(0.5, 0.5)):
+        self.K = 32
+        self.R_tup = R_tup
+        self.S_tup = S_tup
+        self.Q_tup = tuple(map(lambda x: mp.power(10, (x / 400)), self.R_tup))
+        self.E_tup = tuple(mp.fdiv(Q_ab, sum(self.Q_tup)) for Q_ab in self.Q_tup)
+        self.Rnew = tuple(self.R_tup[i] + self.K * (self.S_tup[i] - self.E_tup[i]) for i in range(2))
