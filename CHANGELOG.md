@@ -13,6 +13,12 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.9.0 (2020-12-23)
+
+#### Minor Release 0.9
+
+- [OTHER] Successful deployment to heroku with Python 3.9.1.
+
 ### Version 0.8.0 (2020-11-17)
 
 #### Minor Release 0.8
