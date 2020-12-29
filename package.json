@@ -22,7 +22,7 @@
     "license": "MIT",
     "dependencies": {
         "sass": "^1.30.0",
-        "uikit": "^3.5.14"
+        "uikit": "^3.6.5"
     },
     "devDependencies": {
         "grunt": "^1.3.0",

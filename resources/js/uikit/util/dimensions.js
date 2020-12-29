@@ -1,152 +1,59 @@
 import {css} from './style';
-import {attr} from './attr';
-import {isVisible} from './filter';
-import {each, endsWith, includes, isDocument, isNumeric, isUndefined, isWindow, toFloat, toNode, toWindow, ucfirst} from './lang';
+import {each, endsWith, isDocument, isNumeric, isUndefined, isWindow, toFloat, toNode, toWindow, ucfirst} from './lang';
 
 const dirs = {
-    width: ['x', 'left', 'right'],
-    height: ['y', 'top', 'bottom']
+    width: ['left', 'right'],
+    height: ['top', 'bottom']
 };
 
-export function positionAt(element, target, elAttach, targetAttach, elOffset, targetOffset, flip, boundary) {
+export function dimensions(element) {
 
-    elAttach = getPos(elAttach);
-    targetAttach = getPos(targetAttach);
-
-    const flipped = {element: elAttach, target: targetAttach};
-
-    if (!element || !target) {
-        return flipped;
-    }
-
-    const dim = getDimensions(element);
-    const targetDim = getDimensions(target);
-    const position = targetDim;
-
-    moveTo(position, elAttach, dim, -1);
-    moveTo(position, targetAttach, targetDim, 1);
-
-    elOffset = getOffsets(elOffset, dim.width, dim.height);
-    targetOffset = getOffsets(targetOffset, targetDim.width, targetDim.height);
-
-    elOffset['x'] += targetOffset['x'];
-    elOffset['y'] += targetOffset['y'];
-
-    position.left += elOffset['x'];
-    position.top += elOffset['y'];
-
-    if (flip) {
-
-        const boundaries = [getDimensions(toWindow(element))];
-
-        if (boundary) {
-            boundaries.unshift(getDimensions(boundary));
-        }
-
-        each(dirs, ([dir, align, alignFlip], prop) => {
-
-            if (!(flip === true || includes(flip, dir))) {
-                return;
-            }
-
-            boundaries.some(boundary => {
-
-                const elemOffset = elAttach[dir] === align
-                    ? -dim[prop]
-                    : elAttach[dir] === alignFlip
-                        ? dim[prop]
-                        : 0;
-
-                const targetOffset = targetAttach[dir] === align
-                    ? targetDim[prop]
-                    : targetAttach[dir] === alignFlip
-                        ? -targetDim[prop]
-                        : 0;
-
-                if (position[align] < boundary[align] || position[align] + dim[prop] > boundary[alignFlip]) {
-
-                    const centerOffset = dim[prop] / 2;
-                    const centerTargetOffset = targetAttach[dir] === 'center' ? -targetDim[prop] / 2 : 0;
-
-                    return elAttach[dir] === 'center' && (
-                        apply(centerOffset, centerTargetOffset)
-                        || apply(-centerOffset, -centerTargetOffset)
-                    ) || apply(elemOffset, targetOffset);
-
-                }
-
-                function apply(elemOffset, targetOffset) {
-
-                    const newVal = toFloat((position[align] + elemOffset + targetOffset - elOffset[dir] * 2).toFixed(4));
-
-                    if (newVal >= boundary[align] && newVal + dim[prop] <= boundary[alignFlip]) {
-                        position[align] = newVal;
-
-                        ['element', 'target'].forEach(el => {
-                            flipped[el][dir] = !elemOffset
-                                ? flipped[el][dir]
-                                : flipped[el][dir] === dirs[prop][1]
-                                    ? dirs[prop][2]
-                                    : dirs[prop][1];
-                        });
-
-                        return true;
-                    }
-
-                }
-
-            });
-
-        });
-    }
-
-    offset(element, position);
-
-    return flipped;
-}
-
-export function offset(element, coordinates) {
-
-    if (!coordinates) {
-        return getDimensions(element);
-    }
-
-    const currentOffset = getDimensions(element);
-    const pos = css(element, 'position');
-
-    ['left', 'top'].forEach(prop => {
-        if (prop in coordinates) {
-            const value = css(element, prop);
-            css(element, prop, coordinates[prop] - currentOffset[prop]
-                + toFloat(pos === 'absolute' && value === 'auto'
-                    ? position(element)[prop]
-                    : value)
-            );
-        }
-    });
-}
-
-function getDimensions(element) {
-
-    const {pageYOffset: top, pageXOffset: left} = toWindow(element);
-
-    const rect = isWindow(element)
+    const rect = isWindow(element) || !toNode(element)
         ? {height: height(element), width: width(element), top: 0, left: 0}
-        : getRect(toNode(element));
+        : toNode(element).getBoundingClientRect();
 
     return {
         height: rect.height,
         width: rect.width,
-        top: rect.top + top,
-        left: rect.left + left,
-        bottom: rect.top + rect.height + top,
-        right: rect.left + rect.width + left
+        top: rect.top,
+        left: rect.left,
+        bottom: rect.top + rect.height,
+        right: rect.left + rect.width
     };
+}
+
+export function offset(element, coordinates) {
+
+    const currentOffset = dimensions(element);
+    const {pageYOffset, pageXOffset} = toWindow(element);
+    const offsetBy = {height: pageYOffset, width: pageXOffset};
+
+    for (const dir in dirs) {
+        for (const i in dirs[dir]) {
+            currentOffset[dirs[dir][i]] += offsetBy[dir];
+        }
+    }
+
+    if (!coordinates) {
+        return currentOffset;
+    }
+
+    const pos = css(element, 'position');
+
+    each(css(element, ['left', 'top']), (value, prop) =>
+        css(element, prop, coordinates[prop]
+            - currentOffset[prop]
+            + toFloat(pos === 'absolute' && value === 'auto'
+                ? position(element)[prop]
+                : value)
+        )
+    );
 }
 
 export function position(element, parent) {
 
-    parent = parent || (toNode(element) || {}).offsetParent || toWindow(element).document.documentElement;
+    element = toNode(element);
+    parent = parent || element.offsetParent || element.documentElement;
 
     const elementOffset = offset(element);
     const parentOffset = offset(parent);
@@ -206,7 +113,7 @@ function dimension(prop) {
 
         } else {
 
-            css(element, prop, !value && value !== 0
+            return css(element, prop, !value && value !== 0
                 ? ''
                 : +value + boxModelAdjust(element, prop) + 'px'
             );
@@ -218,7 +125,7 @@ function dimension(prop) {
 
 export function boxModelAdjust(element, prop, sizing = 'border-box') {
     return css(element, 'boxSizing') === sizing
-        ? dirs[prop].slice(1).map(ucfirst).reduce((value, prop) =>
+        ? dirs[prop].map(ucfirst).reduce((value, prop) =>
             value
             + toFloat(css(element, `padding${prop}`))
             + toFloat(css(element, `border${prop}Width`))
@@ -226,60 +133,15 @@ export function boxModelAdjust(element, prop, sizing = 'border-box') {
         : 0;
 }
 
-function moveTo(position, attach, dim, factor) {
-    each(dirs, ([dir, align, alignFlip], prop) => {
-        if (attach[dir] === alignFlip) {
-            position[align] += dim[prop] * factor;
-        } else if (attach[dir] === 'center') {
-            position[align] += dim[prop] * factor / 2;
-        }
-    });
-}
-
-function getPos(pos) {
-
-    const x = /left|center|right/;
-    const y = /top|center|bottom/;
-
-    pos = (pos || '').split(' ');
-
-    if (pos.length === 1) {
-        pos = x.test(pos[0])
-            ? pos.concat('center')
-            : y.test(pos[0])
-                ? ['center'].concat(pos)
-                : ['center', 'center'];
-    }
-
-    return {
-        x: x.test(pos[0]) ? pos[0] : 'center',
-        y: y.test(pos[1]) ? pos[1] : 'center'
-    };
-}
-
-function getOffsets(offsets, width, height) {
-
-    const [x, y] = (offsets || '').split(' ');
-
-    return {
-        x: x ? toFloat(x) * (endsWith(x, '%') ? width / 100 : 1) : 0,
-        y: y ? toFloat(y) * (endsWith(y, '%') ? height / 100 : 1) : 0
-    };
-}
-
 export function flipPosition(pos) {
-    switch (pos) {
-        case 'left':
-            return 'right';
-        case 'right':
-            return 'left';
-        case 'top':
-            return 'bottom';
-        case 'bottom':
-            return 'top';
-        default:
-            return pos;
+    for (const dir in dirs) {
+        for (const i in dirs[dir]) {
+            if (dirs[dir][i] === pos) {
+                return dirs[dir][1 - i];
+            }
+        }
     }
+    return pos;
 }
 
 export function toPx(value, property = 'width', element = window) {
@@ -290,30 +152,10 @@ export function toPx(value, property = 'width', element = window) {
             : endsWith(value, 'vw')
                 ? percent(width(toWindow(element)), value)
                 : endsWith(value, '%')
-                    ? percent(getDimensions(element)[property], value)
+                    ? percent(dimensions(element)[property], value)
                     : toFloat(value);
 }
 
 function percent(base, value) {
     return base * toFloat(value) / 100;
-}
-
-function getRect(element) {
-
-    if (!element) {
-        return {};
-    }
-
-    let style;
-
-    if (!isVisible(element)) {
-        style = attr(element, 'style');
-        element.style.setProperty('display', 'block', 'important');
-    }
-
-    const rect = element.getBoundingClientRect();
-
-    attr(element, 'style', style);
-
-    return rect;
 }
