@@ -19,10 +19,17 @@ export function hyphenate(str) {
     return hyphenateCache[str];
 }
 
+const camelizeCache = {};
 const camelizeRe = /-(\w)/g;
 
 export function camelize(str) {
-    return str.replace(camelizeRe, toUpper);
+
+    if (!(str in camelizeCache)) {
+        camelizeCache[str] = str.replace(camelizeRe, toUpper);
+    }
+
+    return camelizeCache[str];
+
 }
 
 function toUpper(_, c) {
@@ -89,23 +96,19 @@ export function isWindow(obj) {
 }
 
 export function isDocument(obj) {
-    return isObject(obj) && obj.nodeType === 9;
-}
-
-export function isJQuery(obj) {
-    return isObject(obj) && !!obj.jquery;
+    return nodeType(obj) === 9;
 }
 
 export function isNode(obj) {
-    return isObject(obj) && obj.nodeType >= 1;
+    return nodeType(obj) >= 1;
 }
 
 export function isElement(obj) {
-    return isObject(obj) && obj.nodeType === 1;
+    return nodeType(obj) === 1;
 }
 
-export function isNodeCollection(obj) {
-    return toString.call(obj).match(/^\[object (NodeList|HTMLCollection)\]$/);
+function nodeType(obj) {
+    return !isWindow(obj) && isObject(obj) && obj.nodeType;
 }
 
 export function isBoolean(value) {
@@ -156,26 +159,14 @@ export function toFloat(value) {
     return parseFloat(value) || 0;
 }
 
+export const toArray = Array.from || (value => arrPrototype.slice.call(value));
+
 export function toNode(element) {
-    return isNode(element)
-        ? element
-        : isNodeCollection(element) || isJQuery(element)
-            ? element[0]
-            : isArray(element)
-                ? toNode(element[0])
-                : null;
+    return toNodes(element)[0];
 }
 
 export function toNodes(element) {
-    return isNode(element)
-        ? [element]
-        : isNodeCollection(element)
-            ? arrPrototype.slice.call(element)
-            : isArray(element)
-                ? element.map(toNode).filter(Boolean)
-                : isJQuery(element)
-                    ? element.toArray()
-                    : [];
+    return element && (isNode(element) ? [element] : toArray(element).filter(isNode)) || [];
 }
 
 export function toWindow(element) {
@@ -191,16 +182,6 @@ export function toWindow(element) {
             : element.ownerDocument
         ).defaultView
         : window;
-}
-
-export function toList(value) {
-    return isArray(value)
-        ? value
-        : isString(value)
-            ? value.split(/,(?![^(]*\))/).map(value => isNumeric(value)
-                ? toNumber(value)
-                : toBoolean(value.trim()))
-            : [value];
 }
 
 export function toMs(time) {
@@ -255,7 +236,7 @@ export function each(obj, cb) {
 }
 
 export function sortBy(array, prop) {
-    return array.sort(({[prop]: propA = 0}, {[prop]: propB = 0}) =>
+    return array.slice().sort(({[prop]: propA = 0}, {[prop]: propB = 0}) =>
         propA > propB
             ? 1
             : propB > propA
@@ -278,11 +259,10 @@ export function clamp(number, min = 0, max = 1) {
 
 export function noop() {}
 
-export function intersectRect(r1, r2) {
-    return r1.left < r2.right &&
-        r1.right > r2.left &&
-        r1.top < r2.bottom &&
-        r1.bottom > r2.top;
+export function intersectRect(...rects) {
+    return [['bottom', 'top'], ['right', 'left']].every(([minProp, maxProp]) =>
+        Math.min(...rects.map(({[minProp]: min}) => min)) - Math.max(...rects.map(({[maxProp]: max}) => max)) > 0
+    );
 }
 
 export function pointInRect(point, rect) {
@@ -327,3 +307,26 @@ export const Dimensions = {
     }
 
 };
+
+export function getIndex(i, elements, current = 0, finite = false) {
+
+    elements = toNodes(elements);
+
+    const {length} = elements;
+
+    i = isNumeric(i)
+        ? toNumber(i)
+        : i === 'next'
+            ? current + 1
+            : i === 'previous'
+                ? current - 1
+                : elements.indexOf(toNode(i));
+
+    if (finite) {
+        return clamp(i, 0, length - 1);
+    }
+
+    i %= length;
+
+    return i < 0 ? i + length : i;
+}

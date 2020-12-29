@@ -1,4 +1,4 @@
-import {createEvent, css, Dimensions, escape, getImage, includes, IntersectionObserver, isUndefined, queryAll, startsWith, toFloat, toPx, trigger} from 'uikit-util';
+import {createEvent, css, Dimensions, escape, getImage, includes, isUndefined, queryAll, startsWith, toFloat, toPx, trigger} from 'uikit-util';
 
 export default {
 
@@ -22,7 +22,7 @@ export default {
         width: false,
         height: false,
         offsetTop: '50vh',
-        offsetLeft: 0,
+        offsetLeft: '50vw',
         target: false
     },
 
@@ -72,6 +72,11 @@ export default {
 
     connected() {
 
+        if (!window.IntersectionObserver) {
+            setSrcAttrs(this.$el, this.dataSrc, this.dataSrcset, this.sizes);
+            return;
+        }
+
         if (storage[this.cacheKey]) {
             setSrcAttrs(this.$el, storage[this.cacheKey], this.dataSrcset, this.sizes);
         } else if (this.isImg && this.width && this.height) {
@@ -87,12 +92,16 @@ export default {
     },
 
     disconnected() {
-        this.observer.disconnect();
+        this.observer && this.observer.disconnect();
     },
 
     update: {
 
         read({image}) {
+
+            if (!this.observer) {
+                return false;
+            }
 
             if (!image && document.readyState === 'complete') {
                 this.load(this.observer.takeRecords());
@@ -202,7 +211,7 @@ const additionRe = /[+-]?(\d+)/g;
 function evaluateSize(size) {
     return startsWith(size, 'calc')
         ? size
-            .substring(5, size.length - 1)
+            .slice(5, -1)
             .replace(sizeRe, size => toPx(size))
             .replace(/ /g, '')
             .match(additionRe)
