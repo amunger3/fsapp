@@ -30,9 +30,11 @@
         "grunt-contrib-copy": "^1.0.0",
         "grunt-contrib-sass": "^2.0.0",
         "grunt-sass": "^3.1.0",
-        "node-sass": "^5.0.0"
+        "node-sass": "^5.0.0",
+        "npm-run-all": "^4.1.5"
     },
     "scripts": {
+        "bus": "npx npm-run-all build update serve",
         "build": "grunt copy && grunt sass",
         "serve": "python ./dashapp.py",
         "update": "python ./app/data/updater.py"

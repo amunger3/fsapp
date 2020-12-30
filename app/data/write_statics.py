@@ -1,9 +1,14 @@
+import pandas as pd
 import requests
 
+from datetime import date
 import json
 from pathlib import Path
 
 from static import LeagueConfigs
+
+
+LC = LeagueConfigs()
 
 
 def write_tojsondir(w_df, name):
@@ -28,6 +33,36 @@ def write_comps_metas():
     fj = open(w_dir, 'r')
     dob = json.loads(fj.read())
     return dob
+
+
+# NOTE: Move elsewhere, it is too important and complex
+def comps_json_to_hdf():
+    comps = write_comps_metas()
+    comps_list = comps['competitions']
+
+    comps_dict = dict()
+    for comp in comps_list:
+        cs_dates = (
+            date.fromisoformat(comp['currentSeason']['startDate']),
+            date.fromisoformat(comp['currentSeason']['endDate'])
+        )
+        yr_str = '/'.join([str(dt.year)[-2:] for dt in cs_dates])
+        comp['label'] = ' '.join([comp['area']['name'], chr(8211), comp['name'], yr_str])
+        comp['value'] = comp.pop('code')
+        comps_dict[comp['value']] = comp
+
+    hdf = pd.HDFStore(LC._H5)
+    if hdf.__contains__('comps'):
+        print('data present at /comps...deleting key')
+        hdf.remove('comps')
+    hdf.close()
+
+    comps_df = pd.DataFrame.from_dict(comps_dict, orient='index')
+    comps_df.to_hdf(_H5, 'comps')
+    print('Storage of /comps complete...')
+    hdf.close()
+
+    return
 
 
 class FBDataEntry:
@@ -103,4 +138,5 @@ def update_teams():
 
 if __name__ == '__main__':
     # reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None)
-    update_teams()
+    # update_teams()
+    comps_json_to_hdf()
