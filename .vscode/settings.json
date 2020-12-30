@@ -1,5 +1,10 @@
 {
     "python.pythonPath": "/bin/python3.9",
+    "python.terminal.activateEnvInCurrentTerminal": true,
     "scm.countBadge": "focused",
-    "scm.defaultViewMode": "tree"
+    "scm.defaultViewMode": "tree",
+    "terminal.integrated.env.linux": {
+        "FLASK_APP": "dashapp",
+        "FLASK_ENV": "development"
+    }
 }
