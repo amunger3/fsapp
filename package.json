@@ -1,6 +1,6 @@
 {
     "name": "elo-football-ratings",
-    "version": "0.8.0",
+    "version": "0.9.1",
     "description": "Dash app showing Elo football ratings deployed on Heroku",
     "keywords": [
         "python",
@@ -21,7 +21,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "sass": "^1.30.0",
+        "sass": "^1.32.0",
         "uikit": "^3.6.5"
     },
     "devDependencies": {

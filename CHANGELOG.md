@@ -13,6 +13,11 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.9.1 (2020-12-30)
+
+- [CHANGE] Switched to backend table sortings (pandas), sacrificing speed for greater flexibility
+- [ENHANCEMENT] Some cosmetic UI changes
+
 ### Version 0.9.0 (2020-12-23)
 
 #### Minor Release 0.9

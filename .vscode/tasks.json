@@ -6,7 +6,7 @@
         {
             "label": "init-env",
             "type": "shell",
-            "command": "source .init.sh"
+            "command": "source ./init.sh"
         },
         {
             "label": "update-comps",

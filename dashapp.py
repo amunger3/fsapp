@@ -23,7 +23,8 @@ def set_table_header(comp_code):
     comp_label = df_compsix.loc[comp_code]['label']
     return comp_label
 
-card_title = set_table_header('PL')
+initial_comp = 'PL'
+card_title = set_table_header(initial_comp)
 
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
@@ -39,16 +40,12 @@ def comp_elo_df(comp_code):
 
 # Aggregate all leagues
 def all_elo_df():
-    active_comps = ['BL', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
+    active_comps = ['BL1', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
     df_all = pd.concat([comp_elo_df(cc) for cc in active_comps], ignore_index=True)
     return df_all
 
 
-# df functions
-def get_last(ix):
-    return ix[-1]
-
-df_static = comp_elo_df('PL')
+df_static = comp_elo_df(initial_comp)
 
 # Colorbins setup
 def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
@@ -312,8 +309,41 @@ layout_index = html.Div([
         className="uk-navbar-container uk-navbar-transparent"
     ),
     html.Div(
-        className="uk-container uk-margin-medium",
+        className="uk-container uk-margin-small",
         children=[
+            html.Div(
+                className="uk-container uk-margin-small",
+                children=[
+                    html.Div(
+                        className="uk-card uk-card-default uk-card-small uk-card-body",
+                        children=[
+                            html.Span(
+                                "Choose a Competition:",
+                                className="uk-text"
+                            ),
+                            html.Div(
+                                dcc.Dropdown(
+                                    id='comps-dropdown',
+                                    options=df_compini.to_dict('records'),
+                                    placeholder="All Competitions",
+                                    value=initial_comp
+                                ),
+                            className='uk-margin-small'
+                            )
+                        ]
+                    ),
+                    html.Div(
+                        className="uk-card uk-card-default uk-card-small uk-card-body uk-margin-small",
+                        children=[
+                            html.P(
+                                children=card_title,
+                                className="uk-text-lead",
+                                id="comp-title"
+                            )
+                        ]
+                    )
+                ],
+            ),
             dcc.Tabs(
                 id='tabs',
                 value='league-view',
@@ -331,40 +361,15 @@ layout_index = html.Div([
                                 id="tab-content-1",
                                 children=[
                                     html.Div(
-                                        html.H3(
-                                            children=card_title,
-                                            className="uk-card-title",
-                                            id="tablecard-title-1"
-                                        ),
-                                        className="uk-card-header"
-                                    ),
-                                    html.Div(
                                         className="uk-card-body",
                                         children=[
-                                            html.Div([
-                                                html.P(
-                                                    "Choose a Competition:",
-                                                    className="uk-text-lead"
-                                                ),
-                                                dcc.Dropdown(
-                                                    id='comps-dropdown',
-                                                    options=df_compini.to_dict('records'),
-                                                    placeholder="Select a Competition",
-                                                    value='PL'
-                                                ),
-                                            ],
-                                            className="uk-margin-small"
-                                            ),
-                                            html.Div(
-                                                children=legend,
-                                                style={'float': 'right'},
-                                                id="colorbins-legend"
-                                            ),
                                             dash_table.DataTable(
                                                 id='elolgtable',
                                                 columns=elo_columns,
                                                 data=df_static.to_dict('records'),
-                                                sort_action='native',
+                                                sort_action='custom',
+                                                sort_mode='single',
+                                                sort_by=[],
                                                 style_cell={
                                                     'fontFamily': 'Inter var, Inter, Roboto, Nunito, Arial, sans-serif',
                                                     'fontSize': '17px'
@@ -419,7 +424,12 @@ layout_index = html.Div([
                                                 ],
                                                 merge_duplicate_headers=True,
                                                 style_as_list_view=False,
-                                            )
+                                            ),
+                                            html.Div(
+                                                children=legend,
+                                                style={'float': 'right'},
+                                                id="colorbins-legend"
+                                            ),
                                         ]
                                     )
                                 ],
@@ -436,14 +446,6 @@ layout_index = html.Div([
                                 className="uk-card uk-card-default",
                                 id="tab-content-2",
                                 children=[
-                                    html.Div(
-                                        html.H3(
-                                            children=card_title,
-                                            className="uk-card-title",
-                                            id="tablecard-title-2"
-                                        ),
-                                        className="uk-card-header"
-                                    ),
                                     html.Div(
                                         className="uk-card-body",
                                         children=[
@@ -503,24 +505,34 @@ def display_page(pathname):
 @app.callback(
     [Output('elolgtable', 'data'),
     Output('elolgtable', 'style_data_conditional'),
-    Output('tablecard-title-1', 'children'),
+    Output('comp-title', 'children'),
     Output('colorbins-legend', 'children'),
     Output('teams-chklist', 'options')],
-    [Input('comps-dropdown', 'value')])
-def update_table(value):
+    [Input('comps-dropdown', 'value'),
+    Input('elolgtable', 'sort_by')])
+def update_table(value, sort_by):
     if value:
         df_static = comp_elo_df(value)
         card_title = set_table_header(value)
-        teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
-        (styles, legend, full_scale) = discrete_background_color_bins(df_static)
-        return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
     else:
         df_static = all_elo_df()
-        card_title = 'All Leagues'
-        teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
-        (styles, legend, full_scale) = discrete_background_color_bins(df_static)
-        return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
+        card_title = 'All Competitions'
 
-# Run Server
+    if len(sort_by):
+        df_sorted = df_static.sort_values(
+            sort_by[0]['column_id'],
+            ascending=sort_by[0]['direction'] == 'asc'
+        )
+    else:
+        df_sorted = df_static.sort_values(
+            'eloNow',
+            ascending=False
+        )
+    teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
+    (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+
+    return df_sorted.to_dict('records'), styles, card_title, legend, teams_bylg
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
