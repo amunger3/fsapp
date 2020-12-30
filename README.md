@@ -11,10 +11,11 @@ urlFragment: readme
 
 ### Local Development
 
-```powershell
-PS> ./init.ps1  # Starts virtual environment and sets config variables
-PS> npm install # installs any new NPM dependencies
-PS> npm run serve   # Starts configured development server
+```bash
+    > source ./init.sh  # Starts virtual environment and sets config variables
+    > npm install # installs any new NPM dependencies
+    > npm run build # Builds static assets
+    > npm run serve   # Starts configured development server
 ```
 
 ### Deployment
@@ -22,9 +23,9 @@ PS> npm run serve   # Starts configured development server
 There are 2 git remotes, and 2 corresponding heroku apps. Push to `stage` for staging and `pro` for production.
 The app is hosted on a [gunicorn](https://gunicorn.org/) server.
 
-```powershell
-PS> git push stage master vX.X.X
-PS> git push pro master vX.X.X
+```bash
+    > git push stage master vX.X.X
+    > git push pro master vX.X.X
 ```
 
 ## Code Structure
@@ -48,8 +49,8 @@ The data objects are stored in a database as HD5 tables and read by pandas. They
 1. Ensure `./app/data/updater.py` has the correct active leagues configured (under `__main__`)
 2. Run the updater script from the project root (this is where the HD5 database is):
 
-```powershell
-PS [root_dir]> python ./app/data/updater.py
+```bash
+    > npm run update
 ```
 
 ## API Requests
@@ -61,7 +62,6 @@ to recieve an API key.
 
 | id   | code | name                  | area        |
 |------|------|-----------------------|-------------|
-| 2024 | ASL  | Superliga Argentina   | Argentina   |
 | 2002 | BL   | Bundesliga            | Germany     |
 | 2015 | FL1  | Ligue 1               | France      |
 | 2021 | PL   | Premier League        | England     |

@@ -48,4 +48,4 @@ node_modules
 .vscode/settings.json
 
 *.sqlite
-*.h5
+fbd_storage.h5
