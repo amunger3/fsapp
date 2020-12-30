@@ -96,3 +96,5 @@ class LeagueConfigs:
         "CL": None,
         "EL": None,
     }
+
+    _H5 = 'fbd_storage.h5'

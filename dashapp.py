@@ -13,33 +13,36 @@ import requests_cache
 requests_cache.install_cache('fbd_cache', backend='sqlite', expire_after=86400)
 
 # Load HDF5 Storage
-hdf_file = 'fbd_storage.h5'
+_H5 = 'fbd_storage.h5'
 
 # Competition selections
-df_compsix = pd.read_hdf(hdf_file, 'comps')
+df_compsix = pd.read_hdf(_H5, 'comps')
 df_compini = df_compsix[['label', 'value']]
 
 def set_table_header(comp_code):
     comp_label = df_compsix.loc[comp_code]['label']
-    year_str = '/'.join([
-        df_compsix.loc[comp_code]['currentSeason']['startDate'].split('-')[0][-2:],
-        df_compsix.loc[comp_code]['currentSeason']['endDate'].split('-')[0][-2:]
-    ])
-    table_header_str = ' '.join([comp_label, year_str])
-    return table_header_str
+    return comp_label
 
 card_title = set_table_header('PL')
 
 # Pandas DataFrame variable
 def comp_elo_df(comp_code):
     hdf_key = comp_code.lower()
-    df_static = pd.read_hdf(hdf_file, hdf_key)
+    df_static = pd.read_hdf(_H5, hdf_key)
     df_static['lastFix'] = df_static['fixtures'].apply(lambda x: df_static.loc[x[-1]]['tla'])
     res_map = {0: 'L', 0.5: 'D', 1: 'W'}
     df_static['lastRes'] = df_static['results'].apply(lambda x: res_map[x[-1]])
     df_static['lastDiff'] = df_static['eloRun'].apply(lambda x: x[-1] - x[-2])
     df_static['eloRk'] = df_static['eloNow'].rank(ascending=False)
     return df_static
+
+
+# Aggregate all leagues
+def all_elo_df():
+    active_comps = ['BL', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
+    df_all = pd.concat([comp_elo_df(cc) for cc in active_comps], ignore_index=True)
+    return df_all
+
 
 # df functions
 def get_last(ix):
@@ -512,7 +515,7 @@ def update_table(value):
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
         return df_static.to_dict('records'), styles, card_title, legend, teams_bylg
     else:
-        df_static = comp_elo_df('/agg/all')
+        df_static = all_elo_df()
         card_title = 'All Leagues'
         teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
         (styles, legend, full_scale) = discrete_background_color_bins(df_static)
