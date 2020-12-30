@@ -58,7 +58,7 @@ def comps_json_to_hdf():
     hdf.close()
 
     comps_df = pd.DataFrame.from_dict(comps_dict, orient='index')
-    comps_df.to_hdf(_H5, 'comps')
+    comps_df.to_hdf(LC._H5, 'comps')
     print('Storage of /comps complete...')
     hdf.close()
 
@@ -132,8 +132,6 @@ def update_teams():
         tms_cdf = api_buddy.get_teams(str(comp['id']))
         master_teams[str(comp['id'])] = tms_cdf
     write_tojsondir(master_teams, 'teams')
-
-
 
 
 if __name__ == '__main__':

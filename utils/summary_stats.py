@@ -22,16 +22,3 @@ def hdf_data_load(all_comps=True):
     print("Wrote {0} rows on {1} columns to {2}".format(all_df.shape[0], all_df.shape[1], write_path))
     dfcs.close()
     return
-
-
-def calc_summary_stats():
-    try:
-        agg_all = pd.read_hdf(hdf_file, '/agg/all')
-    except:
-        hdf_data_load(all_comps=True)
-        agg_all = pd.read_hdf(hdf_file, '/agg/all')
-    return agg_all
-
-
-if __name__ == '__main__':
-    calc_summary_stats()

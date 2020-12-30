@@ -12,12 +12,11 @@ def get_broken_deps():
             split = lines[lnum].split(' @ ')
             if len(split) >= 2:
                 wheel_name = split[-1].split('-')
-                fixed_dep = split[0] + '==' + wheel_name[1].split('%')[0] +'\n'
+                fixed_dep = split[0] + '==' + wheel_name[1].split('%')[0] + '\n'
                 lines[lnum] = fixed_dep
     print(lines)
     with open(reqs_file, 'w') as reqs_txt:
         reqs_txt.writelines(lines)
-
 
 
 if __name__ == '__main__':

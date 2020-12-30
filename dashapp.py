@@ -19,14 +19,16 @@ _H5 = 'fbd_storage.h5'
 df_compsix = pd.read_hdf(_H5, 'comps')
 df_compini = df_compsix[['label', 'value']]
 
+
 def set_table_header(comp_code):
     comp_label = df_compsix.loc[comp_code]['label']
     return comp_label
 
+
 initial_comp = 'PL'
 card_title = set_table_header(initial_comp)
 
-# Pandas DataFrame variable
+
 def comp_elo_df(comp_code):
     hdf_key = comp_code.lower()
     df_static = pd.read_hdf(_H5, hdf_key)
@@ -38,7 +40,6 @@ def comp_elo_df(comp_code):
     return df_static
 
 
-# Aggregate all leagues
 def all_elo_df():
     active_comps = ['BL1', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
     df_all = pd.concat([comp_elo_df(cc) for cc in active_comps], ignore_index=True)
@@ -47,7 +48,7 @@ def all_elo_df():
 
 df_static = comp_elo_df(initial_comp)
 
-# Colorbins setup
+
 def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
     import colorlover
     bounds = [i * (1.0 / n_bins) for i in range(n_bins + 1)]
@@ -496,11 +497,13 @@ layout_index = html.Div([
 server = app.server
 app.layout = layout_index
 
+
 # Callbacks
 @app.callback(dash.dependencies.Output('page-location', 'children'),
               [dash.dependencies.Input('url', 'pathname')])
 def display_page(pathname):
     return html.A(pathname, href="#")
+
 
 @app.callback(
     [Output('elolgtable', 'data'),
