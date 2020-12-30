@@ -46,3 +46,6 @@ node_modules
 
 # VSCode
 .vscode/settings.json
+
+*.sqlite
+*.h5
