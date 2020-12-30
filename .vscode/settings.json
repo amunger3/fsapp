@@ -1,6 +1,7 @@
 {
-    "python.pythonPath": "/bin/python3.9",
+    "python.pythonPath": "env/bin/python",
     "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.formatting.provider": "none",
     "scm.countBadge": "focused",
     "scm.defaultViewMode": "tree",
     "terminal.integrated.env.linux": {

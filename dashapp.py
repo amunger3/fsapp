@@ -1,6 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_daq as daq
 import dash_table
 from dash_table.Format import Format, Scheme, Sign, Symbol
 from dash.dependencies import Input, Output
@@ -47,10 +48,11 @@ def all_elo_df():
 
 
 df_static = comp_elo_df(initial_comp)
+teams_list = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
+team_links = [html.Li(dcc.Link(team['label'], href=str(team['value']))) for team in teams_list]
 
 
 def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
-    import colorlover
     bounds = [i * (1.0 / n_bins) for i in range(n_bins + 1)]
     if columns == 'all':
         if 'id' in df:
@@ -91,7 +93,6 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
         min_bound = ranges[i - 1]
         max_bound = ranges[i]
         backgroundColor = color_scale[i - 1]
-        # color = 'white' if i > len(bounds) / 2. else 'inherit'
 
         for column in df_numeric_columns:
             styles.append({
@@ -114,19 +115,22 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
         elif i == n_bins:
             legend_border_right = '2px rgb(64, 64, 64) solid'
         legend.append(
-            html.Div(style={'display': 'inline-block', 'width': '60px'}, children=[
-                html.Div(
-                    style={
-                        'backgroundColor': backgroundColor,
-                        'borderLeft': legend_border_left,
-                        'borderRight': legend_border_right,
-                        'borderTop': '2px rgb(64, 64, 64) solid',
-                        'borderBottom': '2px rgb(64, 64, 64) solid',
-                        'height': '16px'
-                    }
-                ),
-                html.Small(round(min_bound), style={'paddingLeft': '2px'})
-            ])
+            html.Div(
+                style={'display': 'inline-block', 'width': '64px'},
+                children=[
+                    html.Div(
+                        style={
+                            'backgroundColor': backgroundColor,
+                            'borderLeft': legend_border_left,
+                            'borderRight': legend_border_right,
+                            'borderTop': '2px rgb(64, 64, 64) solid',
+                            'borderBottom': '2px rgb(64, 64, 64) solid',
+                            'height': '32px'
+                        }
+                    ),
+                    html.Small(round(min_bound), style={'paddingLeft': '-2px'})
+                ]
+            )
         )
         full_scale = html.Small(color_scale, style={'paddingLeft': '2px'})
 
@@ -364,6 +368,14 @@ layout_index = html.Div([
                                     html.Div(
                                         className="uk-card-body",
                                         children=[
+                                            daq.ToggleSwitch(
+                                                id='colorscale-toggle',
+                                                color='#ffffff',
+                                                label='Show color scale',
+                                                size=36,
+                                                style={'margin-bottom': '1.0em'},
+                                                value=False
+                                            ),
                                             dash_table.DataTable(
                                                 id='elolgtable',
                                                 columns=elo_columns,
@@ -427,10 +439,15 @@ layout_index = html.Div([
                                                 style_as_list_view=False,
                                             ),
                                             html.Div(
-                                                children=legend,
-                                                style={'float': 'right'},
-                                                id="colorbins-legend"
-                                            ),
+                                                className="uk-card uk-card-small uk-padding-remove uk-margin-small uk-align-right",
+                                                children=[
+                                                    html.Div(
+                                                        children=legend,
+                                                        id="colorbins-legend",
+                                                        className="uk-card-body"
+                                                    )
+                                                ]
+                                            )
                                         ]
                                     )
                                 ],
@@ -452,18 +469,17 @@ layout_index = html.Div([
                                         children=[
                                             html.Div([
                                                 html.P(
-                                                    "Select Teams",
+                                                    "Teams List",
                                                     className="uk-text-lead"
                                                 ),
                                             ],
                                             className="uk-margin-small"
                                             ),
-                                            dcc.Checklist(
-                                                id='teams-chklist',
-                                                options=[],
-                                                value=[],
-                                                labelStyle={'display': 'block'}
-                                            ),
+                                            html.Ul(
+                                                id="team-links",
+                                                className="uk-list",
+                                                children=team_links
+                                            )
                                         ],
                                     ),
                                 ],
@@ -510,10 +526,11 @@ def display_page(pathname):
     Output('elolgtable', 'style_data_conditional'),
     Output('comp-title', 'children'),
     Output('colorbins-legend', 'children'),
-    Output('teams-chklist', 'options')],
+    Output('team-links', 'children')],
     [Input('comps-dropdown', 'value'),
-    Input('elolgtable', 'sort_by')])
-def update_table(value, sort_by):
+    Input('elolgtable', 'sort_by'),
+    Input('colorscale-toggle', 'value')])
+def update_table(value, sort_by, colorbins_bool):
     if value:
         df_static = comp_elo_df(value)
         card_title = set_table_header(value)
@@ -531,10 +548,11 @@ def update_table(value, sort_by):
             'eloNow',
             ascending=False
         )
-    teams_bylg = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
+    teams_list = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
+    team_links = [html.Li(dcc.Link(team['label'], href=str(team['value']))) for team in teams_list]
     (styles, legend, full_scale) = discrete_background_color_bins(df_static)
 
-    return df_sorted.to_dict('records'), styles, card_title, legend, teams_bylg
+    return df_sorted.to_dict('records'), styles, card_title, legend, team_links
 
 
 if __name__ == '__main__':
