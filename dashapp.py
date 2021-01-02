@@ -3,9 +3,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_daq as daq
 import dash_table
-from dash_table.Format import Format, Scheme, Sign, Symbol
+from dash_table.Format import Format, Scheme
 from dash.dependencies import Input, Output
-import plotly.express as px
 import pandas as pd
 import requests_cache
 
@@ -52,30 +51,23 @@ teams_list = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_sta
 team_links = [html.Li(dcc.Link(team['label'], href=str(team['value']))) for team in teams_list]
 
 
-def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
+def bkg_color_bins(df, n_bins=9, columns=['eloNow']):
     bounds = [i * (1.0 / n_bins) for i in range(n_bins + 1)]
     if columns == 'all':
         if 'id' in df:
-            df_numeric_columns = df.select_dtypes('number').drop(['id'], axis=1)
+            df_numeric_cols = df.select_dtypes('number').drop(['id'], axis=1)
         else:
-            df_numeric_columns = df.select_dtypes('number')
+            df_numeric_cols = df.select_dtypes('number')
     else:
-        df_numeric_columns = df[columns]
-    df_max = df_numeric_columns.max().max()
-    df_min = df_numeric_columns.min().min()
-    ranges = [
-        ((df_max - df_min) * i) + df_min
-        for i in bounds
-    ]
+        df_numeric_cols = df[columns]
+    df_max = df_numeric_cols.max().max()
+    df_min = df_numeric_cols.min().min()
+    ranges = [((df_max - df_min) * i) + df_min for i in bounds]
     styles = [
-        {'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(248, 248, 248)'},
-        {'if': {'column_type': 'text'},
-            'textAlign': 'left'},
-        {'if': {'column_type': 'numeric'},
-            'textAlign': 'center'},
-        {'if': {'column_id': 'lastRes'},
-            'textAlign': 'center'},
+        {'if': {'row_index': 'odd'}, 'backgroundColor': 'rgb(248, 248, 248)'},
+        {'if': {'column_type': 'text'}, 'textAlign': 'left'},
+        {'if': {'column_type': 'numeric'}, 'textAlign': 'center'},
+        {'if': {'column_id': 'lastRes'}, 'textAlign': 'center'},
     ]
     legend = []
     color_scale = [
@@ -94,7 +86,7 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
         max_bound = ranges[i]
         backgroundColor = color_scale[i - 1]
 
-        for column in df_numeric_columns:
+        for column in df_numeric_cols:
             styles.append({
                 'if': {
                     'filter_query': (
@@ -137,7 +129,7 @@ def discrete_background_color_bins(df, n_bins=9, columns=['eloNow']):
     return (styles, html.Div(legend, style={'padding': '5px 0 5px 0'}), full_scale)
 
 
-(styles, legend, full_scale) = discrete_background_color_bins(df_static)
+(styles, legend, full_scale) = bkg_color_bins(df_static)
 
 elo_columns = [
     {
@@ -253,7 +245,6 @@ elo_columns = [
     {'id': 'lastFix', 'name': ['Last Match', 'vs.'], 'type': 'text'},
 ]
 
-# Dash App rendering
 app = dash.Dash(
     __name__,
     assets_ignore='.*dash-default.*',
@@ -550,7 +541,7 @@ def update_table(value, sort_by, colorbins_bool):
         )
     teams_list = [{'label': df_static.loc[ix]['name'], 'value': ix} for ix in df_static.index]
     team_links = [html.Li(dcc.Link(team['label'], href=str(team['value']))) for team in teams_list]
-    (styles, legend, full_scale) = discrete_background_color_bins(df_static)
+    (styles, legend, full_scale) = bkg_color_bins(df_static)
 
     return df_sorted.to_dict('records'), styles, card_title, legend, team_links
 
