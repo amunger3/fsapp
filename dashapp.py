@@ -421,10 +421,8 @@ layout_index = html.Div([
                                                     'paddingRight': '8px',
                                                 },
                                                 style_header_conditional=[
-                                                    {'if': {'column_type': 'text'},
-                                                        'textAlign': 'left'},
-                                                    {'if': {'column_type': 'numeric'},
-                                                        'textAlign': 'center'},
+                                                    {'if': {'column_type': 'text'}, 'textAlign': 'left'},
+                                                    {'if': {'column_type': 'numeric'}, 'textAlign': 'center'},
                                                 ],
                                                 merge_duplicate_headers=True,
                                                 style_as_list_view=False,
@@ -441,9 +439,9 @@ layout_index = html.Div([
                                             )
                                         ]
                                     )
-                                ],
-                            ),
-                        ],
+                                ]
+                            )
+                        ]
                     ),
                     dcc.Tab(
                         label='Teams',
