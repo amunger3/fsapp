@@ -13,6 +13,11 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.9.2 (2021-01-02)
+
+- [ENHANCEMENT] Added area flag SVG and current matchday to card titles.
+- [CODEQUALITY] `npm run update` now also updates the `\comps` table for current matchday info.
+
 ### Version 0.9.1 (2020-12-30)
 
 - [CHANGE] Switched to backend table sortings (pandas), sacrificing speed for greater flexibility
