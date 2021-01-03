@@ -22,7 +22,27 @@ df_compini = df_compsix[['label', 'value']]
 
 def set_table_header(comp_code):
     comp_label = df_compsix.loc[comp_code]['label']
-    return comp_label
+    comp_cs = df_compsix.loc[comp_code]['currentSeason']
+    if df_compsix.loc[comp_code]['area'].get('ensignUrl'):
+        area_logo = html.Img(
+            style={'height': '32px'},
+            src=df_compsix.loc[comp_code]['area']['ensignUrl']
+        )
+    else:
+        area_logo = html.Div()
+    comp_header = ' '.join([
+        comp_label, chr(8211),
+        'Matchday:',
+        str(comp_cs['currentMatchday'])
+    ])
+    full_title = [
+        area_logo,
+        html.Span(
+            comp_header,
+            className='uk-padding-small'
+        )
+    ]
+    return full_title
 
 
 initial_comp = 'PL'
@@ -331,7 +351,7 @@ layout_index = html.Div([
                     html.Div(
                         className="uk-card uk-card-default uk-card-small uk-card-body uk-margin-small",
                         children=[
-                            html.P(
+                            html.Div(
                                 children=card_title,
                                 className="uk-text-lead",
                                 id="comp-title"

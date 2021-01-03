@@ -137,4 +137,5 @@ def update_teams():
 if __name__ == '__main__':
     # reinit_statics(get_areas=True, get_comps=True, plan=None, areas=None)
     # update_teams()
-    comps_json_to_hdf()
+    # comps_json_to_hdf()
+    comps_updater()

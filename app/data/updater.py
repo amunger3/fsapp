@@ -1,10 +1,48 @@
 from static import LeagueConfigs
 from run_calcs import EloRunCalc
+from write_statics import FBDataEntry
+
 import pandas as pd
+
 
 # NOTE: this file must be run from the project root to load the existing HDF Store
 
 LC = LeagueConfigs()
+
+
+def comps_updater():
+
+    FBDE = FBDataEntry()
+    comps_all = FBDE.get_comps()
+    comps_list = comps_all['competitions']
+    comps_dict = dict()
+
+    # Removes competitions with null code
+    comps_dict.update([(comp['code'], comp) for comp in comps_list])
+
+    stored_dict = LC._IDS
+    stored_dict.update([(id_code, comps_dict[id_code]) for id_code in stored_dict.keys()])
+
+    for key, val in stored_dict.items():
+        cs_dates = (date.fromisoformat(val['currentSeason']['startDate']),
+                    date.fromisoformat(val['currentSeason']['endDate']))
+        yr_str = '/'.join([str(dt.year)[-2:] for dt in cs_dates])
+        val['label'] = ' '.join([val['area']['name'], chr(8211), val['name'], yr_str])
+        if key == val['code']:
+            val['value'] = val.pop('code')
+
+    hdf = pd.HDFStore(LC._H5)
+    if hdf.__contains__('comps'):
+        print('data present at /comps...deleting key')
+        hdf.remove('comps')
+    hdf.close()
+
+    stored_df = pd.DataFrame.from_dict(stored_dict, orient='index')
+    stored_df.to_hdf(LC._H5, 'comps')
+    print('Storage of /comps complete...')
+    hdf.close()
+
+    return stored_dict
 
 
 def hdf5_handler(lg_key='PL'):
@@ -32,6 +70,7 @@ def hdf5_handler(lg_key='PL'):
 
 
 if __name__ == '__main__':
+    comps_updater()
     active_comps = ['BL1', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
     for comp in active_comps:
         print('Updating {0}'.format(comp))
