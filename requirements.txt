@@ -8,7 +8,7 @@ colorlover==0.3.0
 dash==1.18.1
 dash-core-components==1.14.1
 dash-daq==0.5.0
-dash-extensions==0.0.40
+dash-extensions==0.0.41
 dash-html-components==1.1.1
 dash-renderer==1.8.3
 dash-table==4.11.1
