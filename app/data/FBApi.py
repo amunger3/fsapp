@@ -1,25 +1,13 @@
-import re
 import requests
 
 
 class FBDataHandler:
 
-    def __init__(self, league_id, season='2019', stage='REGULAR_SEASON', status='FINISHED'):
+    def __init__(self, league_id, season='2020', stage='REGULAR_SEASON', status='FINISHED'):
         self.baseUrl = 'https://api.football-data.org/v2/'
         self.apiToken = '065434220db543f6aafdb8565d85d359'
         self.headers = { 'X-Auth-Token': self.apiToken }
-        self.league_ids = {
-                            'ASL': '2024', 'BSA': '2013', 'BL' : '2002',
-                            'FL1': '2015', 'PL' : '2021', 'ELC': '2016',
-                            'PD' : '2014', 'SA' : '2019', 'PPL': '2017',
-                            'DED': '2003', 'MLS': '2145', 'CL' : '2001',
-                            'EL' : '2146'
-                        }
-        AZ = re.search(r"([A-Z])\w+", league_id)
-        if AZ:
-            self.league_id = self.league_ids[league_id]
-        else:
-            self.league_id = league_id
+        self.league_id = league_id
         self.season = season
         self.stage = stage
         self.status = status

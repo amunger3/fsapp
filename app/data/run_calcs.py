@@ -10,7 +10,7 @@ from pathlib import Path
 # Calculations class
 class EloRunCalc:
 
-    def __init__(self, league_id, season='2019', stage='REGULAR_SEASON', status='FINISHED'):
+    def __init__(self, league_id, season='2020', stage='REGULAR_SEASON', status='FINISHED'):
         self.season = season
         self.stage = stage
         self.status = status

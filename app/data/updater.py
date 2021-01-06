@@ -2,6 +2,8 @@ from static import LeagueConfigs
 from run_calcs import EloRunCalc
 from write_statics import FBDataEntry
 
+from datetime import datetime
+
 import pandas as pd
 
 
@@ -24,8 +26,8 @@ def comps_updater():
     stored_dict.update([(id_code, comps_dict[id_code]) for id_code in stored_dict.keys()])
 
     for key, val in stored_dict.items():
-        cs_dates = (date.fromisoformat(val['currentSeason']['startDate']),
-                    date.fromisoformat(val['currentSeason']['endDate']))
+        cs_dates = (datetime.fromisoformat(val['currentSeason']['startDate']),
+                    datetime.fromisoformat(val['currentSeason']['endDate']))
         yr_str = '/'.join([str(dt.year)[-2:] for dt in cs_dates])
         val['label'] = ' '.join([val['area']['name'], chr(8211), val['name'], yr_str])
         if key == val['code']:
@@ -70,7 +72,7 @@ def hdf5_handler(lg_key='PL'):
 
 
 if __name__ == '__main__':
-    comps_updater()
+    # comps_updater() # Only run when necessary or will throw 400 errors.
     active_comps = ['BL1', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
     for comp in active_comps:
         print('Updating {0}'.format(comp))
