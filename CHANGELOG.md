@@ -13,6 +13,10 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 0.9.3 (2021-01-06)
+
+- [BUGFIX] Reverted previous change that ran the competitions updater persistently (400 errors).
+
 ### Version 0.9.2 (2021-01-02)
 
 - [ENHANCEMENT] Added area flag SVG and current matchday to card titles.
