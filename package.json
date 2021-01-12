@@ -1,0 +1,44 @@
+{
+    "name": "elo-football-ratings",
+    "version": "1.0.0",
+    "description": "Dash app showing Elo football ratings deployed on Heroku",
+    "keywords": [
+        "python",
+        "flask",
+        "dash",
+        "heroku",
+        "football",
+        "data-analytics"
+    ],
+    "author": {
+        "name": "Alex Munger",
+        "email": "munger.alex@gmail.com",
+        "url": "https://amunger3.github.io"
+    },
+    "repository": {
+        "type": "GitHub",
+        "url": "https://github.com/amunger3/fsapp.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "sass": "^1.32.4",
+        "uikit": "^3.6.10"
+    },
+    "devDependencies": {
+        "grunt": "^1.3.0",
+        "grunt-cli": "^1.3.2",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-sass": "^2.0.0",
+        "grunt-sass": "^3.1.0",
+        "node-sass": "^5.0.0",
+        "npm-run-all": "^4.1.5"
+    },
+    "scripts": {
+        "bus": "npx npm-run-all build update:all serve",
+        "build": "grunt copy && grunt sass",
+        "serve": "python ./dashapp.py",
+        "update:all": "npx npm-run-all update:comps update:active",
+        "update:active": "python ./app/data/updater.py --database active",
+        "update:comps": "python ./app/data/updater.py --database comps"
+    }
+}

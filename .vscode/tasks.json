@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "init-env",
+            "type": "shell",
+            "command": "source ./init.sh"
+        },
+        {
+            "label": "update-comps",
+            "type": "shell",
+            "command": "python ./app/data/updater.py"
+        },
+        {
+            "label": "run-local",
+            "type": "shell",
+            "command": "python dashapp.py"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: build",
+            "detail": "grunt copy && grunt sass"
+        }
+    ]
+}

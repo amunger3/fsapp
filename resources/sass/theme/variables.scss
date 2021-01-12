@@ -1,0 +1,112 @@
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+// Global variables
+// ========================================================================
+
+//
+// Typography
+//
+
+$global-font-family: Inter, 'Nunito', Roboto, 'Open Sans', 'Segoe UI', Arial, sans-serif;
+$base-code-font-family: 'Fira Code', 'Liberation Mono', Consolas, monospace;
+$base-body-font-weight: 350 !default;
+$base-strong-font-weight: 500 !default;
+$card-title-font-size: 1.2rem !default;
+$nav-header-text-transform: none !default;
+$nav-header-font-size: 1.0rem !default;
+
+//
+// Colors
+//
+
+$Gy-F: #f8f8f8;
+$Gy-E: #e9e9f0;
+$Gy-D: #d9d9e0;
+$Gy-0: #ceced0;
+$Gy-C: #c0c0c6;
+$Gy-1: #aeb0cc;
+$Gy-9: #9da5ab;
+$Gy-6: #666474;
+$Gy-4: #454a4f;
+
+$Gn-1: #29ee92;
+$Rr-1: #ff4143;
+$Rr-2: #c33c33;
+
+$Rg-P: #1eb980;
+$Rg-S: #045d56;
+$Ro-A: #ff6859;
+$Ry-B: #ffcf44;
+$Rp-C: #b15dff;
+$Rb-D: #72deff;
+
+$Bs-A: #356859;
+$Bs-B: #37966f;
+$Bs-O: #fd5523;
+$Bs-N: #fffbe6;
+
+$Yd-M: #344955;
+$Yd-X: #232f34;
+$Yd-L: #4a6572;
+$Yy-P: #f0ad76;
+$Yo-Y: #f7981c;
+$Yo-O: #d15711;
+
+$Pk-1: #e138e8;
+$Mg-1: #d9008f;
+$Vi-1: #a300d9;
+$Ig-1: #6f24d6;
+$Sb-1: #0085d0;
+$Tq-1: #00d9cc;
+$Lg-1: #00d90a;
+$Yg-1: #85d900;
+$Ct-1: #ffdd1d;
+$Bx-1: #d98500;
+$Ut-1: #dc5b23;
+$Ws-1: #ff0000;
+
+$grad-1: linear-gradient(to bottom, $Gy-D, $Gy-C);
+
+$global-link-color:           $Yo-O !default;
+$global-link-hover-color:     $Yy-P !default;
+$global-muted-background:     $Gy-F !default;
+$global-secondary-background: $Gy-4 !default;
+$global-inverse-color:        $Gy-E !default;
+
+//
+// Backgrounds
+//
+
+$base-body-background:        $Gy-0 !default;
+$base-body-color:             $Gy-6 !default;
+$progress-background:         $Gy-0 !default;
+$progress-bar-background:     $Gn-1 !default;
+$table-row-active-background: $Yy-P !default;
+
+//
+// Borders
+//
+
+//
+// Spacings
+//
+
+$base-body-line-height: 1rem !default;
+
+//
+// Controls
+//
+
+$breadcrumb-item-font-size:             0.875rem !default;
+$breadcrumb-item-color:                 $Rr-2 !default;
+$breadcrumb-item-hover-color:           $Rr-1 !default;
+$breadcrumb-item-hover-text-decoration: underline !default;
+$breadcrumb-item-active-color:          $Gy-6 !default;
+$breadcrumb-divider:                    "/" !default;
+$breadcrumb-divider-margin-horizontal:  0.5rem !default;
+$breadcrumb-divider-font-size:          1.0rem !default;
+$breadcrumb-divider-color:              $Gy-6 !default;
