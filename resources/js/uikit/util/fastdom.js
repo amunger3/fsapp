@@ -33,7 +33,7 @@ export const fastdom = {
 
 function flush(recursion = 1) {
     runTasks(fastdom.reads);
-    runTasks(fastdom.writes.splice(0, fastdom.writes.length));
+    runTasks(fastdom.writes.splice(0));
 
     fastdom.scheduled = false;
 
@@ -61,7 +61,11 @@ function scheduleFlush(recursion) {
 function runTasks(tasks) {
     let task;
     while ((task = tasks.shift())) {
-        task();
+        try {
+            task();
+        } catch (e) {
+            console.error(e);
+        }
     }
 }
 

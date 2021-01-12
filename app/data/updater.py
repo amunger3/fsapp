@@ -2,6 +2,7 @@ from static import LeagueConfigs
 from run_calcs import EloRunCalc
 from write_statics import FBDataEntry
 
+from argparse import ArgumentParser
 from datetime import datetime
 
 import pandas as pd
@@ -72,8 +73,25 @@ def hdf5_handler(lg_key='PL'):
 
 
 if __name__ == '__main__':
-    # comps_updater() # Only run when necessary or will throw 400 errors.
-    active_comps = ['BL1', 'FL1', 'PL', 'ELC', 'PD', 'SA', 'PPL', 'DED']
-    for comp in active_comps:
-        print('Updating {0}'.format(comp))
-        hdf5_handler(lg_key=comp)
+
+    parser = ArgumentParser(description='Specify databases to update.')
+    parser.add_argument(
+        '--database',
+        '-d',
+        choices=['active', 'comps'],
+        default='active',
+        help="Choose which database to update.",
+        type=str
+    )
+    args = parser.parse_args()
+    print('Updating {} database'.format(args.database))
+    print('_' * (18 + len(args.database)) + '\n')
+
+    if args.database == 'active':
+        active_comps = LC._IDS.keys()
+        for comp in active_comps:
+            print('Updating {0}'.format(comp))
+            hdf5_handler(lg_key=comp)
+
+    elif args.database == 'comps':
+        comps_updater()

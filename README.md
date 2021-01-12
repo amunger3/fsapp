@@ -11,11 +11,13 @@ urlFragment: readme
 
 ### Local Development
 
-```bash
-    > source ./init.sh  # Starts virtual environment and sets config variables
-    > npm install # installs any new NPM dependencies
-    > npm run build # Builds static assets
-    > npm run serve   # Starts configured development server
+```shell
+    > source init.sh                   # Starts virtual environment and sets config variables
+    > pip install -r requirements.txt  # Installs Python dependencies
+    > npm install                      # installs NPM dependencies
+    > npm run update:all               # Updates Elo HDF5 databases
+    > npm run build                    # Builds static assets
+    > npm run serve                    # Starts configured development server
 ```
 
 ### Deployment
@@ -43,15 +45,6 @@ The mathematical logic is contained in `elo.py`.
 The data objects are stored in a database as HD5 tables and read by pandas. They are written by `updater.py`.
 
 ## Documentation
-
-**JSON Updates**: To update leagues, do the following:
-
-1. Ensure `./app/data/updater.py` has the correct active leagues configured (under `__main__`)
-2. Run the updater script from the project root (this is where the HD5 database is):
-
-```bash
-    > npm run update
-```
 
 ## API Requests
 

@@ -13,6 +13,14 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 1.0.0 (2021-01-12)
+
+#### Major Release 1.0
+
+- [CODEQUALITY] Added command line directives for updating databases.
+- [CODEQUALITY] Added a GitHub Actions workflow to lint python on `git push`
+- [DEPENDENCY] Upgraded all dependencies.
+
 ### Version 0.9.3 (2021-01-06)
 
 - [BUGFIX] Reverted previous change that ran the competitions updater persistently (400 errors).

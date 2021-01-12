@@ -19,7 +19,6 @@ export default function (UIkit) {
 
         this._data = {};
         this._computeds = {};
-        this._frame = 0;
 
         this._initProps();
 
@@ -45,78 +44,44 @@ export default function (UIkit) {
         this._callHook('disconnected');
 
         this._connected = false;
+        delete this._watch;
 
     };
 
     UIkit.prototype._callUpdate = function (e = 'update') {
 
-        const type = e.type || e;
-
-        if (~['update', 'resize'].indexOf(type)) {
-            this._callWatches();
-        }
-
-        const updates = this.$options.update;
-
-        if (!updates) {
+        if (!this._connected) {
             return;
         }
 
-        const frame = this._frame = ++this._frame % 64;
-
-        for (let i = 0; i < updates.length; i++) {
-            const {read, write, events} = updates[i];
-
-            if (type !== 'update' && (!events || !~events.indexOf(type))) {
-                continue;
-            }
-
-            let cancel;
-            if (read) {
-                fastdom.read(() => {
-
-                    if (!this._connected || frame !== this._frame) {
-                        return;
-                    }
-
-                    const result = read.call(this, this._data, type);
-
-                    if (result === false) {
-                        cancel = true;
-                    } else if (isPlainObject(result)) {
-                        assign(this._data, result);
-                    }
-                });
-            }
-
-            if (write) {
-                fastdom.write(() => {
-
-                    if (cancel || !this._connected || frame !== this._frame) {
-                        return;
-                    }
-
-                    write.call(this, this._data, type);
-                });
-            }
+        if (e === 'update' || e === 'resize') {
+            this._callWatches();
         }
+
+        if (!this.$options.update) {
+            return;
+        }
+
+        if (!this._updates) {
+            this._updates = new Set();
+            fastdom.read(() => {
+                runUpdates.call(this, this._updates);
+                delete this._updates;
+            });
+        }
+
+        this._updates.add(e.type || e);
     };
 
     UIkit.prototype._callWatches = function () {
 
-        const {_watch} = this;
-
-        if (_watch) {
+        if (this._watch) {
             return;
         }
 
         const initital = !hasOwn(this, '_watch');
 
         this._watch = fastdom.read(() => {
-
-            if (!this._connected) {
-                return;
-            }
 
             const {$options: {computed}, _computeds} = this;
 
@@ -143,4 +108,31 @@ export default function (UIkit) {
 
     };
 
+    function runUpdates(types) {
+
+        const updates = this.$options.update;
+
+        for (let i = 0; i < updates.length; i++) {
+            const {read, write, events} = updates[i];
+
+            if (!types.has('update') && (!events || !events.some(type => types.has(type)))) {
+                continue;
+            }
+
+            let result;
+            if (read) {
+
+                result = read.call(this, this._data, types);
+
+                if (result && isPlainObject(result)) {
+                    assign(this._data, result);
+                }
+            }
+
+            if (write && result !== false) {
+                fastdom.write(() => write.call(this, this._data, types));
+            }
+
+        }
+    }
 }
