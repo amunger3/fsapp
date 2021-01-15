@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] [IDEA] *Add 'Form' parameter to table (net +/- Elo over past 5 matches).*
 - [ ] [UPGRADE] Use hdf5-1.12.0 with pandas/pytables for multiple open statements.
 - [ ] [APPEARANCE] Finish Team graphing functionality.
 - [ ] [WORKFLOW] Add tests.
