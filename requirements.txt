@@ -8,7 +8,7 @@ colorlover==0.3.0
 dash==1.18.1
 dash-core-components==1.14.1
 dash-daq==0.5.0
-dash-extensions==0.0.41
+dash-extensions==0.0.44
 dash-html-components==1.1.1
 dash-renderer==1.8.3
 dash-table==4.11.1
@@ -30,7 +30,7 @@ mpmath==1.1.0
 numexpr==2.7.2
 numpy==1.19.5
 pandas==1.2.0
-plotly==4.14.1
+plotly==4.14.3
 pycodestyle==2.6.0
 pyflakes==2.2.0
 python-dateutil==2.8.1
