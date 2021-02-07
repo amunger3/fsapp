@@ -1659,6 +1659,11 @@ button.uk-icon:not(:disabled) {
   vertical-align: top;
 }
 
+.uk-select[multiple],
+.uk-select[size] {
+  resize: vertical;
+}
+
 /* Focus */
 .uk-input:focus,
 .uk-select:focus,
