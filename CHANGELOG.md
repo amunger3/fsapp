@@ -13,6 +13,10 @@ Changelog labels are any of the following:
 
 - [BUGFIX], [CHANGE], [CODEQUALITY], [DEPENDENCY], [ENHANCEMENT], [OTHER], [TRANSLATION]
 
+### Version 1.0.1 (2021-03-02)
+
+- [DEPENDENCY] Updated dependencies.
+
 ### Version 1.0.0 (2021-01-12)
 
 #### Major Release 1.0
